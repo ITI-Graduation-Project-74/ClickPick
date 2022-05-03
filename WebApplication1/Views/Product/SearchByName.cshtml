@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Product>
+
+    @section css{
+
+    <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="~/css/tiny-slider.css" />
+    <link rel="stylesheet" href="~/css/glightbox.min.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+
+}
+
+     <!-- Start Trending Product Area -->
+    <section class="trending-product section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Trending Product</h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            @if(Model.Count() == 0)
+            {
+                <hr />
+                <div class="section-title mt-5">
+                        <p class="text-danger"> There are no Matched Result</p>
+                    </div>
+                
+            }
+            @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Product -->
+                    <div class="single-product">
+                        <div  class="product-image">
+                         <a asp-controller="Product" asp-action="Details" asp-route-ProductId="@item.Id">
+                             <img  src="@item.ImgUrl"style="width:300px; height:300px"  alt="ProductImg">
+                         </a>   
+                        </div>
+                        <div class="product-info">
+@*                            <span class="category">@Model.Category.CategoryName</span>
+*@                            <h4 class="title">
+                                <a asp-controller="Product" asp-action="Details" asp-route-ProductId="@item.Id">
+                                    @item.Name
+                                    </a>
+                            </h4>
+                            <ul class="review">
+                                <li><i class="lni lni-star-filled"></i></li>
+                                <li><i class="lni lni-star-filled"></i></li>
+                                <li><i class="lni lni-star-filled"></i></li>
+                                <li><i class="lni lni-star-filled"></i></li>
+                                <li><i class="lni lni-star"></i></li>
+                                <li><span>4.0 Review(s)</span></li>
+                            </ul>
+                            <div class="price">
+                                <span>@item.Price.ToString("c")</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                }
+
+                
+                    <!-- End Single Product -->
+
+
+
+       </div>         
+    </section>
+    <!-- End Trending Product Area -->

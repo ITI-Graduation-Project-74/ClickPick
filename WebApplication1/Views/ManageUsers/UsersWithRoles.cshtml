@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Ecommerce.Models.Users_in_Role_ViewModel>  
+   
+@{  
+    ViewBag.Title = "Users With Roles";  
+    Layout = "~/Views/Shared/_adminPortal.cshtml";
+
+}  
+   <br />
+   <br />
+   <br />
+ 
+
+        <table class="table table-bordered dt-responsive nowrap"  id="t1">  
+            <thead>  
+                <tr>  
+                    <td><b>Username</b></td>  
+                    <td><b>Email</b></td>  
+                    <td><b>Roles</b></td>  
+                </tr>  
+            </thead>  
+            @foreach (var user in Model)  
+            {  
+                <tr>  
+                    <td>@user.Username</td>  
+                    <td>@user.Email</td>  
+                    <td>@user.Role</td>  
+                      
+                </tr>  
+            }  
+        </table>  
+    </div>  
+   
+    <div class="panel-footer">  
+        <p class="box-title"><b>Total Users till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">@Model.Count()</span></p>  
+    </div>  
+</div>  
+   
+
+
+
+    </tbody>
+</table>
+   
+<script src="~/lib/jquery/dist/jquery.min.js"> </script>
+ <script src="~/AdminPortalAssets/assets/js/vendor.js"></script>
+ <script>
+        var oTable;
+    $(document).ready(function () {       
+       oTable=$('#t1').DataTable({
+            "pageLength":50,
+             dom: 'Bfrtip',
+              buttons: [
+        'copy', 'excel', 'pdf'
+    ],
+    })
+  });
+ </script>

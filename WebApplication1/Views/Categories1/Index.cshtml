@@ -1,0 +1,197 @@
+﻿@model IEnumerable<Ecommerce.Models.Category>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_adminPortal.cshtml";
+}
+
+<br />
+<br />
+<br />
+ 
+<p>
+    <button onclick="test()" class="btn btn-info">Create New</button>
+</p>
+<table class="table table-bordered dt-responsive nowrap"  id="t1">
+    <thead>
+        <tr>
+            <th>
+              Name  
+            </th>
+            
+            <th>
+               image
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                 @Html.DisplayFor(modelItem => item.CategoryName)
+
+            </td>
+         
+         
+            <td>  
+                    <img src="@item.ImgUrl"   
+                         class="rounded-circle"   
+                         height="40" width="40"   
+                         asp-append-version="true" />  
+                </td> 
+            <td>
+                <a onclick="testEdit(@item.Id )"  class="btn btn-primary" >Edit</a>
+                
+             </td>
+            <td>
+                 
+                <a onclick="test2(@item.Id)" class="btn btn-danger" >Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+@*        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+*@        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+@*modal delete*@
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+@*modal edit*@
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+      </div>
+     
+    </div>
+  </div>
+</div>
+ <script src="~/lib/jquery/dist/jquery.min.js"> </script>
+ <script src="~/AdminPortalAssets/assets/js/vendor.js"></script>
+<script>
+     var oTable;
+    $(document).ready(function () {       
+       oTable=$('#t1').DataTable({
+            "pageLength":50,
+             dom: 'Bfrtip',
+              buttons: [
+        'copy', 'excel', 'pdf'
+    ],
+    })
+  });
+  function test(EntityID ) {
+      debugger
+      
+         $.get("@Url.Action("Create", "categories1")", { id: EntityID  }, function (response) {
+             debugger
+                 $(".modal-body").html(response);
+                $('#exampleModal').modal('show');
+
+            })
+        };
+        
+        
+     
+        
+        
+   function saveoredit() {
+       debugger
+         var model = $('#exampleModal');
+        var form = $('form[id="CatForm"]');
+        var data = $('#CatForm').serialize();
+        $.post("@Url.Action("create", "Categories1")", data, function (res) {
+            
+                if (res) {
+                    debugger
+                    model.modal('hide');
+                  
+                    oTable.ajax.reload();
+                }
+                else {
+                    alert(res);
+                  
+                }
+             })    
+             
+    }
+      
+
+   function test2(EntityID) {
+      
+      
+        $.get("@Url.Action("delete", "categories1")", { id: EntityID }, function (response) {
+             debugger
+                 $(".modal-body").html(response);
+                $('#exampleModal').modal('show');
+
+            })
+       
+        }
+        
+
+          function testEdit(EntityID) {
+      
+      
+        $.get("@Url.Action("EditTest", "categories1")", { id: EntityID  }, function (response) {
+             debugger
+                 $(".modal-body").html(response);
+                $('#exampleModal2').modal('show');
+
+            })
+       
+        }
+
+      $(".custom-file-input").on("change", function () {  
+            var fileName = $(this).val().split("\\").pop();  
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);  
+        }); 
+        
+      
+        
+</script>
+
+
