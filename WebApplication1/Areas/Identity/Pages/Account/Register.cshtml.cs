@@ -119,10 +119,11 @@ namespace Ecommerce.Areas.Identity.Pages.Account
             [Required]
             [StringLength(18, ErrorMessage = "The LastName Must Be 20 Chars At Least")]
             public string LastName { get; set; }
-            [Required]
-            public string? Address { get; set; }
 
-            public string? Role { get; set; }
+            
+            public string Address { get; set; }
+
+            public string Role { get; set; }
 
             [ValidateNever]
             public IEnumerable<SelectListItem> RoleList { get; set; }

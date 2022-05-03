@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Ecommerce.Models.Repositories.UnitOfWork;
+using ClickPick.Utility;
 
 namespace Ecommerce.Controllers
 {
@@ -63,6 +64,9 @@ namespace Ecommerce.Controllers
 
             _context.Complete();
 
+            var count = _context.ShoppingCarts.FindAll(c => c.ApplicationUserId == cart.ApplicationUserId).ToList().Count + 1;
+            HttpContext.Session.SetInt32(StaticDetails.SessionCart, count);
+
             return RedirectToAction("Index");
         }
 
@@ -77,6 +81,10 @@ namespace Ecommerce.Controllers
             if(cart.Count <= 1)
             {
                 _context.ShoppingCartServices.Delete(cart);
+                
+                var count = _context.ShoppingCarts.FindAll(c => c.ApplicationUserId == cart.ApplicationUserId).ToList().Count-1;
+                HttpContext.Session.SetInt32(StaticDetails.SessionCart, count);
+
             } else
             {
                 _context.ShoppingCartServices.DecrementCount(cart, 1);
@@ -96,9 +104,13 @@ namespace Ecommerce.Controllers
             var cart = _context.ShoppingCarts
                 .Find(c => c.ApplicationUserId == claim.Value && c.ProductId == productId);
 
+           
             _context.ShoppingCartServices.Delete(cart);
-
             _context.Complete();
+            var count = _context.ShoppingCarts.FindAll(c => c.ApplicationUserId == cart.ApplicationUserId).ToList().Count;
+            HttpContext.Session.SetInt32(StaticDetails.SessionCart, count);
+
+            
 
             return RedirectToAction("Index");
         }

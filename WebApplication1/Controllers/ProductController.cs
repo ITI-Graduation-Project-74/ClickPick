@@ -1,8 +1,10 @@
-﻿using Ecommerce.Data;
+﻿using ClickPick.Utility;
+using Ecommerce.Data;
 using Ecommerce.Models;
 using Ecommerce.Models.PagedList;
 using Ecommerce.Models.Repositories.UnitOfWork;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Dynamic;
 using System.Security.Claims;
@@ -86,6 +88,36 @@ namespace Ecommerce.Controllers
         [ValidateAntiForgeryToken]
 
         [Authorize]
+        //public IActionResult Details(ShoppingCart shoppingCart)
+        //{
+        //    // Get The Claim Of Logined User (ApplicationUserId)
+
+        //    var claimsIdentity = (ClaimsIdentity)User.Identity;
+        //    var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+        //    shoppingCart.ApplicationUserId = claim.Value;
+
+        //    // checking If the User Exist on Database Or Not 
+
+        //    ShoppingCart StoredCartInDb = _context.ShoppingCarts
+        //        .Find(n => n.ApplicationUserId == claim.Value 
+        //        && n.ProductId == shoppingCart.ProductId);
+
+        //    if(StoredCartInDb == null)
+        //    {
+        //        _context.ShoppingCarts.Add(shoppingCart);
+        //    }
+        //    else
+        //    {
+        //        _context.ShoppingCartServices
+        //            .IncrementCount(StoredCartInDb, shoppingCart.Count);
+        //    }
+            
+        //    // Save To Database
+        //    _context.Complete();
+
+        //    return RedirectToAction("Index"); 
+        //}
+
         public IActionResult Details(ShoppingCart shoppingCart)
         {
             // Get The Claim Of Logined User (ApplicationUserId)
@@ -97,26 +129,39 @@ namespace Ecommerce.Controllers
             // checking If the User Exist on Database Or Not 
 
             ShoppingCart StoredCartInDb = _context.ShoppingCarts
-                .Find(n => n.ApplicationUserId == claim.Value 
+                .Find(n => n.ApplicationUserId == claim.Value
                 && n.ProductId == shoppingCart.ProductId);
 
-            if(StoredCartInDb == null)
+            if (StoredCartInDb == null)
             {
                 _context.ShoppingCarts.Add(shoppingCart);
+                _context.Complete();
+                HttpContext.Session
+                    .SetInt32(StaticDetails.SessionCart,
+                    _context.ShoppingCarts
+                    .FindAll(u => u.ApplicationUserId == claim.Value).ToList().Count);  
             }
             else
             {
                 _context.ShoppingCartServices
                     .IncrementCount(StoredCartInDb, shoppingCart.Count);
+                _context.Complete();
             }
-            
+
             // Save To Database
             _context.Complete();
 
-            return RedirectToAction("Index"); 
+            return RedirectToAction("Index");
         }
 
+        public IActionResult SearchByInsideCategory(string ProductName, int id)
+        {
 
+            var GetProductByNameInCategory = _context.Products
+                .FindAll(x => x.Name.Contains(ProductName)&& (x.CatagoryId==id));
+
+            return View("SearchByName", GetProductByNameInCategory);
+        } 
         public IActionResult SearchByName(string ProductName)
         {
             var GetProductByName = _context.Products.FindAll(x => x.Name.Contains(ProductName));
