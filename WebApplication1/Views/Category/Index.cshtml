@@ -40,7 +40,7 @@
                         <!-- Start Single Widget -->
                         <div class="single-widget search">
                             <h3>Search Product</h3>
-                            <form asp-controller="Product" asp-action="SearchByInsideCategory">
+                            <form asp-controller="Category" asp-action="index">
                                 <input type="hidden" name="id" value="@Model.FirstOrDefault().CatagoryId"  />
                                 <input type="text" name="ProductName" placeholder="Search Here...">
                                 <button type="submit"><i class="lni lni-search-alt"></i></button>

@@ -49,6 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="CustomPage\" />
     <Folder Include="wwwroot\Imgs\Categories\Mobiles\" />
   </ItemGroup>
 

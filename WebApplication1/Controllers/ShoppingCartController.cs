@@ -54,8 +54,7 @@ namespace Ecommerce.Controllers
         public IActionResult IncreaseProduct(int productId)
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
-            var claim = claimsIdentity
-                .FindFirst(ClaimTypes.NameIdentifier);
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
 
             var cart =_context.ShoppingCarts
                 .Find(c => c.ApplicationUserId == claim.Value && c.ProductId==productId);
@@ -64,7 +63,7 @@ namespace Ecommerce.Controllers
 
             _context.Complete();
 
-            var count = _context.ShoppingCarts.FindAll(c => c.ApplicationUserId == cart.ApplicationUserId).ToList().Count + 1;
+            var count = _context.ShoppingCarts.FindAll(c => c.ApplicationUserId == cart.ApplicationUserId).Sum(c => c.Count);
             HttpContext.Session.SetInt32(StaticDetails.SessionCart, count);
 
             return RedirectToAction("Index");

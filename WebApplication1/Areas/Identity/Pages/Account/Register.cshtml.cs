@@ -80,6 +80,8 @@ namespace Ecommerce.Areas.Identity.Pages.Account
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
+        /// 
+        public bool IsVendor { get; set; }
         public class InputModel
         {
             /// <summary>
@@ -123,6 +125,12 @@ namespace Ecommerce.Areas.Identity.Pages.Account
             
             public string Address { get; set; }
 
+            [Required]
+            [StringLength(50, ErrorMessage = "The StoreName Must Be 20 Chars At Least")]
+            public string StoreName { get; set; }
+
+            public bool VendorChecked { get; set; }
+
             public string Role { get; set; }
 
             [ValidateNever]
@@ -131,7 +139,7 @@ namespace Ecommerce.Areas.Identity.Pages.Account
         }
 
 
-        public async Task OnGetAsync(string returnUrl = null)
+        public async Task OnGetAsync(int? Vendorid,string returnUrl = null)
         {
             //_roleManager.CreateAsync(new IdentityRole("Admin"));
 
@@ -140,6 +148,11 @@ namespace Ecommerce.Areas.Identity.Pages.Account
                 _roleManager.CreateAsync(new IdentityRole(ApplicationRoles.Role_Admin)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(ApplicationRoles.Role_Vendor)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(ApplicationRoles.Role_User)).GetAwaiter().GetResult();
+            }
+
+            if(Vendorid != null)
+            {
+                IsVendor=true;
             }
 
             ReturnUrl = returnUrl;
@@ -171,6 +184,7 @@ namespace Ecommerce.Areas.Identity.Pages.Account
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
                 user.PhoneNumber = Input.PhoneNumber;
+                user.StoreName = Input.StoreName;
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
@@ -182,12 +196,21 @@ namespace Ecommerce.Areas.Identity.Pages.Account
                     if(Input.Role == null)
                     {
                         // create default user role to customer
-                        await _userManager.AddToRoleAsync(user, ApplicationRoles.Role_User);
+                        //await _userManager.AddToRoleAsync(user, ApplicationRoles.Role_User);
+
+                        if(Input.StoreName == null)
+                        {
+                            await _userManager.AddToRoleAsync(user, ApplicationRoles.Role_User);
+                        }else
+                        {
+                            await _userManager.AddToRoleAsync(user, ApplicationRoles.Role_Vendor);
+                        }
                     }
                     else
                     {
                         await _userManager.AddToRoleAsync(user,Input.Role);
                     }
+
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -218,6 +241,11 @@ namespace Ecommerce.Areas.Identity.Pages.Account
             }
 
             // If we got this far, something failed, redisplay form
+            if (Input.VendorChecked)
+            {
+                IsVendor = true;
+            }
+
             return Page();
         }
 

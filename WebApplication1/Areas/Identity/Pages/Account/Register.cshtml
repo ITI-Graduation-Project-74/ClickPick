@@ -51,7 +51,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label asp-for="Input.FirstName" for="reg-fn">First Name</label>
-                                    <input asp-for="Input.FirstName" class="form-control" type="text" >
+                                    <input asp-for="Input.FirstName" class="form-control" type="text" required >
                                     <span asp-validation-for="Input.FirstName" class="text-danger"></span>
                                 </div>
                             </div>
@@ -78,7 +78,17 @@
                                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                                 </div>
                             </div>
-                           
+                           @if(@Model.IsVendor){
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="Input.StoreName" for="reg-email">StoreName</label>
+                                    <input asp-for="Input.StoreName" class="form-control"  id="reg-email" required>
+                                    <span asp-validation-for="Input.StoreName" class="text-danger"></span>
+                                    
+                                    <input asp-for="Input.VendorChecked" type="checkbox" checked hidden >
+                                </div>
+                            </div> }
+
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label asp-for="Input.Password" for="reg-pass">Password</label>

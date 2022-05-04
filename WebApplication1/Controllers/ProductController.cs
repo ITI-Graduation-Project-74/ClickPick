@@ -136,9 +136,7 @@ namespace Ecommerce.Controllers
             {
                 _context.ShoppingCarts.Add(shoppingCart);
                 _context.Complete();
-                HttpContext.Session
-                    .SetInt32(StaticDetails.SessionCart,
-                    _context.ShoppingCarts
+                HttpContext.Session.SetInt32(StaticDetails.SessionCart, _context.ShoppingCarts
                     .FindAll(u => u.ApplicationUserId == claim.Value).ToList().Count);  
             }
             else
