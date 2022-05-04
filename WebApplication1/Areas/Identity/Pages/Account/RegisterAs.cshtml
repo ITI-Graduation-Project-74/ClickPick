@@ -1,4 +1,7 @@
-﻿ @section css{
+﻿@page
+@model ClickPick.Areas.Identity.Pages.Account.RegisterAsModel
+
+ @section css{
 
     <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
     <link rel="stylesheet" href="~/css/tiny-slider.css" />
@@ -40,10 +43,10 @@
                         </div>
                         <form class="row" method="post">
                             <div class="button">
-                                <a asp-page="/Account/Login"  class="btn" >Customer</a>
+                                <a asp-page="/Account/Register"  class="btn" >Customer</a>
                             </div>
                             <div class="button">
-                                <a asp-page="/Account/Login" class="btn btn-outline-primary" >Vendor</a>
+                                <a asp-page="/Account/Register" asp-route-Vendorid="1" class="btn btn-outline-primary" >Vendor</a>
                             </div>
 
                             <p class="outer-link">Already have an account? <a asp-page="/Account/Login" >Login Now</a>
