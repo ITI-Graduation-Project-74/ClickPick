@@ -125,7 +125,7 @@ namespace Ecommerce.Areas.Identity.Pages.Account
             
             public string Address { get; set; }
 
-            [Required]
+            
             [StringLength(50, ErrorMessage = "The StoreName Must Be 20 Chars At Least")]
             public string StoreName { get; set; }
 
