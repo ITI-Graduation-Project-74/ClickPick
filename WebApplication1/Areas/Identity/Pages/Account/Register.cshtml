@@ -6,6 +6,7 @@
 }
 
 
+
 @section css{
 
     <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
@@ -16,69 +17,85 @@
 }
 
 
-    <!-- Start Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="breadcrumbs-content">
-                        <h1 class="page-title">Registration</h1>
-                    </div>
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="breadcrumbs-content">
+                    @if (User.IsInRole(ApplicationRoles.Role_Admin))
+                    {
+                        <h1 class="page-title text-danger">Admin Portal Registration</h1>
+                    }
+                    else{
+                         <h1 class="page-title">Registration</h1>
+                        
+                        }
+                       
                 </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li>Registration</li>
-                    </ul>
-                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-nav">
+                    <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
+                    <li>Registration</li>
+                </ul>
             </div>
         </div>
     </div>
-    <!-- End Breadcrumbs -->
+</div>
+<!-- End Breadcrumbs -->
 
-    <!-- Start Account Register Area -->
-    <div class="account-login section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
-                    <div class="register-form">
-                        <div class="title">
+<!-- Start Account Register Area -->
+<div class="account-login section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
+                <div class="register-form">
+                    <div class="title">
+                        @if (User.IsInRole(ApplicationRoles.Role_Admin))
+                        {
+                            <h3 class="text-danger text-center ">Admin - Registeration</h3>
+                        }
+                        else{
+
                             <h3>No Account? Register</h3>
-                            <p>Registration takes less than a minute but gives you full control over your orders.</p>
-                        </div>
-                        <form class="row" id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label asp-for="Input.FirstName" for="reg-fn">First Name</label>
-                                    <input asp-for="Input.FirstName" class="form-control" type="text" required >
-                                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label asp-for="Input.LastName" for="reg-ln">Last Name</label>
-                                    <input asp-for="Input.LastName"class="form-control" type="text" >
-                                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
-                                </div>
-                            </div>
-                             <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label asp-for="Input.PhoneNumber"   for="reg-phone">Phone Number</label>
-                                    <input asp-for="Input.PhoneNumber" class="form-control" type="text" >
-                                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-                                </div>
-                            </div>
-
+                            }
                             
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label asp-for="Input.Email" for="reg-email">E-mail Address</label>
-                                    <input asp-for="Input.Email" class="form-control" type="email" id="reg-email" required>
-                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                                </div>
+                        <p>Registration takes less than a minute but gives you full control over your orders.</p>
+                    </div>
+                    <form class="row" id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Input.FirstName" for="reg-fn">First Name</label>
+                                <input asp-for="Input.FirstName" class="form-control" type="text" required >
+                                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
                             </div>
-                           @if(@Model.IsVendor){
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Input.LastName" for="reg-ln">Last Name</label>
+                                <input asp-for="Input.LastName"class="form-control" type="text" >
+                                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Input.PhoneNumber"   for="reg-phone">Phone Number</label>
+                                <input asp-for="Input.PhoneNumber" class="form-control" type="text" >
+                                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="Input.Email" for="reg-email">E-mail Address</label>
+                                <input asp-for="Input.Email" class="form-control" type="email" id="reg-email" required>
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        @if (@Model.IsVendor ){
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label asp-for="Input.StoreName" for="reg-email">StoreName</label>
@@ -87,8 +104,9 @@
                                     
                                     <input asp-for="Input.VendorChecked" type="checkbox" checked hidden >
                                 </div>
-                            </div> }
-
+                            </div>
+                        }
+                         
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label asp-for="Input.Password" for="reg-pass">Password</label>
@@ -104,12 +122,11 @@
                                 </div>
                             </div>
 
-
                             @if(User.IsInRole(ApplicationRoles.Role_Admin)){
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-select">
-                                        <option disabled selected>Choose Your Account Type</option>
+                                    <select  asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-select text-danger">
+                                        <option class="text-danger" disabled selected>Choose Your Title</option>
                                     </select>
                                 </div>
                             </div>

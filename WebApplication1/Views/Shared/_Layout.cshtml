@@ -75,24 +75,39 @@
                         <!-- End Header Logo -->
                     </div>
                     <div class="col-lg-5 col-md-7 d-xs-none">
-                        <!-- Start Main Menu Search -->
-                        <div class="main-menu-search">
+                       <!-- Start Main Menu Search -->
+                       @* <div class="main-menu-search">
                             <!-- navbar search start -->
                             <div class="navbar-search search-style-6">
-                                <div class="search-select">
-                                   
-                                </div>
+                               
                                 <div class="search-input">
-                                    @*<input as type="text" placeholder="Search">*@
+                                    <input as type="text" placeholder="Search">
                                     @using (Html.BeginForm("SearchByName","Product",FormMethod.Get))
                                     {
                                      
                                         @Html.TextBox("ProductName")
                                         <input type="submit" value="Search"  />  
                                     }
+
                                 </div>
-                                
                             </div>
+                            <!-- navbar search Ends -->
+                        </div>*@
+                        <!-- End Main Menu Search -->
+
+                         <!-- Start Main Menu Search -->
+                        <div class="main-menu-search">
+                            <!-- navbar search start -->
+                            <form asp-controller="Product" asp-action="SearchByName">
+                            <div class="navbar-search search-style-5">
+                                <div class="search-input">
+                                    <input type="text" placeholder="Search" name="ProductName">
+                                </div>
+                                <div class="search-btn">
+                                    <button type="submit"><i class="lni lni-search-alt"></i></button>
+                                </div>
+                            </div>
+                            </form>
                             <!-- navbar search Ends -->
                         </div>
                         <!-- End Main Menu Search -->
@@ -150,17 +165,13 @@
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">Categories</a>
                                         <ul class="sub-menu collapse" id="submenu-1-2">
-                                        
-                                       
+
                                                  <li  class="nav-item"><a> Men's</a></li>
                                                  <li class="nav-item"><a> Kids</a></li>
                                                  <li class="nav-item"><a> Mobiles</a></li>
                                                  <li class="nav-item"><a> Laptop</a></li>
                                                  <li class="nav-item"><a> Shoes</a></li>
                                                  <li class="nav-item"><a>Womens's </a></li>
-                                        
-                                           
-                                           
                                         </ul>
                                     </li>
                                  
