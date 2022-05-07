@@ -1,25 +1,27 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using Ecommerce.Models.Enum;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using Ecommerce.Models;
 
-
-namespace Ecommerce.Models
+namespace ClickPick.Models
 {
-    public class Product
+    public class VendorRequest
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        [Display(Name ="Name")]
+        [Display(Name = "Name")]
         public string Name { get; set; }
 
         [Display(Name = "Description")]
         public string Description { get; set; }
+       
+        
+        public string StoreName { get; set; }
+        public bool IsApproved { get; set; }
+
         public double Price { get; set; }
         public Size? Size { get; set; }
-        public bool? IsApproved { get; set; }
-
 
         public string Discount { get; set; }
 
@@ -33,7 +35,7 @@ namespace Ecommerce.Models
         public virtual Category Catagory { get; set; }
         public int CatagoryId { get; set; }
 
-  
+
         //Relation with User as Vendor
 
         [ForeignKey("ApplicationUser")]
@@ -43,6 +45,5 @@ namespace Ecommerce.Models
         //Relation With Product Imgs
 
         public virtual List<ProductImg> ProductImgs { get; set; }
-
     }
 }

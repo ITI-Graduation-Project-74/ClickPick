@@ -20,10 +20,11 @@ namespace Ecommerce.Controllers
                                       UserId = user.Id,
                                       Username = user.UserName,
                                       Email = user.Email,
-                                      RoleNames = (from userRole in _context.Roles
-                                                   join role in _context.Roles on userRole.Id
-                                                   equals role.Id
-                                                   select role.Name).ToList()
+                                      RoleNames = (
+      from userRole in _context.UserRoles
+      join role in _context.Roles on userRole.RoleId equals role.Id
+      where userRole.UserId == user.Id
+      select role.Name).ToArray()
                                   }).ToList().Select(p => new Users_in_Role_ViewModel()
 
                                   {
