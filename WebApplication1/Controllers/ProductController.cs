@@ -116,7 +116,7 @@ namespace Ecommerce.Controllers
         {
             var GetProductByName = _context.Products.FindAll(x => x.Name.Contains(ProductName));
 
-            return RedirectToAction("SearchByName",GetProductByName);
+            return View(GetProductByName);
         }
         public IActionResult AboutUs()
         {
