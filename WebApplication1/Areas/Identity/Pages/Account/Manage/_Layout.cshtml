@@ -1,13 +1,4 @@
-﻿@section css{
-
-    <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
-    <link rel="stylesheet" href="~/css/tiny-slider.css" />
-    <link rel="stylesheet" href="~/css/glightbox.min.css" />
-    <link rel="stylesheet" href="~/css/main.css" />
-
-}
-
-
+﻿
 @{
     if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
     {
@@ -19,21 +10,29 @@
     }
 }
 
-<h1>Manage your account</h1>
+<div class="align-center">
+    <h2 class="text-center">Manage your account</h2>
+</div>
+
 
 <div>
-    <h2>Change your account settings</h2>
+
     <hr />
     <div class="row">
-        <div class="col-md-3">
+       
+
+       
+          <div class="col-md-3">
             <partial name="_ManageNav" />
-        </div>
-        <div class="col-md-9">
+           </div>
+        <div class="col-md-6">
             @RenderBody()
         </div>
+        
+       
     </div>
 </div>
 
-@section Scripts {
+ @section Scripts {
     @RenderSection("Scripts", required: false)
-}
+} 

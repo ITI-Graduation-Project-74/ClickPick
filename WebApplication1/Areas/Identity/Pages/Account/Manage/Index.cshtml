@@ -1,21 +1,26 @@
 ﻿@page
+@using ClickPick.Utility
 @model IndexModel
 @{
     ViewData["Title"] = "Profile";
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
-@section css{
+@*@section css{
 
     <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
     <link rel="stylesheet" href="~/css/tiny-slider.css" />
     <link rel="stylesheet" href="~/css/glightbox.min.css" />
     <link rel="stylesheet" href="~/css/main.css" />
 
-}
+}*@
 <h3>@ViewData["Title"]</h3>
 <partial name="_StatusMessage" for="StatusMessage" />
 <div class="row">
+ @* <div class="col-md-6">
+       <partial name="_ManageNav" />
+  </div>*@
+  
     <div class="col-md-6">
         <form id="profile-form" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -23,6 +28,29 @@
                 <input asp-for="Username" class="form-control" disabled />
                 <label asp-for="Username" class="form-label"></label>
             </div>
+            <div class="form-floating">
+                <input asp-for="Input.FirstName" class="form-control" />
+                <label asp-for="Input.FirstName" class="form-label"></label>
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input asp-for="Input.LastName" class="form-control" />
+                <label asp-for="Input.LastName" class="form-label"></label>
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+            @if(User.IsInRole(ApplicationRoles.Role_Vendor)){
+            <div class="form-floating">
+                <input asp-for="Input.StoreName" class="form-control" />
+                <label asp-for="Input.StoreName" class="form-label"></label>
+                <span asp-validation-for="Input.StoreName" class="text-danger"></span>
+            </div>
+             }
+            <div class="form-floating">
+                <input asp-for="Input.Address" class="form-control" />
+                <label asp-for="Input.Address" class="form-label"></label>
+                <span asp-validation-for="Input.Address" class="text-danger"></span>
+            </div>
+
             <div class="form-floating">
                 <input asp-for="Input.PhoneNumber" class="form-control" />
                 <label asp-for="Input.PhoneNumber" class="form-label"></label>
