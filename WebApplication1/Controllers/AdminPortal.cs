@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Ecommerce.Controllers
 {
 
-    [Authorize(Roles = ApplicationRoles.Role_Admin)]
+    [Authorize(Roles = ApplicationRoles.Role_Admin)] 
     public class AdminPortal : Controller
     {
         private readonly AppDbContext _context;
