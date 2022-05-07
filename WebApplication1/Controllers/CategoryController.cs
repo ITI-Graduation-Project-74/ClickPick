@@ -11,26 +11,33 @@ namespace Ecommerce.Controllers
         {
             _context = context;
         }
-        public IActionResult Index(int id)
+        public IActionResult Index(string ProductName,int id)
         {
-            
             var GetProductOfCategories = _context.Products.FindAll(n => n.CatagoryId == id);
+            ViewBag.CategoryId = id;
             
+            if(ProductName is not null)
+            {
+
+                GetProductOfCategories= GetProductOfCategories.Where(x => x.Name.Contains(ProductName) && (x.CatagoryId == id));
+            }
+
             return View(GetProductOfCategories);
         }
         
         // search in category 
 
-        [HttpPost]
+       
         
-        public IActionResult Index(string ProductName, int id)
-        {
+        //public IActionResult Index(string ProductName, int id)
+        //{
             
-            var GetProductByNameInCategory = _context.Products
-                .FindAll(x => x.Name.Contains(ProductName) && (x.CatagoryId == id));
-            return View(GetProductByNameInCategory);
+        //    var GetProductByNameInCategory = _context.Products
+        //        .FindAll(x => x.Name.Contains(ProductName) && (x.CatagoryId == id));
+        //    ViewBag.CategoryId = id;
+        //    return View(GetProductByNameInCategory);
 
 
-        }
+        //}
     }
 }

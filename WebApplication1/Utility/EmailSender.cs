@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
+using MimeKit;
 using System.Net;
 using System.Net.Mail;
 
@@ -17,13 +18,14 @@ namespace ClickPick.Utility
 
             message.To.Add(email);
 
-            message.Body=$"<html> <body>{htmlMessage} </body></html>";
+            message.Body = $"<html> <body>{htmlMessage} </body></html>";
             message.IsBodyHtml = true;
 
-            var smtpClient = new SmtpClient(host:"smtp.gmail.com")
+            var smtpClient = new SmtpClient(host: "smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential(fromEmail,fromPassword),
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromEmail, fromPassword),
                 EnableSsl = true,
 
             };
@@ -31,5 +33,6 @@ namespace ClickPick.Utility
             smtpClient.Send(message);
             //return Task.CompletedTask;
         }
+
     }
 }

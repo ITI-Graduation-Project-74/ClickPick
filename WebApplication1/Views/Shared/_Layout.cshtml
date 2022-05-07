@@ -46,6 +46,14 @@
                                     <a asp-controller="product" asp-action="contactUs"
                                 >Contact Us</a>
                                 </li>
+                                 @if (User.IsInRole(ApplicationRoles.Role_User))
+                                {
+
+                                   <li>
+                                    <a asp-controller="OrderHeader" asp-action="OrdersHistory"> Orders </a>
+                                </li> 
+                                }
+
                                 @if (User.IsInRole(ApplicationRoles.Role_Vendor))
                                 {
 

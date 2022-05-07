@@ -1,5 +1,8 @@
 ﻿@model Coupon
 
+@using Microsoft.Extensions.Options
+@inject IOptions<ClickPick.Utility.StripeSettings> Stripe
+
 @{
     double i = 0;
    // double coup =double.Parse( TempData.Peek("coupon"));

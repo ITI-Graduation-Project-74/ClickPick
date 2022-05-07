@@ -50,8 +50,16 @@ namespace Ecommerce.Controllers
             HttpContext.Session.SetString("orderHeader", JsonConvert.SerializeObject(orderHeader));
             return View("Payment");
         }
-
         
+
+        // Order History 
+        public IActionResult OrdersHistory()
+        {
+            return View();
+        }
+
+
+
 
 
     }
