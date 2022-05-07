@@ -46,6 +46,13 @@
                                     <a asp-controller="product" asp-action="contactUs"
                                 >Contact Us</a>
                                 </li>
+                                @if (User.IsInRole(ApplicationRoles.Role_Vendor))
+                                {
+
+                                   <li>
+                                    <a asp-controller="products" asp-action="vendorrequest"> Vendor Dashboard </a>
+                                </li> 
+                                }
 
                                 @if (User.IsInRole(ApplicationRoles.Role_Admin))
                                 {
@@ -90,7 +97,7 @@
                         <div class="main-menu-search">
                             <!-- navbar search start -->
 
-                            <form asp-controller="Product" asp-action="SearchByName">
+                            <form asp-controller="Product" asp-action="SearchByName" method="get">
                             <div class="navbar-search search-style-5">
                                 <div class="search-input">
                                     <input type="text" placeholder="Search" name="ProductName">
