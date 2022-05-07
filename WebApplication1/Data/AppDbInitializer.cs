@@ -67,11 +67,48 @@ namespace Ecommerce.Data
                     });
                     context.SaveChanges();
                 }
+                if (!context.Coupons.Any())
+                {
+                    //Coupons
+                    context.Coupons.AddRange(new List<Coupon>()
+                    {
+                       new Coupon()
+                        {
+                            
+                            Name = "Valid10",
 
-                // Products
+                            ValidFrom = new DateTime(2022,5,1),
+                            ValidTo = new DateTime(2022,5,30),
+                            Percentage=10
+
+                        },
+                       new Coupon()
+                        {
+
+                            Name = "Valid5",
+
+                            ValidFrom = new DateTime(2022,5,1),
+                            ValidTo = new DateTime(2022,5,30),
+                            Percentage=5
+                        },
+                       new Coupon()
+                        {
+
+                            Name = "expired",
+
+                            ValidFrom = new DateTime(2022,4,1),
+                            ValidTo = new DateTime(2022,4,30),
+                            Percentage=5
+
+                        },
+                    });
+                context.SaveChanges();
+            }
+
+            // Products
 
 
-                if (!context.Products.Any())
+            if (!context.Products.Any())
                 {
                     context.Products.AddRange(new List<Product>()
                     {
