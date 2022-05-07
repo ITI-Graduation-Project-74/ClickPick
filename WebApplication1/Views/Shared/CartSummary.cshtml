@@ -1,8 +1,8 @@
 ﻿@model Coupon
-
 @{
     double i = 0;
-    
+   // double coup =double.Parse( TempData.Peek("coupon"));
+
 }
 
 <!-- Start Breadcrumbs -->
@@ -39,101 +39,54 @@
                                     aria-expanded="true" aria-controls="collapseThree">Your Personal Details </h6>
                                 <section class="checkout-steps-form-content collapse show" id="collapseThree"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                   <form id="OrderHeaderForm" asp-action="Index" asp-controller="OrderHeader" >
+
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="single-form form-default">
-                                                <label>User Name</label>
-                                                <div class="row">
-                                                    <div class="col-md-6 form-input form">
-                                                        <input type="text" placeholder="First Name">
-                                                    </div>
-                                                    <div class="col-md-6 form-input form">
-                                                        <input type="text" placeholder="Last Name">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="single-form form-default">
-                                                <label>Email Address</label>
-                                                <div class="form-input form">
-                                                    <input type="text" placeholder="Email Address">
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="col-md-6">
                                             <div class="single-form form-default">
                                                 <label>Phone Number</label>
                                                 <div class="form-input form">
-                                                    <input type="text" placeholder="Phone Number">
+                                                    <input name="Phone" type="text" placeholder="Phone Number" id="Phone">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="single-form form-default">
-                                                <label>Mailing Address</label>
+                                                <label>Address</label>
                                                 <div class="form-input form">
-                                                    <input type="text" placeholder="Mailing Address">
+                                                    <input name="Address" type="text" placeholder="Address" id="Address">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="single-form form-default">
-                                                <label>City</label>
-                                                <div class="form-input form">
-                                                    <input type="text" placeholder="City">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="single-form form-default">
-                                                <label>Post Code</label>
-                                                <div class="form-input form">
-                                                    <input type="text" placeholder="Post Code">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="single-form form-default">
-                                                <label>Country</label>
-                                                <div class="form-input form">
-                                                    <input type="text" placeholder="Country">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="single-form form-default">
-                                                <label>Region/State</label>
-                                                <div class="select-items">
-                                                    <select class="form-control">
-                                                        <option value="0">select</option>
-                                                        <option value="1">select option 01</option>
-                                                        <option value="2">select option 02</option>
-                                                        <option value="3">select option 03</option>
-                                                        <option value="4">select option 04</option>
-                                                        <option value="5">select option 05</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
+                                       
                                         <div class="col-md-12">
                                             <div class="single-checkbox checkbox-style-3">
-                                                <input type="checkbox" id="checkbox-3">
-                                                <label for="checkbox-3"><span></span></label>
-                                                <p>My delivery and mailing addresses are the same.</p>
+                                                <input type="checkbox" id="billingAddressCheck" name="billingAddressCheck">
+                                                <label for="billingAddressCheck"><span></span></label>
+                                                <p>Use Different Billing Address</p>
+                                            </div>
+                                        </div>
+                                         <div class="col-md-6">
+                                            <div class="single-form form-default" id="billingAddressDiv">
+                                                <label for="billingAddress">Billing Address</label>
+                                                <div class="form-input form">
+                                                    <input id="billingAddress" type="text" placeholder="City" name="billingAddress">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="single-form button">
-                                                <button class="btn" data-bs-toggle="collapse"
+                                                <button type="submit" class="btn" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseFour" aria-expanded="false"
-                                                    aria-controls="collapseFour">next
-                                                    step</button>
+                                                    aria-controls="collapseFour">Continue to Payment</button>
                                             </div>
                                         </div>
                                     </div>
+                                    </form>
                                 </section>
+
                             </li>
+                            
                             <li>
                                 <h6 class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour"
                                     aria-expanded="false" aria-controls="collapseFour">Shipping Address</h6>
@@ -366,13 +319,15 @@
                                     <div class="button">
                                         <button type="submit" class="btn">apply</button>
                                     </div>
-                                    @if(@Model != null){ 
+                                    @if(TempData.Peek("coupon") != null){ 
                          <br />
                     <span id="txtOrderTotal" class="text-success">
-                        @( ((double) i* (100-(double)Model.Percentage))/100)$
+                        @( ((double) i* (100-Convert.ToDouble( (TempData.Peek("coupon")))))/100)
                         </span>
                         <br/>
-                    <span class="text-danger"id="txtOrderTotal">- @( ((double) i* (double)Model.Percentage)/100) $</span>
+                    <span class="text-danger"id="txtOrderTotal">- @( ((double) i*Convert.ToDouble( TempData.Peek("coupon")))/100) $</span><br />
+                    <form asp-controller="Coupon" asp-action="Remove" method="get">
+                        <button type="submit" class="btn btn-outline-danger">Remove Coupon</button></form>
                 }
                 else
                 {
@@ -402,3 +357,6 @@
     <script src="assets/js/tiny-slider.js"></script>
     <script src="assets/js/glightbox.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="~/js/validate.js" ></script>
