@@ -19,22 +19,6 @@ namespace Ecommerce.Models.Services
             shoppingcart.Count -= count;
             return shoppingcart.Count;
         }
-
-        //public IEnumerable<ShoppingCart> GetAllWithInclude(Expression<Func<ShoppingCart, bool>> expresion, string includeProperties = null)
-        //{
-        //    IQueryable<ShoppingCart> query = _context;
-        //    query = query.Where(expresion);
-
-        //    if(includeProperties != null)
-        //    {
-        //        foreach (var property in includeProperties.Split(new char[] { ',' }))
-        //        {
-        //            query = query.Include(property);
-        //        }
-        //    }
-        //    return query.ToList();
-        //}
-
         public int IncrementCount(ShoppingCart shoppingcart, int count)
         {
             shoppingcart.Count += count;

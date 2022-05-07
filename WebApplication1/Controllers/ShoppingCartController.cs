@@ -25,7 +25,7 @@ namespace Ecommerce.Controllers
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
 
-            //var ProductsInSpecificCart = _context.Products.GetAll();
+  
 
             ShoppingCartVM = new ShoppingCartVM()
             {
@@ -63,7 +63,8 @@ namespace Ecommerce.Controllers
 
             _context.Complete();
 
-            var count = _context.ShoppingCarts.FindAll(c => c.ApplicationUserId == cart.ApplicationUserId).Sum(c => c.Count);
+            var count = _context.ShoppingCarts
+                .FindAll(c => c.ApplicationUserId == cart.ApplicationUserId).Sum(c => c.Count);
             HttpContext.Session.SetInt32(StaticDetails.SessionCart, count);
 
             return RedirectToAction("Index");
@@ -113,18 +114,5 @@ namespace Ecommerce.Controllers
 
             return RedirectToAction("Index");
         }
-
-        //public double GetShoppingCartTotal()
-        //{
-        //    var claimsIdentity = (ClaimsIdentity)User.Identity;
-        //    var claim = claimsIdentity
-        //        .FindFirst(ClaimTypes.NameIdentifier);
-
-        //    var CartTotal = _context.ShoppingCarts
-        //         .Find(c => c.ApplicationUserId == claim.Value && c.ProductId == productId)
-
-        //}
-
-
     }
 }

@@ -19,8 +19,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseLazyLoadingProxies().UseSqlServer(connectionStrings));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentity<ApplicationUser,IdentityRole>().AddDefaultTokenProviders()
-    .AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.AddIdentity<ApplicationUser,IdentityRole>(options=>options.SignIn.RequireConfirmedAccount=true)
+    .AddDefaultTokenProviders()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultUI();
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.AddControllersWithViews();
 
 //builder.Services.AddTransient(typeof(IBaseRepository<>),typeof(BaseRepository<>));
@@ -29,7 +34,7 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-builder.Services.AddSingleton<IEmailSender, EmailSender>();
+//builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
 builder.Services.AddRazorPages();
 

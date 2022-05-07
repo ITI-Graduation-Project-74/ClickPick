@@ -43,9 +43,6 @@ namespace Ecommerce.Controllers
 
             ViewBag.DataView = Pages;
 
-
-
-
             dynamic ProductCategory = new ExpandoObject();
             ProductCategory.Product = data;
             ProductCategory.Category = categories;
@@ -53,21 +50,14 @@ namespace Ecommerce.Controllers
             return View(ProductCategory);
         }
 
-        //public IActionResult ProductDetails(int id)
-        //{
-
-        //    var productDetails = _context.Products.GetById(id);
-        //    if (productDetails == null)
-        //        return View("Error");
-        //    return View(productDetails);
-        //}
-
+       // Product Imgs
         public IActionResult ProductDetails(int id)
         {
 
             var productDetails = _context.ProductImgs.FindAll(x => x.ProductId == id);
             if (productDetails == null)
                 return View("Error");
+
             return View(productDetails);
         }
 
@@ -84,46 +74,16 @@ namespace Ecommerce.Controllers
         }
 
         [HttpPost]
-
         [ValidateAntiForgeryToken]
-
         [Authorize]
-        //public IActionResult Details(ShoppingCart shoppingCart)
-        //{
-        //    // Get The Claim Of Logined User (ApplicationUserId)
-
-        //    var claimsIdentity = (ClaimsIdentity)User.Identity;
-        //    var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-        //    shoppingCart.ApplicationUserId = claim.Value;
-
-        //    // checking If the User Exist on Database Or Not 
-
-        //    ShoppingCart StoredCartInDb = _context.ShoppingCarts
-        //        .Find(n => n.ApplicationUserId == claim.Value 
-        //        && n.ProductId == shoppingCart.ProductId);
-
-        //    if(StoredCartInDb == null)
-        //    {
-        //        _context.ShoppingCarts.Add(shoppingCart);
-        //    }
-        //    else
-        //    {
-        //        _context.ShoppingCartServices
-        //            .IncrementCount(StoredCartInDb, shoppingCart.Count);
-        //    }
-            
-        //    // Save To Database
-        //    _context.Complete();
-
-        //    return RedirectToAction("Index"); 
-        //}
-
         public IActionResult Details(ShoppingCart shoppingCart)
         {
             // Get The Claim Of Logined User (ApplicationUserId)
 
             var claimsIdentity = (ClaimsIdentity)User.Identity;
+
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
             shoppingCart.ApplicationUserId = claim.Value;
 
             // checking If the User Exist on Database Or Not 
@@ -136,9 +96,8 @@ namespace Ecommerce.Controllers
             {
                 _context.ShoppingCarts.Add(shoppingCart);
                 _context.Complete();
-                HttpContext.Session.SetInt32(StaticDetails.SessionCart, _context.ShoppingCarts
-                    .FindAll(u => u.ApplicationUserId == claim.Value).ToList().Count);  
             }
+
             else
             {
                 _context.ShoppingCartServices
@@ -148,25 +107,17 @@ namespace Ecommerce.Controllers
 
             // Save To Database
             _context.Complete();
-
+            TempData["success"] = "Product Added To Cart Successfuly";
             return RedirectToAction("Index");
         }
 
-        public IActionResult SearchByInsideCategory(string ProductName, int id)
-        {
-
-            var GetProductByNameInCategory = _context.Products
-                .FindAll(x => x.Name.Contains(ProductName)&& (x.CatagoryId==id));
-
-            return View("SearchByName", GetProductByNameInCategory);
-        } 
+        // Search in Home 
         public IActionResult SearchByName(string ProductName)
         {
             var GetProductByName = _context.Products.FindAll(x => x.Name.Contains(ProductName));
 
-            return View(GetProductByName);
+            return RedirectToAction("SearchByName",GetProductByName);
         }
-
         public IActionResult AboutUs()
         {
             return View();

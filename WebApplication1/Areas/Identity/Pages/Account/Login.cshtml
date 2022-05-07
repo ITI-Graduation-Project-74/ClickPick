@@ -5,16 +5,6 @@
     ViewData["Title"] = "Log in";
 }
 
-@section css{
-
-    <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
-    <link rel="stylesheet" href="~/css/tiny-slider.css" />
-    <link rel="stylesheet" href="~/css/glightbox.min.css" />
-    <link rel="stylesheet" href="~/css/main.css" />
-
-}
-
-
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="container">
@@ -46,12 +36,20 @@
                                 <h3>Login Now</h3>
                                
                             </div>
+                              <div class="social-login">
+                                <div class="row ">
+                                    <div class="col-lg-4 col-md-4 col-12"><a class="btn facebook-btn"
+                                            href="javascript:void(0)"><i class="lni lni-facebook-filled"></i> Facebook
+                                            login</a></div>
+                                  
+                                </div>
+                            </div>
                             
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             
                             <div class="form-group input-group">
-                                <label asp-for="Input.Email" for="reg-fn">Email</label>
-                                <input asp-for="Input.Email" class="form-control" type="email" id="reg-email" required>
+                                <label asp-for="Input.Email" for="reg-fn"></label>
+                                <input asp-for="Input.Email" class="form-control" required>
                                  <span asp-validation-for="Input.Email" class="text-danger"></span>
                             </div>
                             <div class="form-group input-group">
@@ -65,27 +63,27 @@
                                     <label asp-for="Input.RememberMe" class="form-check-label">Remember me</label>
                                 </div>*@
                                   <div class="checkbox">
-                        <label asp-for="Input.RememberMe" class="form-label">
-                            <input class="form-check-input" asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
-                    </div>
+                                        <label asp-for="Input.RememberMe" class="form-label">
+                                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        </label>
+                                </div>
                             </div>
                             <div class="button">
                                 <button id="login-submit" type="submit"  class="btn" >Login</button>
                             </div>
                             
-                            <div >
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
+                              <div class="row">
+                                    <p>
+                                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password</a>
+                                    </p>
+                                    <p>
+                                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                                    </p>
+                                    <p>
+                                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                                    </p>
+                              </div>
                         </div>
                     </form>
                 </div>
