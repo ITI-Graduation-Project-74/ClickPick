@@ -112,7 +112,7 @@ namespace Ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Catagories");
+                    b.ToTable("Catagories", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Coupon", b =>
@@ -137,7 +137,7 @@ namespace Ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Coupons");
+                    b.ToTable("Coupons", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.Models.OrderDetails", b =>
@@ -165,7 +165,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("PaymentId");
 
-                    b.ToTable("OrderDetials");
+                    b.ToTable("OrderDetials", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.Models.OrderHeader", b =>
@@ -204,7 +204,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
-                    b.ToTable("OrderHeaders");
+                    b.ToTable("OrderHeaders", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Payment", b =>
@@ -220,7 +220,7 @@ namespace Ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Product", b =>
@@ -263,7 +263,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.Models.ProductImg", b =>
@@ -281,7 +281,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImgs");
+                    b.ToTable("ProductImgs", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.Models.ShoppingCart", b =>
@@ -307,7 +307,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ShoppingCart");
+                    b.ToTable("ShoppingCart", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -1,13 +1,7 @@
-﻿@model IEnumerable<Product>
+﻿@using System.Web
+@model IEnumerable<Product>
 
-@section css{
 
-    <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
-    <link rel="stylesheet" href="~/css/tiny-slider.css" />
-    <link rel="stylesheet" href="~/css/glightbox.min.css" />
-    <link rel="stylesheet" href="~/css/main.css" />
-
-}
 
  <!-- Start Breadcrumbs -->
     <div class="breadcrumbs">
@@ -39,9 +33,10 @@
                     <div class="product-sidebar">
                         <!-- Start Single Widget -->
                         <div class="single-widget search">
+
                             <h3>Search Product</h3>
                             <form asp-controller="Category" asp-action="index">
-                                <input type="hidden" name="id" value="@Model.FirstOrDefault().CatagoryId"  />
+                                <input type="hidden" name="id" value="@Model.FirstOrDefault()?.CatagoryId"/>
                                 <input type="text" name="ProductName" placeholder="Search Here...">
                                 <button type="submit"><i class="lni lni-search-alt"></i></button>
                             </form>
@@ -101,8 +96,18 @@
                             <div class="tab-pane fade show active" id="nav-grid" role="tabpanel"
                                 aria-labelledby="nav-grid-tab">
                                 <div class="row">
+                                
+                                   
                                         <!-- Start Single Product -->
-                                        @foreach (var item in Model)
+                                @if (Model.Count() == 0)
+                                {
+                                             <hr />
+                                        <div class="section-title mt-5">
+                                                <p class="text-danger"> There are no Matched Result</p>
+                                            </div>
+                                    }
+
+                                @foreach (var item in Model)
                                         {
                                             <div class="col-lg-4 col-md-6 col-12">
                                             <div class="single-product">
@@ -122,8 +127,7 @@
                                             </div>
                                         </div>
                                         </div>
-                                        }
-                                        
+                                        }                   
                                         <!-- End Single Product -->
                                         
                                         </div>

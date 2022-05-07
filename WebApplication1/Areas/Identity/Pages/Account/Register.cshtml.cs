@@ -22,6 +22,7 @@ using Microsoft.Extensions.Logging;
 using ClickPick.Utility;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Net.Mail;
 
 namespace Ecommerce.Areas.Identity.Pages.Account
 {
@@ -61,8 +62,10 @@ namespace Ecommerce.Areas.Identity.Pages.Account
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
+        /// 
         [BindProperty]
-        public InputModel Input { get; set; }
+        
+        public virtual InputModel Input { get; set; }
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -122,13 +125,7 @@ namespace Ecommerce.Areas.Identity.Pages.Account
             [StringLength(18, ErrorMessage = "The LastName Must Be 20 Chars At Least")]
             public string LastName { get; set; }
 
-            
             public string Address { get; set; }
-
-            
-            [StringLength(50, ErrorMessage = "The StoreName Must Be 20 Chars At Least")]
-            public string StoreName { get; set; }
-
             public bool VendorChecked { get; set; }
 
             public string Role { get; set; }
@@ -139,7 +136,7 @@ namespace Ecommerce.Areas.Identity.Pages.Account
         }
 
 
-        public async Task OnGetAsync(int? Vendorid,string returnUrl = null)
+        public async Task OnGetAsync(string returnUrl = null)
         {
             //_roleManager.CreateAsync(new IdentityRole("Admin"));
 
@@ -150,10 +147,10 @@ namespace Ecommerce.Areas.Identity.Pages.Account
                 _roleManager.CreateAsync(new IdentityRole(ApplicationRoles.Role_User)).GetAwaiter().GetResult();
             }
 
-            if(Vendorid != null)
-            {
-                IsVendor=true;
-            }
+            //if(Vendorid != null)
+            //{
+            //    IsVendor=true;
+            //}
 
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -170,7 +167,7 @@ namespace Ecommerce.Areas.Identity.Pages.Account
             };
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        public virtual async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -181,10 +178,11 @@ namespace Ecommerce.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+               user.UserName=new MailAddress(Input.Email).User;
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
                 user.PhoneNumber = Input.PhoneNumber;
-                user.StoreName = Input.StoreName;
+               
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
@@ -198,13 +196,7 @@ namespace Ecommerce.Areas.Identity.Pages.Account
                         // create default user role to customer
                         //await _userManager.AddToRoleAsync(user, ApplicationRoles.Role_User);
 
-                        if(Input.StoreName == null)
-                        {
                             await _userManager.AddToRoleAsync(user, ApplicationRoles.Role_User);
-                        }else
-                        {
-                            await _userManager.AddToRoleAsync(user, ApplicationRoles.Role_Vendor);
-                        }
                     }
                     else
                     {
@@ -241,15 +233,15 @@ namespace Ecommerce.Areas.Identity.Pages.Account
             }
 
             // If we got this far, something failed, redisplay form
-            if (Input.VendorChecked)
-            {
-                IsVendor = true;
-            }
+            //if (Input.VendorChecked)
+            //{
+            //    IsVendor = true;
+            //}
 
             return Page();
         }
 
-        private ApplicationUser CreateUser()
+        protected ApplicationUser CreateUser()
         {
             try
             {
@@ -263,7 +255,7 @@ namespace Ecommerce.Areas.Identity.Pages.Account
             }
         }
 
-        private IUserEmailStore<ApplicationUser> GetEmailStore()
+        protected IUserEmailStore<ApplicationUser> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)
             {

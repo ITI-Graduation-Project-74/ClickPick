@@ -131,7 +131,7 @@ namespace Ecommerce.Data
                             Id=2,
                             Name ="Iphone 13 128giga",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =3000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/2/a.jpg",
 
@@ -144,7 +144,7 @@ namespace Ecommerce.Data
                             Id=3,
                             Name ="Ihpone 13 Pink",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =4000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/3/a.jpg",
 
@@ -156,7 +156,7 @@ namespace Ecommerce.Data
                         {   Id=4,
                             Name ="Nokia G20 Dual sim",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =5000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/4/a.jpg",
 
@@ -170,7 +170,7 @@ namespace Ecommerce.Data
                              Id=5,
                             Name ="oppo A55 64giga",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =6000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/5/a.jpg",
 
@@ -183,7 +183,7 @@ namespace Ecommerce.Data
                               Id =6,
                             Name ="Realme Gt master",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =7000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/6/a.jpg",
 
@@ -197,7 +197,7 @@ namespace Ecommerce.Data
                             Id=7,
                             Name ="Samsung Galaxy s21",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =8000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/7/a.jpg",
 
@@ -209,7 +209,7 @@ namespace Ecommerce.Data
                              Id=8,
                             Name ="Samsung Galaxy s21 64giga",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =9000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/8/a.jpg",
 
@@ -220,7 +220,7 @@ namespace Ecommerce.Data
                             Id=9,
                             Name ="Samsung Galaxy Z filp",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =10000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/9/a.jpg",
 
@@ -233,7 +233,7 @@ namespace Ecommerce.Data
                             Id=10,
                             Name ="Spigen Ultra Hybrid",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =11000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/10/a.jpg",
 
@@ -246,7 +246,7 @@ namespace Ecommerce.Data
                             Id=11,
                             Name ="Xiaomi Redmi Note 10S",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =12000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/11/a.jpg",
 
@@ -259,7 +259,7 @@ namespace Ecommerce.Data
                             Id=12,
                             Name ="Xiaomi Redmi Note 9 pro",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =13000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/12/a.jpg",
 
@@ -276,7 +276,7 @@ namespace Ecommerce.Data
                             Id=13,
                             Name ="Active Blue Black",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =14000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/1/a.jpg",
 
@@ -289,7 +289,7 @@ namespace Ecommerce.Data
                                Id =14,
                             Name ="Active white Black",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =15000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/2/a.jpg",
 
@@ -302,7 +302,7 @@ namespace Ecommerce.Data
                                Id=15,
                             Name ="Active white men's shoes",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =16000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/3/a.jpg",
 
@@ -315,7 +315,7 @@ namespace Ecommerce.Data
                             Id=16,
                             Name ="Active white men's shoes",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =3000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/4/a.jpg",
 
@@ -328,7 +328,7 @@ namespace Ecommerce.Data
                             Id=17,
                             Name ="Active women's shoes",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =5000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/5/a.jpg",
 
@@ -339,7 +339,7 @@ namespace Ecommerce.Data
                                 Id=18,
                             Name ="Adidas black shoes",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =8000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/6/a.jpg",
 
@@ -350,7 +350,7 @@ namespace Ecommerce.Data
                                 Id=19,
                             Name ="Black sappoh with high heels",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =9000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/7/a.jpg",
 
@@ -361,7 +361,7 @@ namespace Ecommerce.Data
                                 Id=20,
                             Name ="Blue sport men's shoes",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =10000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/8/a.jpg",
 
@@ -372,7 +372,7 @@ namespace Ecommerce.Data
                                 Id=21,
                             Name ="Dawara Casual Shoes",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =8000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/9/a.jpg",
 

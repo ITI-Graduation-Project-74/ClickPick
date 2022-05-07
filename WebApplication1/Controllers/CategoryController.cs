@@ -13,19 +13,24 @@ namespace Ecommerce.Controllers
         }
         public IActionResult Index(int id)
         {
+            
             var GetProductOfCategories = _context.Products.FindAll(n => n.CatagoryId == id);
-
+            
             return View(GetProductOfCategories);
         }
+        
+        // search in category 
 
         [HttpPost]
+        
         public IActionResult Index(string ProductName, int id)
         {
-
+            
             var GetProductByNameInCategory = _context.Products
                 .FindAll(x => x.Name.Contains(ProductName) && (x.CatagoryId == id));
-
             return View(GetProductByNameInCategory);
+
+
         }
     }
 }

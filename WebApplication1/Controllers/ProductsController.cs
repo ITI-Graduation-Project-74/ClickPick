@@ -25,6 +25,7 @@ namespace Ecommerce.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
+         
             var appDbContext = _context.Products.Include(p => p.ApplicationUser).Include(p => p.Catagory).Include(p => p.ProductImgs);
 
             return View(await appDbContext.ToListAsync());
@@ -69,6 +70,7 @@ namespace Ecommerce.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+
             ViewData["UserId"] = new SelectList(_context.ApplicationUsers, "Id", "UserName");
             ViewData["CatagoryId"] = new SelectList(_context.Catagories, "Id", "CategoryName");
 
@@ -166,6 +168,8 @@ namespace Ecommerce.Controllers
 
             return View(product);
         }
+
+
 
         // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -285,5 +289,99 @@ namespace Ecommerce.Controllers
         {
             return _context.Products.Any(e => e.Id == id);
         }
+
+
+        //get VendorRequest
+        // GET: Products/VendorRequest
+        public IActionResult VendorRequest()
+        {
+
+            ViewData["UserId"] = new SelectList(_context.ApplicationUsers, "Id", "UserName");
+            ViewData["CatagoryId"] = new SelectList(_context.Catagories, "Id", "CategoryName");
+
+            return View();
+        }
+
+
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> VendorRequest(Product product, List<IFormFile> ProductImgs)
+        {
+            if (ModelState.IsValid)
+            {
+                Random R = new Random();
+
+                Product employee = new Product
+                {
+                    CatagoryId = product.CatagoryId,
+                    Name = product.Name,
+                    Description = product.Description,
+                    Price = product.Price,
+                    Size = product.Size,
+                    Discount = product.Discount,
+                    ImgUrl = product.ImgUrl,
+                    Catagory = product.Catagory,
+                    UserId = _context.Users.SingleOrDefault(x=>x.UserName.ToLower()==User.Identity.Name.ToLower()).Id,
+                    IsApproved = false ,
+
+                    Id = R.Next()
+                };
+
+                employee.Id = R.Next();
+                _context.Add(employee);
+                await _context.SaveChangesAsync();
+                var id = employee.Id;
+
+
+
+                foreach (IFormFile file in ProductImgs)
+                {
+                    if (file == null || file.Length == 0)
+                        return Content("file not selected");
+                    //Checking file is available to save.  
+                    if (file != null)
+                    {
+                        var InputFileName = Path.GetFileName(file.FileName);
+
+                        //var ServerSavePath = Path.Combine(Server.MapPath("~/imgs/") + InputFileName);
+                        var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
+
+                        using (var stream = new FileStream(ServerSavePath, FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream);
+                        }
+                        Random R2 = new Random();
+                        //assigning file uploaded status to ViewBag for showing message to user.  
+                        ViewBag.UploadStatus = ProductImgs.Count().ToString() + " files uploaded successfully.";
+                        ProductImg P = new ProductImg();
+                        P.ProductId = id;
+                        P.ImgUrl = file.FileName;
+                        P.Id = R2.Next();
+                        _context.ProductImgs.Add(P);
+                        await _context.SaveChangesAsync();
+                    }
+                    //return RedirectToAction(nameof(Index));
+                }
+                //ViewData["UserId"] = new SelectList(_context.ApplicationUsers, "Id", "Id", product.UserId);
+                //ViewData["CatagoryId"] = new SelectList(_context.Catagories, "Id", "Id", product.CatagoryId);
+
+                ViewData["UserId"] = new SelectList(_context.ApplicationUsers, "Id", "UserName");
+                ViewData["CatagoryId"] = new SelectList(_context.Catagories, "Id", "CategoryName");
+                //return View(product);
+                //return RedirectToAction(nameof(Index));
+                ViewBag.msg = "Your Request Is Done";
+                return View(product);
+
+                //  return View("Send");
+            }
+            //return RedirectToAction(nameof(Index));
+            // return View("Send");
+            //ViewBag.Msg = "Your Request Is Done";
+            return View(product);
+
+
+        }
+
     }
 }
