@@ -70,6 +70,7 @@ namespace Ecommerce.Controllers
                 ProductId= productId,
                 Product = _context.Products.GetById(productId),
             };
+            TempData["DetailsProductId"] = productId;
             return View(cartObj);
         }
 
@@ -108,7 +109,8 @@ namespace Ecommerce.Controllers
             // Save To Database
             _context.Complete();
             TempData["success"] = "Product Added To Cart Successfuly";
-            return RedirectToAction("Index");
+
+            return RedirectToAction("Details", new { productId = TempData["DetailsProductId"]});
         }
 
         // Search in Home 
