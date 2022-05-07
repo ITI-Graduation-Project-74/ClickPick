@@ -10,6 +10,9 @@ namespace Ecommerce.Data
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {
         }
+ 
+
+
 
 
         //Set Primary Key of Ternary Relation
@@ -34,8 +37,10 @@ namespace Ecommerce.Data
         public virtual DbSet<OrderHeader> OrderHeaders { get; set; }
         public virtual DbSet<OrderDetails> OrderDetials { get; set; }
 
-      
-        
+
+
+
+
 
 
 
