@@ -1,4 +1,5 @@
-﻿using Ecommerce.Data;
+﻿using ClickPick.Models;
+using Ecommerce.Data;
 using Ecommerce.Models.Services;
 
 namespace Ecommerce.Models.Repositories.UnitOfWork
@@ -20,7 +21,8 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
             ProductImgs      = new BaseRepository<ProductImg>(context);
             OrderHeaders = new BaseRepository<OrderHeader>(context);
             OrderDetails = new BaseRepository<OrderDetails>(context);
-
+            VendorRequest = new BaseRepository<VendorRequest>(context);
+            Brands = new BaseRepository<Brand>(context);
             ShoppingCartServices = new ShoppingCartService(context);
 
 
@@ -37,6 +39,10 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
 
         public IBaseRepository<OrderHeader> OrderHeaders { get; private set; }
         public IBaseRepository<OrderDetails> OrderDetails { get; private set; }
+
+        public IBaseRepository<VendorRequest> VendorRequest { get; private set; }
+
+        public IBaseRepository<Brand> Brands { get; private set; }
 
         public int Complete()
         {
