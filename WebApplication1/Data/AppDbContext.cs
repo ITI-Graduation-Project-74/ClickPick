@@ -1,4 +1,4 @@
-﻿using ClickPick.Models;
+using ClickPick.Models;
 using Ecommerce.Migrations;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -41,6 +41,8 @@ namespace Ecommerce.Data
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ShoppingCart> ShoppingCart { get; set; }
+        public virtual DbSet<VendorRequest> VendorRequest { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
 
         // OrderHeader And Order Details 
 

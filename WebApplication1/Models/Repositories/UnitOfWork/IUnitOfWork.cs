@@ -1,4 +1,5 @@
-﻿using Ecommerce.Models.Services;
+﻿using ClickPick.Models;
+using Ecommerce.Models.Services;
 
 namespace Ecommerce.Models.Repositories.UnitOfWork
 {
@@ -17,8 +18,10 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
 
         public IBaseRepository<OrderHeader> OrderHeaders { get; }
 
-        public IBaseRepository<OrderDetails> OrderDetails { get; } 
+        public IBaseRepository<OrderDetails> OrderDetails { get; }
 
+        public IBaseRepository<VendorRequest> VendorRequest { get; }
+        public IBaseRepository<Brand> Brands { get; }
 
         int Complete();
     }

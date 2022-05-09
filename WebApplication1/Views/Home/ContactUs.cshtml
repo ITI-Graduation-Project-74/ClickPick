@@ -1,4 +1,17 @@
-﻿
+﻿@using ClickPick.Models
+@model ContactUs
+@{
+    ViewData["Title"]= "ContactUs";
+}
+
+@section css{
+
+    <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="~/css/tiny-slider.css" />
+    <link rel="stylesheet" href="~/css/glightbox.min.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+
+}
 
 
 
@@ -74,35 +87,46 @@
                         <div class="col-lg-8 col-md-12 col-12">
                             <div class="contact-form-head">
                                 <div class="form-main">
-                                    <form class="form" method="post" action="assets/mail/mail.php">
+                                 <h1>@ViewBag.Message</h1>
+                                    <form class="form" method="post" action="/Home/ContactUs">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <input name="name" type="text" placeholder="Your Name"
+                                                <div class="form-group" >
+                                                    <lable></lable>
+                                                    <input name="name" type="text" asp-for="@Model.Name" placeholder="Your Name"
                                                         required="required">
+                                                        <span asp-validation-for="@Model.Name"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="form-group" >
+                                                    <lable></lable>
+                                                    <input name="subject" type="text"asp-for="@Model.Subject" placeholder="Your Subject"
+                                                        required="required">
+                                                        <span asp-validation-for="@Model.Subject"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <input name="subject" type="text" placeholder="Your Subject"
+                                                    <lable ></lable>
+                                                    <input name="email" type="email"asp-for="@Model.Email" placeholder="Your Email"
                                                         required="required">
+                                                        <span asp-validation-for="@Model.Email"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <input name="email" type="email" placeholder="Your Email"
+                                                <div class="form-group" >
+                                                    <lable ></lable>
+                                                    <input name="phone" type="text"asp-for="@Model.PhoneNumber" placeholder="Your Phone"
                                                         required="required">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-12">
-                                                <div class="form-group">
-                                                    <input name="phone" type="text" placeholder="Your Phone"
-                                                        required="required">
+                                                        <span asp-validation-for="@Model.PhoneNumber"></span>
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <div class="form-group message">
-                                                    <textarea name="message" placeholder="Your Message"></textarea>
+                                                <div class="form-group message" >
+                                                    <lable ></lable>
+                                                    <textarea name="message" asp-for="@Model.Message" placeholder="Your Message"></textarea>
+                                                    <span asp-validation-for="@Model.Message"></span>
                                                 </div>
                                             </div>
                                             <div class="col-12">

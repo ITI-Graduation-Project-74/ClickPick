@@ -124,7 +124,7 @@
              debugger
                                alert("The product has been Rejected")
 
-              window.location.href = "@Url.Action("PendingRequest", "adminportal")";
+              window.location.href = "@Url.Action("PendingRequest", "AdminPortal")";
 
 
             })
@@ -138,7 +138,7 @@
         $.post("@Url.Action("Approve", "AdminPortal")", { id: EntityID  }, function (response) {
              debugger
                   alert("The product has been approved")
-                 window.location.href = "@Url.Action("PendingRequest", "adminportal")";
+                 window.location.href = "@Url.Action("PendingRequest", "AdminPortal")";
 
 
 
