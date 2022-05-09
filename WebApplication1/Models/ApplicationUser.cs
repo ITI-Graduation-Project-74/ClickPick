@@ -29,6 +29,12 @@ namespace Ecommerce.Models
         //Relation With Product as Vendor
         public virtual List<Product> Products { get; set; }
 
+        //relation with wishlist
+        //[ForeignKey("wishListId")]
+        //public virtual WishList WishList { get; set; }
+        //public int wishListId { get; set; }
+
+
         
 
 
