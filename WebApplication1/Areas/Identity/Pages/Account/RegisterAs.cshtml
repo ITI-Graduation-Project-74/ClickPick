@@ -1,14 +1,7 @@
 ﻿@page
 @model ClickPick.Areas.Identity.Pages.Account.RegisterAsModel
 
- @section css{
 
-    <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
-    <link rel="stylesheet" href="~/css/tiny-slider.css" />
-    <link rel="stylesheet" href="~/css/glightbox.min.css" />
-    <link rel="stylesheet" href="~/css/main.css" />
-
-}
 
 
 <!-- Start Breadcrumbs -->
@@ -46,7 +39,8 @@
                                 <a asp-page="/Account/Register"  class="btn" >Customer</a>
                             </div>
                             <div class="button">
-                                <a asp-page="/Account/Register" asp-route-Vendorid="1" class="btn btn-outline-primary" >Vendor</a>
+                                @*asp-route-Vendorid="1"*@
+                                <a asp-page="/Account/RegisterVendor"  class="btn btn-outline-primary" >Vendor</a>
                             </div>
 
                             <p class="outer-link">Already have an account? <a asp-page="/Account/Login" >Login Now</a>
@@ -58,3 +52,5 @@
         </div>
     </div>
     <!-- End Account Register Area -->
+
+ 

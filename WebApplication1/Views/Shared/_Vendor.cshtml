@@ -1,0 +1,186 @@
+﻿@using ClickPick.Utility
+@using Ecommerce.Data
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title> admin Portal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Responsive bootstrap 4 admin template" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="~/AdminPortalAssets/assets/images/favicon.ico">
+
+        <!-- Table datatable css -->
+        <link href="~/AdminPortalAssets/assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/AdminPortalAssets/assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/AdminPortalAssets/assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/AdminPortalAssets/assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="~/AdminPortalAssets/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
+        <link href="~/AdminPortalAssets/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/AdminPortalAssets/assets/css/app.min.css" rel="stylesheet" type="text/css"  id="app-stylesheet" />
+         <!-- Footer -->
+        
+
+          <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="~/css/tiny-slider.css" />
+    <link rel="stylesheet" href="~/css/glightbox.min.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+
+    </head>
+
+    <body style= " margin:0; padding:0">
+             <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <div class="row align-items-center">
+                    
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="top-middle">
+                            <ul class="useful-links">
+                                <li><a asp-controller="product" asp-action="Index">Vendor</a></li>
+                                <li><a asp-controller="product" asp-action="AboutUs">
+                                    About Us
+                                </a>
+                                </li>
+                                <li>
+                                    <a asp-controller="product" asp-action="contactUs"
+                                >Contact Us</a>
+                                </li>
+
+                                @if (User.IsInRole(ApplicationRoles.Role_Admin))
+                                {
+
+                                   <li>
+                                    <a asp-controller="AdminPortal" asp-action="index"> Vendor Dashboard </a>
+                                </li> 
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12 ">
+                        <div class="top-end">
+                            <div class="user">
+                                <i class="lni lni-user"></i>
+                             
+                            </div>
+                            <partial name="_loginPartial">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Topbar -->
+
+          @*  <div class="topbar-menu">
+                <div class="container-fluid">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+
+                            <li class="has-submenu">
+                                <a href="index.html">
+                                    <i class="mdi mdi-view-dashboard"></i>Dashboard
+                                </a>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="@Url.Action("Index", "Categories1")">
+                                    <i class="mdi mdi-format-underline"></i>Categories
+                                </a>
+                            
+                            </li>
+
+                            <li class="has-submenu">
+                                   <a href="@Url.Action("Index", "Products")">
+
+                                    <i class="mdi mdi-format-underline"></i>Products 
+                                </a>
+                             
+                            </li>
+                                <li class="has-submenu">
+                                   <a href="@Url.Action("PendingRequest", "adminportal")">
+
+                                    <i class="mdi mdi-format-underline"></i>Pending Products 
+                                    <span class="badge badge-warning badge-pill float-right">@ViewBag.TPP</span>
+                                </a>
+                             
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="@Url.Action("UsersWithRoles", "ManageUsers")"> 
+                                    <i class="mdi mdi-black-mesa"></i>Users 
+                                    </a>
+
+                            </li>
+
+                        </ul>
+                        <!-- End navigation menu -->
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- end #navigation -->
+                </div>
+                <!-- end container -->
+            </div>*@
+            <!-- end navbar-custom -->
+
+        </header>
+      
+
+        <div class="wrapper">
+            <div class="container-fluid">
+                @RenderBody()
+        
+            </div> <!-- end container-fluid -->
+        </div>
+      
+ 
+        <!-- Vendor js -->
+        <script src="~/AdminPortalAssets/assets/js/vendor.min.js"></script>
+
+        <!-- Datatable plugin js -->
+        <script src="~/AdminPortalAssets/assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/AdminPortalAssets/assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="~/AdminPortalAssets/assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="~/AdminPortalAssets/assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        <script src="~/AdminPortalAssets/assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="~/AdminPortalAssets/assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="~/AdminPortalAssets/assets/libs/jszip/jszip.min.js"></script>
+          <script src="~/AdminPortalAssets/assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="~/AdminPortalAssets/assets/libs/datatables/buttons.print.min.js"></script>        
+        <script src="~/AdminPortalAssets/assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="~/AdminPortalAssets/assets/libs/datatables/dataTables.select.min.js"></script>
+        <!-- Datatables init -->
+
+        <script src="~/AdminPortalAssets/assets/js/pages/datatables.init.js"></script>
+        <!-- App js -->
+
+        <script src="~/AdminPortalAssets/assets/js/app.min.js"></script>
+@*            @RenderSection("Scripts", required: false)
+*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+      $(".custom-file-input").on("change", function () {  
+            var fileName = $(this).val().split("\\").pop();  
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);  
+        }); 
+}
+<style>
+    .wrapper {
+    padding: 35px 12px 0 12px;}
+    .badge-warning {
+    color: #212529;
+    background-color: #ff5d48;
+        color: white;
+}
+</style>
+    </body>
+</html>

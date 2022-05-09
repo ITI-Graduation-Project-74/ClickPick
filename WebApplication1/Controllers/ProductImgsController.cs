@@ -23,6 +23,7 @@ namespace Ecommerce.Controllers
         // GET: ProductImgs
         public async Task<IActionResult> Index()
         {
+           
             var iunitOfWork = _context.ProductImgs.Include(p => p.Product);
             return View(await iunitOfWork.ToListAsync());
         }
@@ -85,7 +86,7 @@ namespace Ecommerce.Controllers
             }
             ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", productImg.ProductId);
             ViewData["ImgUrl"] = new SelectList(_context.ProductImgs, "ImgUrl", "ImgUrl", productImg.ImgUrl);
-
+            ViewBag.countImg = productImg.ImgUrl.Count();
             return View(productImg);
         }
 

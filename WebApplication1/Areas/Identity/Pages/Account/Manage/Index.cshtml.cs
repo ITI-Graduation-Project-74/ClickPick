@@ -56,6 +56,22 @@ namespace Ecommerce.Areas.Identity.Pages.Account.Manage
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
+            /// 
+
+            [Required]
+            [StringLength(20, ErrorMessage = "The FirstName Must Be 20 Chars At Least")]
+            public string FirstName { get; set; }
+
+            [Required]
+            [StringLength(18, ErrorMessage = "The LastName Must Be 20 Chars At Least")]
+            public string LastName { get; set; }
+
+            [Required]
+            public string Address { get; set; }
+
+            [StringLength(50, ErrorMessage = "The StoreName Must Be 20 Chars At Least")]
+            public string StoreName { get; set; }
+
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
@@ -70,6 +86,11 @@ namespace Ecommerce.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
+                FirstName=user.FirstName,
+                LastName=user.LastName,
+                Address=user.Address,
+                StoreName=user.StoreName,
+                
                 PhoneNumber = phoneNumber
             };
         }
@@ -101,6 +122,31 @@ namespace Ecommerce.Areas.Identity.Pages.Account.Manage
             }
 
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            var firstName = user.FirstName;
+            var lastName = user.LastName;
+            var address = user.Address;
+            var storeName = user.StoreName;
+
+            if(Input.FirstName != firstName)
+            {
+                user.FirstName = Input.FirstName;
+                await _userManager.UpdateAsync(user);
+            }
+            if (Input.LastName != lastName)
+            {
+                user.LastName = Input.LastName;
+                await _userManager.UpdateAsync(user);
+            }
+            if (Input.Address != address)
+            {
+                user.Address = Input.Address;
+                await _userManager.UpdateAsync(user);
+            }
+            if (Input.StoreName != storeName)
+            {
+                user.StoreName = Input.StoreName;
+                await _userManager.UpdateAsync(user);
+            }
             if (Input.PhoneNumber != phoneNumber)
             {
                 var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
@@ -110,6 +156,7 @@ namespace Ecommerce.Areas.Identity.Pages.Account.Manage
                     return RedirectToPage();
                 }
             }
+
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";

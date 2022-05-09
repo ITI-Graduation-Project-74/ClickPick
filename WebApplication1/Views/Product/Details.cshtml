@@ -1,53 +1,72 @@
-﻿@model ShoppingCart
+@model ShoppingCart
 
-
-@section css{
-
-    <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
-    <link rel="stylesheet" href="~/css/tiny-slider.css" />
-    <link rel="stylesheet" href="~/css/glightbox.min.css" />
-    <link rel="stylesheet" href="~/css/main.css" />
-
+=======
+@{
+    ViewData["title"] = "Product Details";
+   
 }
+@if(TempData["success"] != null)
+    {
+        <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> 
+        <script type="text/javascript">
+            toastr.success('@TempData["success"]');
+       </script> 
+    }
+
 
 s
 <!-- Start Item Details -->
 <section class="item-details section">
         <div class="container">
             <div class="top-area">
+
                     <form method="post">
                         <input hidden asp-for="ProductId" />
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-12 col-12">
-                                <div class="product-images">
-                                    <main id="gallery">
-                                        <div class="main-img">
-                                            <img src="@Model.Product.ImgUrl" style="width:860px;height:500px" id="current" alt="ProductImg">
-                                        </div>
-                                        <div class="images">
-                                            @foreach (var item in @Model.Product.ProductImgs)
-                                            {
-                                        <img src="@item.ImgUrl" style="width:120px;height:100px" class="img" alt="ProductImg">
- 
-                                            }
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="product-images">
+                            <main id="gallery">
+                                <div class="main-img">
+                                    <img src="@Model.Product.ImgUrl"
+                                    style="width:860px;height:500px" id="current" alt="ProductImg">
+                                </div>
+                                <div class="images">
+                                    @foreach (var item in @Model.Product.ProductImgs)
+                                    {
+                                <img src="@item.ImgUrl" 
+                                style="width:120px;height:100px" class="img" alt="ProductImg"
+                                     }
                                         </div>
                                     </main>
                                 </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="product-info">
+                            <h2 class="title">@Model.Product.Name</h2>
+                            <p class="category" style="font-size:20px">
+                                <i class="lni lni-tag"></i> Category:
+                                <a>@Model.Product.Catagory.CategoryName</a>
+                                </p>
+                            <h3 class="price">@Model.Product.Price.ToString("c")</h3>
+                            <p class="info-text">@Model.Product.Description</p>
+                            <div class="row">
+                                
+                                
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <div class="form-group quantity">
+                                        <label for="color">Quantity</label>
+                                       <input  asp-for="Count" class="form-control" min="1" />
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-6 col-md-12 col-12">
-                                <div class="product-info">
-                                    <h2 class="title">@Model.Product.Name</h2>
-                                    <p class="category" style="font-size:20px"><i class="lni lni-tag"></i> Category:<a>@Model.Product.Catagory.CategoryName</a></p>
-                                    <h3 class="price">@Model.Product.Price.ToString("c")</h3>
-                                    <p class="info-text">@Model.Product.Description</p>
-                                    <div class="row">
-                                
-                                
-                                        <div class="col-lg-4 col-md-4 col-12">
-                                            <div class="form-group quantity">
-                                                <label for="color">Quantity</label>
-                                               <input  asp-for="Count" class="form-control" min="1" />
-                                            </div>
+                            <div class="bottom-content">
+                                <div class="row align-items-end">
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="button cart-button">
+                                            <button type="submit" value="Add To Cart"  
+                                            class="btn" style="width: 100%;">Add to Cart</button>
                                         </div>
                                     </div>
                                     <div class="bottom-content">
@@ -76,26 +95,26 @@ s
                                  class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
                            </div>
                      </form>
-                </div>
-                <div class="product-details-info">
-                    <div class="single-block">
-                        <div class="row">
-                            <div class="col-lg-6 col-12">
-                                <div class="info-body custom-responsive-margin">
-                                    <h4>Details</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                    <h4>Features</h4>
-                                    <ul class="features">
-                                        <li>Capture 4K30 Video and 12MP Photos</li>
-                                        <li>Game-Style Controller with Touchscreen</li>
-                                        <li>View Live Camera Feed</li>
-                                        <li>Full Control of HERO6 Black</li>
-                                        <li>Use App for Dedicated Camera Operation</li>
-                                    </ul>
-                                </div>
+            </div>
+            <div class="product-details-info">
+                <div class="single-block">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="info-body custom-responsive-margin">
+                                <h4>Details</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                                <h4>Features</h4>
+                                <ul class="features">
+                                    <li>Capture 4K30 Video and 12MP Photos</li>
+                                    <li>Game-Style Controller with Touchscreen</li>
+                                    <li>View Live Camera Feed</li>
+                                    <li>Full Control of HERO6 Black</li>
+                                    <li>Use App for Dedicated Camera Operation</li>
+                                </ul>
+
                             </div>
                          </div>
                      </div>

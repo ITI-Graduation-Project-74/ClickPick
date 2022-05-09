@@ -7,6 +7,7 @@ using Ecommerce.Models.Repositories.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,8 +20,17 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseLazyLoadingProxies().UseSqlServer(connectionStrings));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentity<ApplicationUser,IdentityRole>().AddDefaultTokenProviders()
-    .AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.AddIdentity<ApplicationUser,IdentityRole>(options=>options.SignIn.RequireConfirmedAccount=false)
+    .AddDefaultTokenProviders()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultUI();
+
+// Stripe Service For Payment
+
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.AddControllersWithViews();
 
 //builder.Services.AddTransient(typeof(IBaseRepository<>),typeof(BaseRepository<>));
@@ -29,7 +39,7 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-builder.Services.AddSingleton<IEmailSender, EmailSender>();
+//builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
 builder.Services.AddRazorPages();
 
@@ -69,6 +79,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 
 app.UseAuthentication();
 app.UseAuthorization();

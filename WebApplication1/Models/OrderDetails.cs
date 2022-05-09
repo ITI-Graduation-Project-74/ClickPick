@@ -11,12 +11,14 @@ namespace Ecommerce.Models
         }
         [Key]
         public int Id { get; set; }
-        public int Quantatiy { get; set; }
 
         //Relation with OrderHeader
 
         [ForeignKey("OrderHeaderId")]
         public int OrderHeaderId { get; set; }
+
+        public int Quantatiy { get; set; }
+
         public virtual OrderHeader OrderHeader { get; set; }
 
 
@@ -25,7 +27,7 @@ namespace Ecommerce.Models
         public virtual List<Product> Products { get; set; }
 
         //Relation with copoun
-        public int CouponId { get; set; }
+        public int? CouponId { get; set; }
         public virtual Coupon Coupon { get; set; }
 
         //Relation with payment

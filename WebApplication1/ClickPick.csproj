@@ -30,6 +30,8 @@
 
   <ItemGroup>
     <PackageReference Include="Grpc.Core" Version="2.46.0-pre2" />
+    <PackageReference Include="jQuery.Validation" Version="1.19.3" />
+    <PackageReference Include="MailKit" Version="3.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
@@ -45,15 +47,34 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />
+    <PackageReference Include="MimeKit" Version="3.2.0" />
+    <PackageReference Include="Stripe.net" Version="39.110.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CustomPage\" />
     <Folder Include="wwwroot\Imgs\Categories\Mobiles\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\Disable2fa.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\Email.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\GenerateRecoveryCodes.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\Index.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\PersonalData.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\SetPassword.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\ShowRecoveryCodes.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\_Layout.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\_StatusMessage.cshtml" />
+    <None Include="Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml" />
     <None Include="Views\AdminPortal\Index.cshtml" />
     <None Include="Views\ProductImgs\Create.cshtml" />
     <None Include="Views\ProductImgs\Delete.cshtml" />

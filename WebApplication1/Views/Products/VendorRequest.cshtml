@@ -1,0 +1,102 @@
+﻿@model Ecommerce.Models.Product
+
+@{
+     Layout = "~/Views/Shared/_Vendor.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+       @* asp-action="VendorRequest"
+        method="post"*@
+
+          <p style="text-align:center">@ViewBag.msg</p>
+
+        <form  asp-action="VendorRequest" id="form1"  method="post" enctype="multipart/form-data"  >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          @*  <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Size" class="control-label"></label>
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discount" class="control-label"></label>
+                <input asp-for="Discount" class="form-control" />
+                <span asp-validation-for="Discount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImgUrl" class="control-label"></label>
+                <input type="text" asp-for="ImgUrl" class="form-control" />
+                <span asp-validation-for="ImgUrl" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="ProductImgs" class="control-label"></label>
+                <input type="file"  asp-for="ProductImgs" class="form-control"  multiple/>
+                <span asp-validation-for="ProductImgs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatagoryId" class="control-label"></label>
+                <select asp-for="CatagoryId" class ="form-control" asp-items="ViewBag.CatagoryId"></select>
+            </div>
+         @*   <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" onclick="test()" value="Save" class="btn btn-primary" />
+            </div>
+            <div>
+                
+           
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+@*        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+*@        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                <p >@ViewBag.Msg.</p>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"> </script>
+ <script src="~/AdminPortalAssets/assets/js/vendor.js"></script>
+
+
+
+
+

@@ -3,8 +3,9 @@ using Ecommerce.Models.Repositories.UnitOfWork;
 using Ecommerce.Models;
 using Ecommerce.Models.ViewModels;
 using System.Security.Claims;
+using Newtonsoft.Json;
 
-namespace Ecommerce.Controllers
+namespace ClickPick.Controllers
 {
     public class CouponController : Controller
     {
@@ -30,6 +31,7 @@ namespace Ecommerce.Controllers
             if (c == null)
             {
                 ViewBag.msg = "Not Applicaple";
+                TempData.Remove("coupon");
                 return View("CartSummary");
             }
             else
@@ -40,16 +42,30 @@ namespace Ecommerce.Controllers
                 if (valid < 0)
                 {
                     ViewBag.msg = "Not Applicaple yet";
+                    TempData.Remove("coupon");
                     return View("CartSummary");
                 }
                 else if (expire > 0)
                 {
                     ViewBag.msg = "sorry this coupon expired";
+                    TempData.Remove("coupon");
                     return View("CartSummary");
                 }
-                return View("CartSummary", c);
+                else
+                {
+                    TempData["coupon"] = c.Percentage;
+                    HttpContext.Session.SetString("coupon", JsonConvert.SerializeObject(c));
+                    return View("CartSummary");
+
+                }
             }
 
+        }
+        public IActionResult Remove()
+        {
+            TempData.Remove("coupon");
+            ViewBag.msg = "coupon removed";
+            return View("CartSummary");
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Ecommerce.Controllers
         // GET: Catagories
         public async Task<IActionResult> Index()
         {
+          
             return View(await _context.Catagories.ToListAsync());
 
         }
