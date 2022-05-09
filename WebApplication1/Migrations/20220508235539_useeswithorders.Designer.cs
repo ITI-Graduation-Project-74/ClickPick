@@ -4,6 +4,7 @@ using Ecommerce.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220508235539_useeswithorders")]
+    partial class useeswithorders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,7 +156,7 @@ namespace Ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Catagories", (string)null);
+                    b.ToTable("Catagories");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Coupon", b =>
@@ -179,7 +181,7 @@ namespace Ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Coupons", (string)null);
+                    b.ToTable("Coupons");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.OrderDetails", b =>
@@ -190,16 +192,13 @@ namespace Ecommerce.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CouponId")
+                    b.Property<int?>("CouponId")
                         .HasColumnType("int");
 
                     b.Property<int>("OrderHeaderId")
                         .HasColumnType("int");
 
                     b.Property<int>("PaymentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantatiy")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -210,7 +209,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("PaymentId");
 
-                    b.ToTable("OrderDetials", (string)null);
+                    b.ToTable("OrderDetials");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.OrderHeader", b =>
@@ -249,7 +248,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
-                    b.ToTable("OrderHeaders", (string)null);
+                    b.ToTable("OrderHeaders");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Payment", b =>
@@ -265,7 +264,7 @@ namespace Ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payments", (string)null);
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Product", b =>
@@ -284,6 +283,9 @@ namespace Ecommerce.Migrations
 
                     b.Property<string>("ImgUrl")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsApproved")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -308,7 +310,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.ProductImg", b =>
@@ -326,7 +328,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImgs", (string)null);
+                    b.ToTable("ProductImgs");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.ShoppingCart", b =>
@@ -352,7 +354,7 @@ namespace Ecommerce.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ShoppingCart", (string)null);
+                    b.ToTable("ShoppingCart");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -435,12 +437,10 @@ namespace Ecommerce.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -477,12 +477,10 @@ namespace Ecommerce.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -496,9 +494,7 @@ namespace Ecommerce.Migrations
                 {
                     b.HasOne("Ecommerce.Models.Coupon", "Coupon")
                         .WithMany()
-                        .HasForeignKey("CouponId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CouponId");
 
                     b.HasOne("Ecommerce.Models.OrderHeader", "OrderHeader")
                         .WithMany("OrderDetails")
