@@ -1,16 +1,13 @@
-﻿@using ClickPick.CustomModels
+
+@using System.Web
+@model IEnumerable<Product>
+  
+@using ClickPick.CustomModels
 @model ProductViewModel
 @{
 	var catagoryId = ViewContext.RouteData.Values["id"];
 }
 @section css{
-
-<link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
-<link rel="stylesheet" href="~/css/tiny-slider.css" />
-<link rel="stylesheet" href="~/css/glightbox.min.css" />
-<link rel="stylesheet" href="~/css/main.css" />
-
-}
 
 <!-- Start Breadcrumbs -->
 <div class="breadcrumbs">

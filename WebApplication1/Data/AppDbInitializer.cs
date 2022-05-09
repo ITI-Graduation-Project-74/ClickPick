@@ -117,7 +117,7 @@ namespace Ecommerce.Data
                             Id=1,
                             Name ="Apple iPhone 11 128giga",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =35100,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/1/a.jpg",
 
@@ -131,7 +131,7 @@ namespace Ecommerce.Data
                             Id=2,
                             Name ="Iphone 13 128giga",
                             Description="The Product Description",
-                            Price =3000,
+                            Price =30200,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/2/a.jpg",
 
@@ -144,7 +144,7 @@ namespace Ecommerce.Data
                             Id=3,
                             Name ="Ihpone 13 Pink",
                             Description="The Product Description",
-                            Price =4000,
+                            Price =23100,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/3/a.jpg",
 
@@ -156,7 +156,7 @@ namespace Ecommerce.Data
                         {   Id=4,
                             Name ="Nokia G20 Dual sim",
                             Description="The Product Description",
-                            Price =5000,
+                            Price =4320,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/4/a.jpg",
 
@@ -170,7 +170,7 @@ namespace Ecommerce.Data
                              Id=5,
                             Name ="oppo A55 64giga",
                             Description="The Product Description",
-                            Price =6000,
+                            Price =5500,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/5/a.jpg",
 
@@ -183,7 +183,7 @@ namespace Ecommerce.Data
                               Id =6,
                             Name ="Realme Gt master",
                             Description="The Product Description",
-                            Price =7000,
+                            Price =7100,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/6/a.jpg",
 
@@ -197,7 +197,7 @@ namespace Ecommerce.Data
                             Id=7,
                             Name ="Samsung Galaxy s21",
                             Description="The Product Description",
-                            Price =8000,
+                            Price =8230,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/7/a.jpg",
 
@@ -209,7 +209,7 @@ namespace Ecommerce.Data
                              Id=8,
                             Name ="Samsung Galaxy s21 64giga",
                             Description="The Product Description",
-                            Price =9000,
+                            Price =9300,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/8/a.jpg",
 
@@ -220,7 +220,7 @@ namespace Ecommerce.Data
                             Id=9,
                             Name ="Samsung Galaxy Z filp",
                             Description="The Product Description",
-                            Price =10000,
+                            Price =7900,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/9/a.jpg",
 
@@ -233,7 +233,7 @@ namespace Ecommerce.Data
                             Id=10,
                             Name ="Spigen Ultra Hybrid",
                             Description="The Product Description",
-                            Price =11000,
+                            Price =11300,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/10/a.jpg",
 
@@ -246,7 +246,7 @@ namespace Ecommerce.Data
                             Id=11,
                             Name ="Xiaomi Redmi Note 10S",
                             Description="The Product Description",
-                            Price =12000,
+                            Price =5030,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/11/a.jpg",
 
@@ -259,7 +259,7 @@ namespace Ecommerce.Data
                             Id=12,
                             Name ="Xiaomi Redmi Note 9 pro",
                             Description="The Product Description",
-                            Price =13000,
+                            Price =7050,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/12/a.jpg",
 
@@ -276,7 +276,7 @@ namespace Ecommerce.Data
                             Id=13,
                             Name ="Active Blue Black",
                             Description="The Product Description",
-                            Price =14000,
+                            Price =660,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/1/a.jpg",
 
@@ -289,7 +289,7 @@ namespace Ecommerce.Data
                                Id =14,
                             Name ="Active white Black",
                             Description="The Product Description",
-                            Price =15000,
+                            Price =630,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/2/a.jpg",
 
@@ -302,7 +302,7 @@ namespace Ecommerce.Data
                                Id=15,
                             Name ="Active white men's shoes",
                             Description="The Product Description",
-                            Price =16000,
+                            Price =640,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/3/a.jpg",
 
@@ -315,7 +315,7 @@ namespace Ecommerce.Data
                             Id=16,
                             Name ="Active white men's shoes",
                             Description="The Product Description",
-                            Price =3000,
+                            Price =750,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/4/a.jpg",
 
@@ -328,7 +328,7 @@ namespace Ecommerce.Data
                             Id=17,
                             Name ="Active women's shoes",
                             Description="The Product Description",
-                            Price =5000,
+                            Price =620,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/5/a.jpg",
 
@@ -339,7 +339,7 @@ namespace Ecommerce.Data
                                 Id=18,
                             Name ="Adidas black shoes",
                             Description="The Product Description",
-                            Price =8000,
+                            Price =410,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/6/a.jpg",
 
@@ -350,7 +350,7 @@ namespace Ecommerce.Data
                                 Id=19,
                             Name ="Black sappoh with high heels",
                             Description="The Product Description",
-                            Price =9000,
+                            Price =210,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/7/a.jpg",
 
@@ -361,7 +361,7 @@ namespace Ecommerce.Data
                                 Id=20,
                             Name ="Blue sport men's shoes",
                             Description="The Product Description",
-                            Price =10000,
+                            Price =420,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/8/a.jpg",
 
@@ -383,7 +383,7 @@ namespace Ecommerce.Data
                                 Id=22,
                             Name ="Grinta Women",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =610,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/10/a.jpg",
 
@@ -394,7 +394,7 @@ namespace Ecommerce.Data
                                 Id=23,
                             Name ="Skippy Blue Shoes",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =740,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/11/a.jpg",
 
@@ -405,7 +405,7 @@ namespace Ecommerce.Data
                                 Id=24,
                             Name ="Men's Tennis Shoes",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =450,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/12/a.jpg",
 
@@ -422,7 +422,7 @@ namespace Ecommerce.Data
                                 Id=25,
                             Name ="Alienware m15 Ryzen™ Edition R5 Gaming Laptop",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =18750,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/1/a.jpg",
 
@@ -433,7 +433,7 @@ namespace Ecommerce.Data
                                 Id=26,
                             Name ="Dell G15 15-5510 Gaming laptop - 10th Intel Core i5",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =23000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/2/a.jpg",
 
@@ -444,7 +444,7 @@ namespace Ecommerce.Data
                                 Id=27,
                             Name ="Dell Inspiron 7306 2-in-1 x360 laptop - 11th Intel Core i5",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =25000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/3/a.jpg",
 
@@ -455,7 +455,7 @@ namespace Ecommerce.Data
                                 Id=28,
                             Name ="Dell Vostro 3510 laptop - 11th Gen Intel core i7",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =8000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/4/a.jpg",
 
@@ -466,7 +466,7 @@ namespace Ecommerce.Data
                                 Id=29,
                             Name ="DELL Vostro 3515 Laptop - Ryzen 5 3450U, 8GB RAM, 512GB SSD",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =11500,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/5/a.jpg",
 
@@ -477,7 +477,7 @@ namespace Ecommerce.Data
                                 Id=30,
                             Name ="HP 15-dy2091wm Laptop - 11th Gen Intel Core i3",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =13000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/6/a.jpg",
 
@@ -489,7 +489,7 @@ namespace Ecommerce.Data
                                 Id=31,
                             Name ="HP Laptop 15-dw3023ne(11th Gen Intel core i5",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =14000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/7/a.jpg",
 
@@ -500,7 +500,7 @@ namespace Ecommerce.Data
                                 Id=32,
                             Name ="HP Pavilion x360 Convertible 2n1 14-dy0142ne laptop",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =12000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/8/a.jpg",
 
@@ -511,7 +511,7 @@ namespace Ecommerce.Data
                                 Id=33,
                             Name ="HP Victus 16-d0023dx Gaming Laptop Latest Model - 11th",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =18000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/9/a.jpg",
 
@@ -522,7 +522,7 @@ namespace Ecommerce.Data
                                 Id=34,
                             Name ="Lenovo IdeaPad 3 15ALC6 Laptop - Ryzen 5 5500U 6 Cores",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =13000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/10/a.jpg",
 
@@ -533,7 +533,7 @@ namespace Ecommerce.Data
                                 Id=35,
                             Name ="Lenovo Legion 5 Gaming Laptop - Ryzen 7 5800H 8-Core",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =35000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/11/a.jpg",
 
@@ -544,7 +544,7 @@ namespace Ecommerce.Data
                                 Id=36,
                             Name ="Lenovo v15 4GB Ram",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =4000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/12/a.jpg",
 
@@ -561,7 +561,7 @@ namespace Ecommerce.Data
                                 Id=37,
                             Name ="Black Pants",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =200,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/1/a.jpg",
 
@@ -572,7 +572,7 @@ namespace Ecommerce.Data
                                 Id=38,
                             Name ="Gray sweet-shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =200,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/2/a.jpg",
 
@@ -583,7 +583,7 @@ namespace Ecommerce.Data
                                 Id=39,
                             Name ="Blue short",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =300,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/3/a.jpg",
 
@@ -594,7 +594,7 @@ namespace Ecommerce.Data
                                 Id=40,
                             Name ="Red Sweet-shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =400,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/4/a.jpg",
 
@@ -605,7 +605,7 @@ namespace Ecommerce.Data
                                 Id=41,
                             Name ="Black Sweet-shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =710,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/5/a.jpg",
 
@@ -616,7 +616,7 @@ namespace Ecommerce.Data
                                 Id=42,
                             Name ="Blue pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =820,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/6/a.jpg",
 
@@ -627,7 +627,7 @@ namespace Ecommerce.Data
                                 Id=43,
                             Name ="Yellow salopit",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =630,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/7/a.jpg",
 
@@ -638,7 +638,7 @@ namespace Ecommerce.Data
                                 Id=44,
                             Name ="Black T-shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =650,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/8/a.jpg",
 
@@ -649,7 +649,7 @@ namespace Ecommerce.Data
                                 Id=45,
                             Name ="Blue Salopit",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =740,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/9/a.jpg",
 
@@ -660,7 +660,7 @@ namespace Ecommerce.Data
                                 Id=46,
                             Name ="Pink Sweet-shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =250,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/10/a.jpg",
 
@@ -671,7 +671,7 @@ namespace Ecommerce.Data
                                 Id=47,
                             Name ="Blue and Gray pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =240,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/11/a.jpg",
 
@@ -682,7 +682,7 @@ namespace Ecommerce.Data
                                 Id=48,
                             Name ="Dark green pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =120,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/12/a.jpg",
 
@@ -700,7 +700,7 @@ namespace Ecommerce.Data
                                 Id=49,
                             Name ="Red pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =520,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Men/1/a.jpg",
 
@@ -711,7 +711,7 @@ namespace Ecommerce.Data
                                 Id=50,
                             Name ="Black pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =560,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/2/a.jpg",
 
@@ -722,7 +722,7 @@ namespace Ecommerce.Data
                                 Id=51,
                             Name ="Blue pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =230,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/3/a.jpg",
 
@@ -733,7 +733,7 @@ namespace Ecommerce.Data
                                 Id=52,
                             Name ="Gray t-shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =320,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/4/a.jpg",
 
@@ -744,7 +744,7 @@ namespace Ecommerce.Data
                                 Id=53,
                             Name ="Black Sweet-Pants",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =780,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/5/a.jpg",
 
@@ -755,7 +755,7 @@ namespace Ecommerce.Data
                                 Id=54,
                             Name ="Black and cafee pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =150,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/6/a.jpg",
 
@@ -766,7 +766,7 @@ namespace Ecommerce.Data
                                 Id=55,
                             Name ="white and gray pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =910,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/7/a.jpg",
 
@@ -777,7 +777,7 @@ namespace Ecommerce.Data
                                 Id=56,
                             Name ="Red Sweet-Shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =550,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/8/a.jpg",
 
@@ -788,7 +788,7 @@ namespace Ecommerce.Data
                                 Id=57,
                             Name ="Black Sweet-Shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =660,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/9/a.jpg",
 
@@ -799,7 +799,7 @@ namespace Ecommerce.Data
                                 Id=58,
                             Name ="Gray Sweet-Pants",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =770,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/10/a.jpg",
 
@@ -810,7 +810,7 @@ namespace Ecommerce.Data
                                 Id=59,
                             Name ="Green Shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =220,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/11/a.jpg",
 
@@ -821,7 +821,7 @@ namespace Ecommerce.Data
                                 Id=60,
                             Name ="Cofee Shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =110,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/12/a.jpg",
 
@@ -836,7 +836,7 @@ namespace Ecommerce.Data
                                 Id=61,
                             Name ="Red Flowered Dress",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =220,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/1/a.jpg",
 
@@ -847,7 +847,7 @@ namespace Ecommerce.Data
                                 Id=62,
                             Name ="Blue-Black Flowered Blouse",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =670,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/2/a.jpg",
 
@@ -858,7 +858,7 @@ namespace Ecommerce.Data
                                 Id=63,
                             Name ="Yellow Shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =870,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/3/a.jpg",
 
@@ -869,7 +869,7 @@ namespace Ecommerce.Data
                                 Id=64,
                             Name ="Blue Black Shirt",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =780,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/4/a.jpg",
 
@@ -880,7 +880,7 @@ namespace Ecommerce.Data
                                 Id=65,
                             Name ="Red pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =120,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/5/a.jpg",
 
@@ -891,7 +891,7 @@ namespace Ecommerce.Data
                                 Id=66,
                             Name ="Gray Pyjama",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =390,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/6/a.jpg",
 
@@ -902,7 +902,7 @@ namespace Ecommerce.Data
                                 Id=67,
                             Name ="Red Blouse",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =830,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/7/a.jpg",
 
@@ -913,7 +913,7 @@ namespace Ecommerce.Data
                                 Id=68,
                             Name ="Dark Red Vest",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =710,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/8/a.jpg",
 
@@ -924,7 +924,7 @@ namespace Ecommerce.Data
                                 Id=69,
                             Name ="Baby Blue suit",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =420,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/9/a.jpg",
 
@@ -935,7 +935,7 @@ namespace Ecommerce.Data
                                 Id=70,
                             Name ="Black suit",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =620,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/10/a.jpg",
 
@@ -946,7 +946,7 @@ namespace Ecommerce.Data
                                 Id=71,
                             Name ="Gray vest",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =710,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/11/a.jpg",
 
@@ -957,7 +957,7 @@ namespace Ecommerce.Data
                                 Id=72,
                             Name ="Red blouse",
                             Description="The Product Description",
-                            Price =2000,
+                            Price =750,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/12/a.jpg",
 

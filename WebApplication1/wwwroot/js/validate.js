@@ -4,14 +4,14 @@ jQuery.validator.addMethod("matches", function (phone_number, element) {
         phone_number.match(/^0\d{10}$/);
 }, "Please specify a valid phone number");
 $(function () {
-    var $headerForm = $("#OrderHeaderForm");
+    var $headerForm = $("#Orderheader");
     if ($headerForm.length) {
         $headerForm.validate({
 
             rules: {
                 Phone: {
                     required: true,
-                    matches:true, // <-- no such method called "matches"!
+                    matches: true, // <-- no such method called "matches"!
                     minlength: 11,
                     maxlength: 11
                 },
@@ -27,13 +27,13 @@ $(function () {
                     maxlength: "not valid"
                 },
                 Address: {
-                    required:"Required"
+                    required: "Required"
                 }
             }
 
         })
     }
-})
+});
 //$('#billingAddressCheck').click(function () {
 //    $('#billingAddress')[this.checked ? "show" : "hide"]();
 //});
@@ -48,14 +48,14 @@ $('input[name=billingAddressCheck]').on('change', function () {
     }
 });
 
-//Payment
-$("#PaymentFormDiv").hide();
-$('input[type="radio"]').click(function () {
-    if ($(this).attr("value") == "Cash") {
-        $("#PaymentFormDiv").hide('slow');
-    }
-    if ($(this).attr("value") == "Paypal") {
-        $("#PaymentFormDiv").show('slow');
+////Payment
+//$("#PaymentFormDiv").hide();
+//$('input[type="radio"]').click(function () {
+//    if ($(this).attr("value") == "Cash") {
+//        $("#PaymentFormDiv").hide('slow');
+//    }
+//    if ($(this).attr("value") == "Paypal") {
+//        $("#PaymentFormDiv").show('slow');
 
-    }
-});
+//    }
+//});
