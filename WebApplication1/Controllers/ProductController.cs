@@ -80,6 +80,8 @@ namespace Ecommerce.Controllers
                 ProductId= productId,
                 Product = _context.Products.GetById(productId),
             };
+            TempData["productDetailsId"] = productId;
+
             return View(cartObj);
         }
 
@@ -88,35 +90,7 @@ namespace Ecommerce.Controllers
         [ValidateAntiForgeryToken]
 
         [Authorize]
-        //public IActionResult Details(ShoppingCart shoppingCart)
-        //{
-        //    // Get The Claim Of Logined User (ApplicationUserId)
-
-        //    var claimsIdentity = (ClaimsIdentity)User.Identity;
-        //    var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-        //    shoppingCart.ApplicationUserId = claim.Value;
-
-        //    // checking If the User Exist on Database Or Not 
-
-        //    ShoppingCart StoredCartInDb = _context.ShoppingCarts
-        //        .Find(n => n.ApplicationUserId == claim.Value 
-        //        && n.ProductId == shoppingCart.ProductId);
-
-        //    if(StoredCartInDb == null)
-        //    {
-        //        _context.ShoppingCarts.Add(shoppingCart);
-        //    }
-        //    else
-        //    {
-        //        _context.ShoppingCartServices
-        //            .IncrementCount(StoredCartInDb, shoppingCart.Count);
-        //    }
-            
-        //    // Save To Database
-        //    _context.Complete();
-
-        //    return RedirectToAction("Index"); 
-        //}
+        
 
         public IActionResult Details(ShoppingCart shoppingCart)
         {
@@ -149,8 +123,12 @@ namespace Ecommerce.Controllers
             // Save To Database
             _context.Complete();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { productId = TempData["productDetailsId"] });
         }
+
+
+
+
 
         public IActionResult SearchByInsideCategory(string ProductName, int id)
         {

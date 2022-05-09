@@ -17,7 +17,9 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
 
         public IBaseRepository<OrderHeader> OrderHeaders { get; }
 
-        public IBaseRepository<OrderDetails> OrderDetails { get; } 
+        public IBaseRepository<OrderDetails> OrderDetails { get; }
+        public IBaseRepository<WishList> WishLists { get; }
+
 
 
         int Complete();

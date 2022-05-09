@@ -28,6 +28,9 @@ namespace Ecommerce.Data
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ShoppingCart> ShoppingCart { get; set; }
+        public virtual DbSet<WishList> WishLists { get; set; }
+
+
 
         // OrderHeader And Order Details 
 
