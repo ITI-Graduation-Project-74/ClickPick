@@ -20,6 +20,9 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
 
         public IBaseRepository<OrderDetails> OrderDetails { get; }
 
+        public IBaseRepository<WishList> WishLists { get; }
+
+
         public IBaseRepository<VendorRequest> VendorRequest { get; }
         public IBaseRepository<Brand> Brands { get; }
 

@@ -1,0 +1,58 @@
+﻿
+
+@using ClickPick.Models.ViewModels
+
+@model WishListVM
+
+@section css{
+
+    <link rel="stylesheet" href="~/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="~/css/tiny-slider.css" />
+    <link rel="stylesheet" href="~/css/glightbox.min.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+
+}
+
+
+
+<form method="post">
+
+<div class="container d-flex flex-column align-items-center align-content-center mt-5 mb-5">
+    <div class="d-flex flex-column justify-content-center align-items-center ">
+        @foreach (var item in  Model.WishList)
+        {
+   
+        <div class="d-flex flex-column align-items-center align-content-center col-lg-6 col-12 mb-lg-3 " >
+            <div class="row p-2 bg-white border rounded">
+                <div class="col-md-2 mt-1">
+                    <img class="img-fluid img-responsive rounded product-image" src="@item.Product.ImgUrl">
+                </div>
+                <div class="col-md-6 mt-1">
+                    <h5><b> @item.Product.Name</b></h5>
+                    <div class="d-flex flex-row"> <br>
+                        @*<div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><br>*@
+                        <h6 class="mr-1 text-center" > Price : @item.Product.Price</h6>
+                        
+                      
+                    </div>
+                    
+                    <p class="text-justify text-truncate para mb-0"><br>@item.Product.Description<br></p>
+                </div>
+                <div class="align-items-end align-content-center col-md-4 border-right mt-1">
+                  
+                    
+                     <div class="d-flex flex-column mt-2">
+                         <button class="btn btn-primary mt-2" type="submit" asp-controller="product" asp-action="Details" asp-route-productId="@item.ProductId" >Add To Cart</button>
+                         
+                         <button class="btn btn-outline-danger mt-2" type="submit"  asp-action="delete" asp-route-productId="@item.ProductId">Delete</button>
+
+                     </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+</form>
+
+    

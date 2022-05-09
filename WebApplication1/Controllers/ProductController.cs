@@ -70,7 +70,11 @@ namespace Ecommerce.Controllers
                 ProductId= productId,
                 Product = _context.Products.GetById(productId),
             };
+
+
+
             TempData["DetailsProductId"] = productId;
+
             return View(cartObj);
         }
 
@@ -114,6 +118,7 @@ namespace Ecommerce.Controllers
         }
 
         // Search in Home 
+
         public IActionResult SearchByName(string ProductName)
         {
             var GetProductByName = _context.Products.FindAll(x => x.Name.Contains(ProductName));
