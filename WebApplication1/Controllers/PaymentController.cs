@@ -3,6 +3,7 @@ using Ecommerce.Models.Repositories.UnitOfWork;
 using Ecommerce.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Stripe.Checkout;
 using System.Security.Claims;
 
 namespace ClickPick.Controllers
@@ -17,6 +18,7 @@ namespace ClickPick.Controllers
 
         public IActionResult Index(String Method)
         {
+           
             Coupon coupon = new Coupon();
             //Coupon
             if ((HttpContext.Session.GetString("coupon")) != null)
@@ -30,15 +32,20 @@ namespace ClickPick.Controllers
 
             //OrderDetails
             var claimsIdentity = (ClaimsIdentity)User.Identity;
+
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
             ShoppingCartVM cart = new ShoppingCartVM()
             {
                 ListCart = _context.ShoppingCartServices
                .FindAll(c => c.ApplicationUserId == claim.Value)
             };
             List<Product> Products = new List<Product>();
-            foreach (var item in cart.ListCart)
+            long stripeTotalAmount = 0;
+
+            foreach (var item in cart.ListCart) 
             {
+                stripeTotalAmount += (long)(item.Product.Price * 100);
                 Products.Add(item.Product);
             }
 
@@ -47,16 +54,17 @@ namespace ClickPick.Controllers
             OrderHeader orderHeader = orderHeaderSession;
             _context.Payments.Add(payment);
             _context.Complete();
-
             _context.OrderHeaders.Add(orderHeader);
             _context.Complete();
 
 
-            
-            OrderDetails orderDetails=new OrderDetails()
+            OrderDetails orderDetails = new OrderDetails()
             {
-                OrderHeaderId= orderHeader.Id,
-                Products= Products,
+                
+                OrderHeaderId = orderHeader.Id,
+             
+                Products = Products,
+              
                 PaymentId= payment.Id,
                 
             };
@@ -69,11 +77,93 @@ namespace ClickPick.Controllers
                 orderDetails.CouponId = null;
             }
             _context.OrderDetails.Add(orderDetails);
-           
             _context.Complete();
+
+            // Payment With Stripe 
+        if (Method == "Stripe")
+            {
+                var domain = "https://localhost:7199/";
+                var options = new SessionCreateOptions
+                {
+                    LineItems = new List<SessionLineItemOptions>(),
+                    Mode = "payment",
+                    SuccessUrl = domain + $"Payment/OrderConfirmedWithStripe?id={orderDetails.OrderHeaderId}",
+                    CancelUrl = domain + $"Payment/OrderCanceled?id={orderDetails.OrderHeaderId}",
+                };
+               
+                if (coupon.Id != 0)
+                    
+                {
+                    stripeTotalAmount = stripeTotalAmount - ((stripeTotalAmount * coupon.Percentage) / 100);
+                }
+               
+                foreach (var item in cart.ListCart)
+                {
+
+                    var sessionLineItem = new SessionLineItemOptions
+                    {
+                        PriceData = new SessionLineItemPriceDataOptions
+                        {
+                            UnitAmount = stripeTotalAmount, // If The Price is 20.00 we should multiple it to be 2000  
+                            Currency = "usd",
+                            ProductData = new SessionLineItemPriceDataProductDataOptions
+                            {
+                                Name = item.Product.Name,
+                                Description = item.Product.Description,
+
+                            },
+                        },
+                        Quantity = item.Count,
+                    };
+                    options.LineItems.Add(sessionLineItem);
+                }
+
+
+                var service = new SessionService();
+                Session session = service.Create(options);
+
+                orderHeader.SessionId = session.Id;
+                orderHeader.PaymentStripeId = session.PaymentIntentId;
+
+                _context.Complete();
+                Response.Headers.Add("Location", session.Url);
+                return new StatusCodeResult(303);
+            }
+            
+
+
             HttpContext.Session.Remove("coupon");
             TempData.Remove("USD");
+
             return View();
+        }
+
+        //public IActionResult OrderConfirmation(int id)
+        //{
+        //    OrderHeader orderHeader = _context.OrderHeaders.Find(x => x.Id == id);
+
+        //    var service = new SessionService();
+
+        //    Session session = service.Get(orderHeader.SessionId);
+
+        //    // check the stripe status 
+
+        //    if (session.PaymentStatus.ToLower() == "Paid")
+        //    {
+                
+        //    }
+        //}
+        
+        public IActionResult OrderConfirmedWithStripe()
+        {
+
+            return View();
+        }
+
+        public IActionResult OrderCanceled()
+        {
+            return View();
+
         }
     }
 }
