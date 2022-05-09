@@ -1,4 +1,5 @@
-﻿using ClickPick.Models;
+using ClickPick.Models;
+using Ecommerce.Migrations;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,8 @@ namespace Ecommerce.Data
    
     public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
+        private object modelBuilder;
+
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {
         }
@@ -21,9 +24,15 @@ namespace Ecommerce.Data
         {
 
             base.OnModelCreating(builder);
+            builder.Entity<UsersWithorder>(
+                 eb =>
+                 {
+                     eb.HasNoKey();
+                     eb.ToView("View_UsersWithorder");
+                     eb.Property(v => v.FirstName).HasColumnName("FirstName");
+                 });
 
-            
-            
+
         }
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public virtual DbSet<Category> Catagories { get; set; }
@@ -40,9 +49,9 @@ namespace Ecommerce.Data
         public virtual DbSet<OrderHeader> OrderHeaders { get; set; }
         public virtual DbSet<OrderDetails> OrderDetials { get; set; }
 
+        //users with order details
 
-
-
+        public DbSet<UsersWithorder> UsersWithorders { get; set; }
 
 
 

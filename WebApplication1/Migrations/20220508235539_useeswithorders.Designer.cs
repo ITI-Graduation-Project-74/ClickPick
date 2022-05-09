@@ -4,6 +4,7 @@ using Ecommerce.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220508235539_useeswithorders")]
+    partial class useeswithorders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,69 +24,6 @@ namespace Ecommerce.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-
-            modelBuilder.Entity("ClickPick.Models.Brand", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("BrandName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Brands");
-                });
-
-            modelBuilder.Entity("ClickPick.Models.VendorRequest", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CatagoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Discount")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsApproved")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.Property<int?>("Size")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StoreName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CatagoryId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("VendorRequest");
-=======
             modelBuilder.Entity("ClickPick.Models.UsersWithOrders", b =>
                 {
                     b.Property<string>("Address")
@@ -125,7 +64,6 @@ namespace Ecommerce.Migrations
                         .HasColumnType("datetime2");
 
                     b.ToView("View_UsersWithOrders");
-
                 });
 
             modelBuilder.Entity("Ecommerce.Models.ApplicationUser", b =>
@@ -263,9 +201,6 @@ namespace Ecommerce.Migrations
                     b.Property<int>("PaymentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantatiy")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CouponId");
@@ -337,9 +272,6 @@ namespace Ecommerce.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("BrandId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CatagoryId")
                         .HasColumnType("int");
 
@@ -372,8 +304,6 @@ namespace Ecommerce.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BrandId");
-
                     b.HasIndex("CatagoryId");
 
                     b.HasIndex("OrderDetailsId");
@@ -394,14 +324,9 @@ namespace Ecommerce.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("VendorRequestId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("VendorRequestId");
 
                     b.ToTable("ProductImgs");
                 });
@@ -565,23 +490,6 @@ namespace Ecommerce.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ClickPick.Models.VendorRequest", b =>
-                {
-                    b.HasOne("Ecommerce.Models.Category", "Catagory")
-                        .WithMany()
-                        .HasForeignKey("CatagoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Ecommerce.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("ApplicationUser");
-
-                    b.Navigation("Catagory");
-                });
-
             modelBuilder.Entity("Ecommerce.Models.OrderDetails", b =>
                 {
                     b.HasOne("Ecommerce.Models.Coupon", "Coupon")
@@ -618,12 +526,6 @@ namespace Ecommerce.Migrations
 
             modelBuilder.Entity("Ecommerce.Models.Product", b =>
                 {
-                    b.HasOne("ClickPick.Models.Brand", "Brand")
-                        .WithMany("Products")
-                        .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Ecommerce.Models.Category", "Catagory")
                         .WithMany("Products")
                         .HasForeignKey("CatagoryId")
@@ -640,8 +542,6 @@ namespace Ecommerce.Migrations
 
                     b.Navigation("ApplicationUser");
 
-                    b.Navigation("Brand");
-
                     b.Navigation("Catagory");
                 });
 
@@ -652,10 +552,6 @@ namespace Ecommerce.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("ClickPick.Models.VendorRequest", null)
-                        .WithMany("ProductImgs")
-                        .HasForeignKey("VendorRequestId");
 
                     b.Navigation("Product");
                 });
@@ -726,16 +622,6 @@ namespace Ecommerce.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("ClickPick.Models.Brand", b =>
-                {
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("ClickPick.Models.VendorRequest", b =>
-                {
-                    b.Navigation("ProductImgs");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.ApplicationUser", b =>
