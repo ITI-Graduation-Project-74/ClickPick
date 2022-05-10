@@ -30,9 +30,9 @@ namespace Ecommerce.Models
 
         //Relation products with catagory
 
-
-        [ForeignKey("BrandId")]
+        
         public virtual Brand Brand { get; set; }
+        [ForeignKey("Brand")]
         public int BrandId { get; set; }
 
 
@@ -50,6 +50,10 @@ namespace Ecommerce.Models
         //Relation With Product Imgs
 
         public virtual List<ProductImg> ProductImgs { get; set; }
+
+        // Relation With OrderDetails 
+        public virtual List <Product_OrderDetails> Product_OrderDetails { get; set; }
+
 
     }
 }
