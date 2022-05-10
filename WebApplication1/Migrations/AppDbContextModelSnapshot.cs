@@ -273,7 +273,7 @@ namespace Ecommerce.Migrations
                     b.Property<string>("SessionId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Shipping")
+                    b.Property<int>("Shipping");
 
                     b.Property<string>("PaymentStripeId")
                         .HasColumnType("nvarchar(max)");
