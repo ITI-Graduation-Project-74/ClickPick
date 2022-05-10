@@ -27,5 +27,11 @@ namespace Ecommerce.Models
         [NotMapped]
         public  double Price { get; set; }
 
+        ////order details relation
+        //[ForeignKey("OrderDetailsID")]
+
+        //public int? OrderDetailsID { get; set; }
+        //public virtual OrderDetails OrderDetails { get; set; }  
+
     }
 }

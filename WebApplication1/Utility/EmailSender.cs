@@ -7,31 +7,33 @@ namespace ClickPick.Utility
 {
     public class EmailSender : IEmailSender
     {
-        public async Task SendEmailAsync(string email, string subject, string htmlMessage)
+        public  Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
+
             var fromEmail = "esraa.abdelmonem.hassan@gmail.com";
             var fromPassword = "esraa12345";
 
-            var message = new MailMessage();
-            message.From = new MailAddress(fromEmail);
-            message.Subject = subject;
 
-            message.To.Add(email);
+            //var message = new MailMessage();
+            //message.From = new MailAddress(fromEmail);
+            //message.Subject = subject;
 
-            message.Body = $"<html> <body>{htmlMessage} </body></html>";
-            message.IsBodyHtml = true;
+            //message.To.Add(email);
 
-            var smtpClient = new SmtpClient(host: "smtp.gmail.com")
-            {
-                Port = 587,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromEmail, fromPassword),
-                EnableSsl = true,
+            //message.Body = $"<html> <body>{htmlMessage} </body></html>";
+            //message.IsBodyHtml = true;
 
-            };
+            //var smtpClient = new SmtpClient(host: "smtp.gmail.com")
+            //{
+            //    Port = 587,
+            //    UseDefaultCredentials = false,
+            //    Credentials = new NetworkCredential(fromEmail, fromPassword),
+            //    EnableSsl = true,
 
-            smtpClient.Send(message);
-            //return Task.CompletedTask;
+            //};
+
+            //smtpClient.Send(message);
+            return Task.CompletedTask;
         }
 
     }
