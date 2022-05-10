@@ -48,6 +48,7 @@ namespace ClickPick.Controllers
                 stripeTotalAmount += (long)(item.Product.Price * 100);
                 Products.Add(item.Product);
             }
+          
 
             //OrderHeader
             var orderHeaderSession = JsonConvert.DeserializeObject<OrderHeader>(HttpContext.Session.GetString("orderHeader"));
@@ -62,7 +63,7 @@ namespace ClickPick.Controllers
             {
 
                 OrderHeaderId= orderHeader.Id,
-                Products = Products,
+                Products = new List<Product>(Products),
                 OrderDateTime = DateTime.Now,
                 PaymentId = payment.Id,
                 status="Pending"
@@ -134,7 +135,9 @@ namespace ClickPick.Controllers
 
 
             HttpContext.Session.Remove("coupon");
+            HttpContext.Session.Remove("orderHeader");
             TempData.Remove("USD");
+
 
             return View();
         }

@@ -54,7 +54,7 @@ namespace Ecommerce.Controllers
         
 
         // Order History 
-        public async Task<IActionResult> OrdersHistory()
+        public  IActionResult OrdersHistory()
         {
             //user 
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -65,7 +65,7 @@ namespace Ecommerce.Controllers
             List<OrderDetails> orders = new List<OrderDetails>();
             foreach (var orderHeaderItem in UserorderHeaders)
             {
-                List<OrderDetails> ordersI = await _context.OrderDetails.GetAllEagerLodingAsync(a => a.OrderHeaderId == orderHeaderItem.Id, new[] { "Products" });
+                List<OrderDetails> ordersI =  _context.OrderDetails.FindAll(a => a.OrderHeaderId == orderHeaderItem.Id).ToList();
                 orders.AddRange(ordersI);
             }
             
@@ -73,12 +73,17 @@ namespace Ecommerce.Controllers
             return View();
         }
 
-        public async Task<IActionResult> OrderHistoryDetails( int Id)
+        public  IActionResult OrderHistoryDetails( int Id)
         {
-           List<OrderDetails> orderHistoryDetail = await _context.OrderDetails.GetAllEagerLodingAsync(c => c.Id == Id, new[] { "Products" });
-            OrderDetails orderHistoryDetailWithoutProducts = orderHistoryDetail[0];
-            OrderHeader orderHeaderHistory = _context.OrderHeaders.Find(y => y.Id == orderHistoryDetailWithoutProducts.OrderHeaderId);
-            ViewBag.Orders=orderHistoryDetail;
+            //List<OrderDetails> orderHistoryDetail = await _context.OrderDetails.GetAllEagerLodingAsync(c => c.Id == Id, new[] { "Products" });
+            // OrderDetails orderHistoryDetailWithoutProducts = orderHistoryDetail[0];
+            // OrderHeader orderHeaderHistory = _context.OrderHeaders.Find(y => y.Id == orderHistoryDetailWithoutProducts.OrderHeaderId);
+            // ViewBag.Orders=orderHistoryDetail;
+            OrderDetails order = _context.OrderDetails.Find(c => c.Id == Id);
+            List <Product> products= order.Products;
+            OrderHeader orderHeaderHistory = _context.OrderHeaders.Find(y => y.Id == order.OrderHeaderId);
+            ViewBag.order = order;
+            ViewBag.Products = products;
             ViewBag.Header=orderHeaderHistory;
             return View();
         }
