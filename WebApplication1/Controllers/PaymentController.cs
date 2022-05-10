@@ -40,34 +40,44 @@ namespace ClickPick.Controllers
                 ListCart = _context.ShoppingCartServices
                .FindAll(c => c.ApplicationUserId == claim.Value)
             };
-            List<Product> Products = new List<Product>();
-            long stripeTotalAmount = 0;
 
-            foreach (var item in cart.ListCart) 
-            {
-                stripeTotalAmount += (long)(item.Product.Price * 100);
-                Products.Add(item.Product);
-            }
+           
 
             //OrderHeader
             var orderHeaderSession = JsonConvert.DeserializeObject<OrderHeader>(HttpContext.Session.GetString("orderHeader"));
             OrderHeader orderHeader = orderHeaderSession;
             _context.Payments.Add(payment);
-            _context.Complete();
             _context.OrderHeaders.Add(orderHeader);
             _context.Complete();
-
 
             OrderDetails orderDetails = new OrderDetails()
             {
 
                 OrderHeaderId= orderHeader.Id,
-                Products = Products,
                 OrderDateTime = DateTime.Now,
                 PaymentId = payment.Id,
                 status="Pending"
-
             };
+
+            _context.OrderDetails.Add(orderDetails);
+            _context.Complete();
+
+            long stripeTotalAmount = 0;
+
+            foreach (var item in cart.ListCart)
+            {
+                stripeTotalAmount += (long)(item.Product.Price * 100);
+
+                Product_OrderDetails productDetails = new Product_OrderDetails()
+                { ProductId = item.ProductId, OrderDetailsId = orderDetails.Id };
+                _context.Product_OrderDetails.Add(productDetails);
+
+                //orderDetails.Product_OrderDetails.Add(productDetails);
+                //item.Product.Product_OrderDetails.Add(productDetails);
+            }
+            _context.Complete();
+
+
             if (coupon.Id !=0)
             {
                 orderDetails.CouponId = coupon.Id;
@@ -76,11 +86,11 @@ namespace ClickPick.Controllers
             {
                 orderDetails.CouponId = null;
             }
-            _context.OrderDetails.Add(orderDetails);
+
             _context.Complete();
 
             // Payment With Stripe 
-        if (Method == "Stripe")
+            if (Method == "Stripe")
             {
                 var domain = "https://localhost:7199/";
                 var options = new SessionCreateOptions

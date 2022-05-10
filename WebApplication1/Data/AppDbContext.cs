@@ -24,6 +24,7 @@ namespace Ecommerce.Data
         {
 
             base.OnModelCreating(builder);
+
             builder.Entity<UsersWithorder>(
                  eb =>
                  {
@@ -32,6 +33,11 @@ namespace Ecommerce.Data
                      eb.Property(v => v.FirstName).HasColumnName("FirstName");
                  });
 
+            builder.Entity<Product_OrderDetails>(
+                  PO =>
+                  {
+                      PO.HasKey(c=>new {c.ProductId,c.OrderDetailsId});
+                  });
 
         }
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
@@ -41,8 +47,9 @@ namespace Ecommerce.Data
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ShoppingCart> ShoppingCart { get; set; }
-
         public virtual DbSet<WishList> WishLists { get; set; }
+
+        public virtual DbSet<Product_OrderDetails> Product_OrderDetails { get; set; }
 
 
 

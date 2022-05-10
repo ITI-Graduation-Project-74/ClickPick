@@ -7,7 +7,7 @@ namespace Ecommerce.Models
     {
         public OrderDetails()
         {
-           Products = new List<Product>();
+            Product_OrderDetails = new List<Product_OrderDetails>();
             //Products = new IEnumerable<ShoppingCart>();
         }
         [Key]
@@ -24,8 +24,8 @@ namespace Ecommerce.Models
 
 
         //Relation with product
+        public virtual List<Product_OrderDetails> Product_OrderDetails { get; set; }
 
-         public virtual List<Product> Products { get; set; }
         //Relation with copoun
         public int? CouponId { get; set; }
         public virtual Coupon Coupon { get; set; }
