@@ -20,8 +20,6 @@ namespace Ecommerce.Models
         [ForeignKey("OrderHeaderId")]
         public int OrderHeaderId { get; set; }
 
-        public int Quantatiy { get; set; }
-
         public virtual OrderHeader OrderHeader { get; set; }
 
 

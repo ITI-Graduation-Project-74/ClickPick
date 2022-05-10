@@ -4,6 +4,7 @@ using Ecommerce.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220509230154_Date5102022")]
+    partial class Date5102022
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -215,24 +217,11 @@ namespace Ecommerce.Migrations
                     b.Property<int?>("CouponId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("OrderDateTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("OrderHeaderId")
                         .HasColumnType("int");
 
                     b.Property<int>("PaymentId")
                         .HasColumnType("int");
-
-
-
-                    b.Property<string>("status")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Quantatiy")
-                        .HasColumnType("int");
-
-
 
                     b.HasKey("Id");
 
@@ -271,17 +260,13 @@ namespace Ecommerce.Migrations
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-
-                    b.Property<int>("Shipping")
+                    b.Property<DateTime>("OrderDateTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("PaymentStripeId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PhoneNumber")
-
                         .HasColumnType("int");
 
                     b.Property<string>("SessionId")

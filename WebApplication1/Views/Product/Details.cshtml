@@ -1,6 +1,5 @@
 @model ShoppingCart
 
-=======
 @{
     ViewData["title"] = "Product Details";
    
@@ -15,14 +14,13 @@
     }
 
 
-s
+
 <!-- Start Item Details -->
-<section class="item-details section">
+<form method="post">
+    <input hidden asp-for="ProductId" />
+    <section class="item-details section">
         <div class="container">
             <div class="top-area">
-
-                    <form method="post">
-                        <input hidden asp-for="ProductId" />
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12 col-12">
                         <div class="product-images">
@@ -35,12 +33,12 @@ s
                                     @foreach (var item in @Model.Product.ProductImgs)
                                     {
                                 <img src="@item.ImgUrl" 
-                                style="width:120px;height:100px" class="img" alt="ProductImg"
-                                     }
-                                        </div>
-                                    </main>
+                                style="width:120px;height:100px" class="img" alt="ProductImg">
+ 
+                                    }
                                 </div>
-                      </div>
+                            </main>
+                        </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-12">
                         <div class="product-info">
@@ -69,31 +67,25 @@ s
                                             class="btn" style="width: 100%;">Add to Cart</button>
                                         </div>
                                     </div>
-                                    <div class="bottom-content">
-                                        <div class="row align-items-end">
-                                            <div class="col-lg-4 col-md-4 col-12">
-                                                <div class="button cart-button">
-                                                    <button type="submit" value="Add To Cart"  class="btn" style="width: 100%;">Add to Cart</button> 
-                                            
-                                                </div>
-                                            </div>
                                    
-                                            <div class="col-lg-4 col-md-4 col-12">
-                                       
-                                            </div>
+                                    @*<div class="col-lg-4 col-md-4 col-12">
+                                        <div class="wish-button">
+                                            <button class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
                                         </div>
-                                    </div>
+                                    </div>*@
                                 </div>
                             </div>
                         </div>
-                      </form>
-                      <form method="post" asp-controller="WishList" asp-action="wishList">
-                         <input hidden asp-for="ProductId" />
-                         <div class="wish-button">
+                    </div>
+                </div>
+                </form>
+                <form method="post" asp-controller="WishList" asp-action="wishList">
+                   <input hidden asp-for="ProductId" />
+                        <div class="wish-button">
                                             
-                             <button type="submit" value="Add To Wish List" 
-                                 class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
-                           </div>
+                            <button type="submit" value="Add To Wish List" 
+                                class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
+                        </div>
                      </form>
             </div>
             <div class="product-details-info">
@@ -114,11 +106,12 @@ s
                                     <li>Full Control of HERO6 Black</li>
                                     <li>Use App for Dedicated Camera Operation</li>
                                 </ul>
-
                             </div>
-                         </div>
-                     </div>
-                </div>
+                        </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </section>
 
  

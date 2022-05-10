@@ -23,7 +23,7 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
         public IBaseRepository<WishList> WishLists { get; }
 
 
-        public IBaseRepository<VendorRequest> VendorRequest { get; }
+      
         public IBaseRepository<Brand> Brands { get; }
 
         int Complete();
