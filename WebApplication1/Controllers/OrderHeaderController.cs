@@ -15,7 +15,7 @@ namespace Ecommerce.Controllers
         {
             _context = context;
         }
-        public IActionResult Index(int Phone, string Address, string? Note, String? BillingAddress)
+        public IActionResult Index(string Phone, string Address,int Shipping, string? Note, String? BillingAddress)
         {
 
             
@@ -33,14 +33,15 @@ namespace Ecommerce.Controllers
             };
             ViewBag.ShoppingCartVM = cart;
 
-
+            ApplicationUser appuser = _context.ApplicationUsers.Find(a => a.Id == claim.Value);
             OrderHeader orderHeader = new OrderHeader()
             {
-
+                FirstName=appuser.FirstName,
+                LastName=appuser.LastName,
                 PhoneNumber = Phone,
                 Address = Address,
                 Note = Note,
-                OrderDateTime = DateTime.Now,
+                Shipping= Shipping,
                 BillingAddress = BillingAddress,
                 ApplicationUserId=claim.Value
             };
@@ -53,11 +54,41 @@ namespace Ecommerce.Controllers
         
 
         // Order History 
-        public IActionResult OrdersHistory()
+        public async Task<IActionResult> OrdersHistory()
         {
+            //user 
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            //getting order
+            List<OrderHeader> UserorderHeaders = _context.OrderHeaders.FindAll(a => a.ApplicationUserId == claim.Value).ToList();
+            List<OrderDetails> orders = new List<OrderDetails>();
+            foreach (var orderHeaderItem in UserorderHeaders)
+            {
+                List<OrderDetails> ordersI = await _context.OrderDetails.GetAllEagerLodingAsync(a => a.OrderHeaderId == orderHeaderItem.Id, new[] { "Products" });
+                orders.AddRange(ordersI);
+            }
+            
+            ViewBag.OrderDetails = orders;
             return View();
         }
 
+        public async Task<IActionResult> OrderHistoryDetails( int Id)
+        {
+           List<OrderDetails> orderHistoryDetail = await _context.OrderDetails.GetAllEagerLodingAsync(c => c.Id == Id, new[] { "Products" });
+            OrderDetails orderHistoryDetailWithoutProducts = orderHistoryDetail[0];
+            OrderHeader orderHeaderHistory = _context.OrderHeaders.Find(y => y.Id == orderHistoryDetailWithoutProducts.OrderHeaderId);
+            ViewBag.Orders=orderHistoryDetail;
+            ViewBag.Header=orderHeaderHistory;
+            return View();
+        }
+        public IActionResult CancelOrder(int orderId) {
+           OrderDetails order= _context.OrderDetails.Find(a => a.Id == orderId);
+            order.status = "Canceled";
+            _context.Complete();
+
+            return RedirectToAction("OrdersHistory");
+        }
 
 
 

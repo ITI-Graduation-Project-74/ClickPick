@@ -1,0 +1,96 @@
+﻿@section css{<link rel="stylesheet" href="~/css/orderHistoryDetails.css">}
+ @foreach(var order in ViewBag.Orders){
+<div class="card">
+            <div class="row">
+                <div class="col-md-8 cart">
+                    <div class="title">
+                        <div class="row">
+                            <div class="col"><h4><b>Order ID NO. @order.Id</b></h4></div>
+                            <div class="col align-self-center text-right text-muted">3 Items</div>
+                        </div>
+                    </div> 
+                   
+                @foreach(var item in order.Products)
+                {
+                 <div class="row border-top border-bottom">
+                        <div class="row main align-items-center">
+                           <a href="/Product/Details?ProductId=@(item.Id)">
+                               <div class="col-2"><img class="img-fluid" src=@item.ImgUrl></div></a>
+                            <div class="col">
+                                <div class="row text-muted">@item.Name</div>
+                                <div class="row">Cotton T-shirt</div>
+                            </div>
+                            
+                            <div class="col">&dolar; @item.Price <span class="close">&#10005;</span></div>
+                        </div>
+                    </div>   
+                }
+            
+                    
+                    
+                    <div class="back-to-shop"><a href="/OrderHeader/OrdersHistory">&leftarrow; <span class="text-muted">Back to shop</span></a></div>
+                </div>
+                <div class="col-md-4 summary">
+                    <div><h5><b>Bill</b></h5></div>
+                    <hr>
+                  
+                        @*<p>SHIPPING Address</p>
+                        <select><option class="text-muted">Standard-Delivery- &euro;5.00</option></select>*@
+                        <p>SHIPPING ADDRESS</p>
+                        <p id="code" > @ViewBag.Header.Address</p>
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">Phone</div>
+                        <div class="col text-right"> @ViewBag.Header.PhoneNumber </div>
+                    </div>
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">Customer Name</div>
+                        <div class="col text-right"> 
+                            <span>@(ViewBag.Header.FirstName) </span><span>@(ViewBag.Header.LastName)</span> </div>
+                    </div>
+                       <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">Date </div>
+                        <div class="col text-right"> 
+                          <span>@order.OrderDateTime)</span> </div>
+                    </div>
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">Shipping fee </div>
+                        <div class="col text-right"> 
+                          <span>@ViewBag.Header.Shipping</span> </div>
+                    </div>
+                @if(@ViewBag.Header.BillingAddress != null)
+                {
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">Billing Address</div>
+                        <div class="col text-right"> @ViewBag.Header.BillingAddress</div>
+                    </div>
+                }
+                   @if(@ViewBag.Header.Note != null)
+                {
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">Notes</div>
+                        <div class="col text-right"> @ViewBag.Header.Note</div>
+                    </div>
+                }
+                    @if(@order.status =="Pending"){
+                        <a onclick="onclick="return confirm('are you sure?');" href="/OrderHeader/CancelOrder?orderId=@(order.Id)" class="btn btn-danger"> Cancel Order</a>
+                        }
+                          else if (@order.status=="Canceled"){<p class="text-danger">Pending</p>}
+                              else{<p class="text-success">Completed</p>}
+                </div>
+            </div>
+            
+        </div>}
+            
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+function confirm_delete() {
+  return confirm('are you sure?');
+}
+</script>
+    
+     
+    

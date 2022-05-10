@@ -16,5 +16,10 @@ namespace Ecommerce.Models.Repositories
         T Find(Expression<Func<T, bool>> expression);
 
         IEnumerable<T> FindAll(Expression<Func<T, bool>> expression);
-    }
+        Task<List<T>> GetAllEagerLodingAsync(Expression<Func<T, bool>> expression, string[] includes = null);
+
+        Task<T> GetEagerLodingAsync(Expression<Func<T, bool>> expression, string[] includes = null);
+
+
+}
 }

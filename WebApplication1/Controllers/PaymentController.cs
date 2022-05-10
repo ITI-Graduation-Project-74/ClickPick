@@ -56,8 +56,10 @@ namespace ClickPick.Controllers
             OrderDetails orderDetails=new OrderDetails()
             {
                 OrderHeaderId= orderHeader.Id,
-                Products= Products,
-                PaymentId= payment.Id,
+                Products = Products,
+                OrderDateTime = DateTime.Now,
+                PaymentId = payment.Id,
+                status="Pending"
                 
             };
             if (coupon.Id !=0)
@@ -71,6 +73,11 @@ namespace ClickPick.Controllers
             _context.OrderDetails.Add(orderDetails);
            
             _context.Complete();
+            orderHeader.OrderDetails.Add(orderDetails);
+            _context.Complete();
+
+         
+
             HttpContext.Session.Remove("coupon");
             TempData.Remove("USD");
             return View();

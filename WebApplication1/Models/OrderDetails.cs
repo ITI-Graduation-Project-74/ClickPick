@@ -7,11 +7,14 @@ namespace Ecommerce.Models
     {
         public OrderDetails()
         {
-            Products = new List<Product>();
+           Products = new List<Product>();
+            //Products = new IEnumerable<ShoppingCart>();
         }
         [Key]
         public int Id { get; set; }
+        public DateTime OrderDateTime { get; set; }
 
+        public string status { get; set; }
         //Relation with OrderHeader
 
         [ForeignKey("OrderHeaderId")]
@@ -20,9 +23,8 @@ namespace Ecommerce.Models
 
 
         //Relation with product
-       
-        public virtual List<Product> Products { get; set; }
 
+         public virtual List<Product> Products { get; set; }
         //Relation with copoun
         public int? CouponId { get; set; }
         public virtual Coupon Coupon { get; set; }
