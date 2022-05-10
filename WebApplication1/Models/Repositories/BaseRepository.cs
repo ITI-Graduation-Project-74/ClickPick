@@ -1,5 +1,7 @@
 ﻿using Ecommerce.Data;
 using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Ecommerce.Models.Repositories
 {
@@ -59,5 +61,29 @@ namespace Ecommerce.Models.Repositories
         {
             context.Set<T>().Update(entity);
         }
+        public async Task<List<T>> GetAllEagerLodingAsync(Expression<Func<T, bool>> expression, string[] includes = null)
+        {
+            IQueryable<T> query = context.Set<T>();
+            if (includes != null)
+            {
+                foreach (var item in includes)
+                    query = query.Include(item);
+            }
+            return await query.Where(expression).ToListAsync();
+
+        }
+        public async Task<T> GetEagerLodingAsync(Expression<Func<T, bool>> expression, string[] includes = null)
+        {
+            IQueryable<T> query = context.Set<T>();
+            if (includes != null)
+            {
+                foreach (var item in includes)
+                    query = query.Include(item);
+            }
+            return await query.SingleOrDefaultAsync(expression);
+
+        }
+
+
     }
 }

@@ -60,13 +60,13 @@ namespace ClickPick.Controllers
 
             OrderDetails orderDetails = new OrderDetails()
             {
-                
-                OrderHeaderId = orderHeader.Id,
-             
+
+                OrderHeaderId= orderHeader.Id,
                 Products = Products,
-              
-                PaymentId= payment.Id,
-                
+                OrderDateTime = DateTime.Now,
+                PaymentId = payment.Id,
+                status="Pending"
+
             };
             if (coupon.Id !=0)
             {
@@ -132,27 +132,14 @@ namespace ClickPick.Controllers
             
 
 
+
             HttpContext.Session.Remove("coupon");
             TempData.Remove("USD");
 
             return View();
         }
 
-        //public IActionResult OrderConfirmation(int id)
-        //{
-        //    OrderHeader orderHeader = _context.OrderHeaders.Find(x => x.Id == id);
-
-        //    var service = new SessionService();
-
-        //    Session session = service.Get(orderHeader.SessionId);
-
-        //    // check the stripe status 
-
-        //    if (session.PaymentStatus.ToLower() == "Paid")
-        //    {
-                
-        //    }
-        //}
+      
         
         public IActionResult OrderConfirmedWithStripe()
         {
