@@ -1,22 +1,28 @@
-﻿using ClickPick.Utility;
+using ClickPick.Utility;
 using Ecommerce.Data;
 using Ecommerce.Models;
 using Ecommerce.Models.Repositories.UnitOfWork;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Controllers
 {
 
-    [Authorize(Roles = ApplicationRoles.Role_Admin)] 
+
+
+=======
+    [Authorize(Roles = ApplicationRoles.Role_Admin)]
+
     public class AdminPortal : Controller
     {
         private readonly AppDbContext _context;
-
-        public AdminPortal(AppDbContext context)
+        private readonly IEmailSender _email;
+        public AdminPortal(AppDbContext context, IEmailSender email)
         {
             _context = context;
+            this._email = email;
         }
 
         public IActionResult Index()
@@ -44,17 +50,20 @@ namespace Ecommerce.Controllers
         }
 
         [HttpPost]
-        public IActionResult Approve(int id)
+        public async Task <IActionResult> Approve(int id)
         {
            
                 if(id != null)
                 {
 
-                    var Request = _context.Products.Where(x => x.Id == id).FirstOrDefault();
-                    Request.IsApproved = true;
-                    _context.Update(Request);
+                    var Product = _context.Products.Where(x => x.Id == id).FirstOrDefault();
+                    Product.IsApproved = true;
+                    _context.Update(Product);
                     _context.SaveChanges();
-                    return RedirectToAction("PendingRequest");
+                var Email = _context.Users.FirstOrDefault(x => x.Id==Product.UserId).Email;
+            await _email.SendEmailAsync(Email, "Approved Product", "The Product is sufficient to display it on our Website");
+
+                return RedirectToAction("PendingRequest");
                 }
             
            
@@ -79,10 +88,20 @@ namespace Ecommerce.Controllers
             var product = await _context.Products.FindAsync(id);
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
+            var Email = _context.Users.FirstOrDefault(x => x.Id == product.UserId).Email;
+
+            await _email.SendEmailAsync(Email, "Reject Product", "The Product is not sufficient to display it on our Website");
             return RedirectToAction("PendingRequest");
 
         }
 
+
+        public IActionResult UsersWithOrders()
+        {
+            var viewresult = _context.UsersWithorders.ToList();
+
+            return View(viewresult);
+        }
 
     }
 }

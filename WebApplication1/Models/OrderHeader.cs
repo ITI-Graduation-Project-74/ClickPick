@@ -28,6 +28,11 @@ namespace Ecommerce.Models
 
         public string? BillingAddress { get; set; }
 
+        // Stripe Id
+        public string? SessionId { get; set; }
+
+        public string? PaymentStripeId { get; set; }
+
  
         // Relation With ApplicationUser
         [ForeignKey("ApplicationUser")]

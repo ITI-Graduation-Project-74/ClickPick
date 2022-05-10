@@ -1,4 +1,7 @@
-﻿
+﻿@{
+    double i = 0;
+    double ii = 0;
+}
  <!-- Preloader -->
   <div class="preloader">
     <div class="preloader-inner">
@@ -17,9 +20,10 @@
       <div class="d-table-cell">
         <div class="container">
           <div class="success-content">
-            <img src="~/Imgs/Payment/orderconfirmed.png" style="width:300px; height:300px;" />
-            <h3>Your Order Sent Successfully</h3>
-            <p>Thanks for contacting with us, We will get back to you asap.</p>
+              <img src="~/Imgs/Payment/orderCanceled.png" style="width:300px; height:300px;" />
+            @*<i class="lni lni-envelope"></i>*@
+            <h3>Your Order Has Been Canceled </h3>
+            <p>Canceling your order is the last thing we want to do but some situations come up where cancellation is the best option to save you time and money..</p>
             <div class="button">
                 
               <a asp-controller="product" asp-action="Index" class="btn">Back to Home</a>
@@ -42,7 +46,6 @@
     function fadeout() {
       document.querySelector('.preloader').style.opacity = '0';
       document.querySelector('.preloader').style.display = 'none';
-      
     }
     setTimeout("location.replace('https://localhost:7199/')",2000)
   </script>

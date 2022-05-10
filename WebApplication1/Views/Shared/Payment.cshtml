@@ -30,112 +30,10 @@
     <!-- End Breadcrumbs -->
 
     <!--====== Checkout Form Steps Part Start ======-->
-    <section class="checkout-wrapper section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="checkout-steps-form-style-1">
-        @*    <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Cash" checked>
-  <label class="form-check-label fs-3" for="flexRadioDefault1">
-   Cash on Delievry
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Paypal">
-  <label class="form-check-label fs-3" for="flexRadioDefault2">
-    PayPal
-  </label>
-</div>*@
-<!--===========================================================-->
-<form asp-action="Index" asp-controller="Payment">
-<div class="grid">
-  <label class="card " >
-        <img class="card-img-top" src="~/Imgs/Payment/cod-istock.jpg" alt="Card image cap">
-
-    <input name="Method" class="radio" type="radio" value="Cash" checked>
-    
-    <span class="plan-details">
-      <span class="plan-type">Cash On Delievry</span>
-     
-    </span>
-  </label>
-  <label class="card ">
-   <img class="card-img-top" src="~/Imgs/Payment/paypal.jpg" alt="Card image cap">
-    <input name="Method" class="radio" type="radio" value="Paypal">
-    <span class="hidden-visually"> PayPal</span>
-    
-  </label>
- 
-</div>
-<!--=============================================================-->
-                    <ul id="accordionExample">
-              
-                     <div id="PaymentFormDiv">
-                         
-                            <li>
-                                <h6 class="title" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                    aria-expanded="true" aria-controls="collapseThree">Payment Details </h6>
-                                <section class="checkout-steps-form-content collapse show" id="collapseThree"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="checkout-payment-form">
-                                                <div class="single-form form-default">
-                                                    <label>Cardholder Name</label>
-                                                    <div class="form-input form">
-                                                        <input type="text" placeholder="Cardholder Name">
-                                                    </div>
-                                                </div>
-                                                <div class="single-form form-default">
-                                                    <label>Card Number</label>
-                                                    <div class="form-input form">
-                                                        <input id="credit-input" type="text"
-                                                            placeholder="0000 0000 0000 0000">
-                                                        <img src="assets/images/payment/card.png" alt="card">
-                                                    </div>
-                                                </div>
-                                                <div class="payment-card-info">
-                                                    <div class="single-form form-default mm-yy">
-                                                        <label>Expiration</label>
-                                                        <div class="expiration d-flex">
-                                                            <div class="form-input form">
-                                                                <input type="text" placeholder="MM">
-                                                            </div>
-                                                            <div class="form-input form">
-                                                                <input type="text" placeholder="YYYY">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="single-form form-default">
-                                                        <label>CVC/CVV <span><i
-                                                                    class="mdi mdi-alert-circle"></i></span></label>
-                                                        <div class="form-input form">
-                                                            <input type="text" placeholder="***">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                                 </div>
-                            </li>
-
-                          
-                        </ul>
-                         <div class="single-form form-default button">
-                          <button type="submit" class="btn">Buy now</button>
-                          </div>
-                </form>          
-                        </div>
-                    </div>
-                </div>
-              
-                <div class="col-lg-12">
+    <section class="checkout-wrapper section mt-1">
+        <h4 class="text-center text-muted"> Please Review Your Pricing Table And Confirm Your Checkout Method </h4>
+            <div class="col-lg-8 col-md-12 col-12 mx-auto mb-5">
                     <div class="checkout-sidebar">
-                        
                         <div class="checkout-sidebar-price-table mt-30">
                             <h5 class="title">Pricing Table</h5>
 
@@ -166,13 +64,48 @@
                                         ii = i;
                                     }
 
-                                     
                                         <span id="txtOrderTotal"> @ii.ToString("c") </span> </strong>
                                    </li>
                                </ul>
+                                    </div>
                                </div>
-                               </div>
+                    </div>
+                            <hr />
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="checkout-steps-form-style-1">
+    
+          <form asp-action="Index" asp-controller="Payment">
+          <div class="row justify-content-lg-between justify-content-md-between justify-content-sm-between">
+            <label class="card " style="width: 18rem;" >
+                  <img class="card-img-top" src="~/Imgs/Payment/COD.jpg" style="width:250px; height:200px" alt="Card image cap">
+              <input name="Method" class="radio" type="radio" value="Cash" checked>
+              
+              <span class="plan-details">
+                <span class="plan-type">Cash On Delievry</span>
+               
+              </span>
+            </label>
+            <label class="card " style="width: 18rem;">
+                <img class="card-img-top" src="~/Imgs/Payment/Stripe.png" style="width:350px; height:250px" alt="Card image cap">
+                 <input name="Method" class="radio" type="radio" value="Stripe">
+                 <span class="hidden-visually"> Stripe</span>
+              
+            </label>
+ 
         </div>
+        <hr />
+          <div class="single-form form-default button float-end mt-5">
+          <button type="submit" class="btn mt-3">Buy now</button>
+                   </div>
+        </form>          
+                        </div>
+                    </div>
+                </div>
+              
+            
         </div>
         </div>
     </section>

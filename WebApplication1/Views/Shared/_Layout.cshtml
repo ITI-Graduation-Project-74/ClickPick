@@ -43,7 +43,7 @@
                                 </a>
                                 </li>
                                 <li>
-                                    <a asp-controller="product" asp-action="contactUs"
+                                    <a asp-controller="Home" asp-action="contactUs"
                                 >Contact Us</a>
                                 </li>
                                  @if (User.IsInRole(ApplicationRoles.Role_User))
@@ -130,9 +130,9 @@
                             </div>
                             <div class="navbar-cart">
                                 <div class="wishlist">
-                                    <a href="javascript:void(0)">
+                                    <a asp-controller="WishList" asp-action="Index">
                                         <i class="lni lni-heart"></i>
-                                        <span class="total-items">0</span>
+                                        @*<span class="total-items">0</span>*@
                                     </a>
                                 </div>
                                 <div class="cart-items">
@@ -340,10 +340,11 @@
 </html>
 
 
-<script src="~/lib/jquery/dist/jquery.min.js">
+@*<script src="~/lib/jquery/dist/jquery.min.js">*@
 
 <!-- ========================= JS here ========================= -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/tiny-slider.js"></script>
     <script src="assets/js/glightbox.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="~/js/validate.js" ></script>

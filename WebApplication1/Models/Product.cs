@@ -1,4 +1,5 @@
 ﻿
+using ClickPick.Models;
 using Ecommerce.Models.Enum;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,6 +29,12 @@ namespace Ecommerce.Models
 
 
         //Relation products with catagory
+
+
+        [ForeignKey("BrandId")]
+        public virtual Brand Brand { get; set; }
+        public int BrandId { get; set; }
+
 
         [ForeignKey("CatagoryId")]
         public virtual Category Catagory { get; set; }

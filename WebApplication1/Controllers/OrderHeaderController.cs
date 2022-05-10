@@ -17,9 +17,6 @@ namespace Ecommerce.Controllers
         }
         public IActionResult Index(string Phone, string Address,int Shipping, string? Note, String? BillingAddress)
         {
-
-            
-
             //Order Details
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
@@ -33,11 +30,13 @@ namespace Ecommerce.Controllers
             };
             ViewBag.ShoppingCartVM = cart;
 
-            ApplicationUser appuser = _context.ApplicationUsers.Find(a => a.Id == claim.Value);
+
+            ApplicationUser user = _context.ApplicationUsers.Find(u => u.Id == claim.Value);
+
             OrderHeader orderHeader = new OrderHeader()
             {
-                FirstName=appuser.FirstName,
-                LastName=appuser.LastName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
                 PhoneNumber = Phone,
                 Address = Address,
                 Note = Note,
@@ -45,9 +44,10 @@ namespace Ecommerce.Controllers
                 BillingAddress = BillingAddress,
                 ApplicationUserId=claim.Value
             };
-            //save the orderHeader
-            //_context.OrderHeaders.Add(orderHeader);
-            //_context.Complete();
+
+           
+            
+
             HttpContext.Session.SetString("orderHeader", JsonConvert.SerializeObject(orderHeader));
             return View("Payment");
         }
@@ -82,6 +82,7 @@ namespace Ecommerce.Controllers
             ViewBag.Header=orderHeaderHistory;
             return View();
         }
+
         public IActionResult CancelOrder(int orderId) {
            OrderDetails order= _context.OrderDetails.Find(a => a.Id == orderId);
             order.status = "Canceled";
@@ -89,6 +90,7 @@ namespace Ecommerce.Controllers
 
             return RedirectToAction("OrdersHistory");
         }
+
 
 
 

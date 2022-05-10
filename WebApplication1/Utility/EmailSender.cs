@@ -9,8 +9,10 @@ namespace ClickPick.Utility
     {
         public  Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            //var fromEmail = "manal.afifi525@gmail.com";
-            //var fromPassword = "1234mM/1234mM/";
+
+            var fromEmail = "esraa.abdelmonem.hassan@gmail.com";
+            var fromPassword = "esraa12345";
+
 
             //var message = new MailMessage();
             //message.From = new MailAddress(fromEmail);
