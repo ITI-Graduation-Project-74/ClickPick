@@ -44,7 +44,7 @@ namespace ClickPick.Controllers
                 ProductId = productId,
                 Product = _context.Products.GetById(productId),
             };
-            TempData["productDetailsId"] = productId;
+            TempData["DetailsProductId"] = productId;
             return View(Obj);
         }
 
@@ -73,14 +73,13 @@ namespace ClickPick.Controllers
             {
                 _context.WishLists.Add(wishList);
                 _context.Complete();
+                TempData["wishList"] = "Add To WishList";
 
             }
-
-
             // Save To Database
             _context.Complete();
 
-            return RedirectToAction("Details" , "Product" , new {ProductId=TempData["productDetailsId"] });
+            return RedirectToAction("Details" , "Product" , new {productId=TempData["DetailsProductId"] });
         }
         public IActionResult delete(int productId)
         {
@@ -93,8 +92,6 @@ namespace ClickPick.Controllers
 
             _context.WishLists.Delete(wishListItem);
             _context.Complete();
-
-
             return RedirectToAction("Index");
         }
            

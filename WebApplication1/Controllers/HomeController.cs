@@ -12,13 +12,13 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-       // private readonly IEmailSender _email;
+        private readonly IEmailSender _email;
 
-        //public HomeController(ILogger<HomeController> logger, IEmailSender email)
-        //{
-        //    _logger = logger;
-        //    this._email = email;
-        //}
+        public HomeController(ILogger<HomeController> logger, IEmailSender email)
+        {
+            _logger = logger;
+            this._email = email;
+        }
 
         public IActionResult Index()
         {
@@ -48,7 +48,6 @@ namespace WebApplication1.Controllers
             if(!ModelState.IsValid) return View();
             try
             {
-
 
                 MailMessage mail =  new MailMessage();
                 mail.From = new MailAddress("omar7mohamed4@gmail.com");

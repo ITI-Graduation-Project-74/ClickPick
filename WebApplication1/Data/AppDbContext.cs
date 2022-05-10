@@ -46,7 +46,6 @@ namespace Ecommerce.Data
 
 
 
-        public virtual DbSet<VendorRequest> VendorRequest { get; set; }
         public virtual DbSet<Brand> Brands { get; set; }
 
 

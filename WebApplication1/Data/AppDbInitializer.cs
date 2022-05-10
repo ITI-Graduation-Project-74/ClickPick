@@ -1,4 +1,5 @@
 ﻿
+using ClickPick.Models;
 using Ecommerce.Models;
 
 namespace Ecommerce.Data
@@ -104,11 +105,66 @@ namespace Ecommerce.Data
                     });
                 context.SaveChanges();
             }
+                // Brand
 
-            // Products
+                if (!context.Brands.Any())
+                {
+                    context.Brands.AddRange(new List<Brand>()
+                    {
+                        new Brand()
+                        {
+
+                            BrandName = "Men's",
+                            
+                        },
+
+                       new Brand()
+                        {
+                            
+                            BrandName = "Kid's",
+                            
+                        },
+                       new Brand()
+                        {
+                           
+                            BrandName = "Mobile",
+
+                           
+
+                        },
+                       new Brand()
+                        {
+                            
+                            BrandName = "Laptop",
+
+                           
+
+                        },
+                       new Brand()
+                        {
+
+                            BrandName = "Shoes",
+
+                            
+
+                        },
+                       new Brand()
+                        {
+                          
+                            BrandName = "Women's",
+
+                           
+
+                        },
+                    });
+                    context.SaveChanges();
+                }
 
 
-            if (!context.Products.Any())
+                // Products
+
+
+                if (!context.Products.Any())
                 {
                     context.Products.AddRange(new List<Product>()
                     {
@@ -121,7 +177,7 @@ namespace Ecommerce.Data
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/1/a.jpg",
 
-
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -134,7 +190,7 @@ namespace Ecommerce.Data
                             Price =30200,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/2/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -147,7 +203,7 @@ namespace Ecommerce.Data
                             Price =23100,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/3/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -159,7 +215,7 @@ namespace Ecommerce.Data
                             Price =4320,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/4/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -173,7 +229,7 @@ namespace Ecommerce.Data
                             Price =5500,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/5/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -186,7 +242,7 @@ namespace Ecommerce.Data
                             Price =7100,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/6/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -200,7 +256,7 @@ namespace Ecommerce.Data
                             Price =8230,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/7/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
                         },
 
@@ -212,7 +268,7 @@ namespace Ecommerce.Data
                             Price =9300,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/8/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
                         },
                              new Product()
@@ -223,7 +279,7 @@ namespace Ecommerce.Data
                             Price =7900,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/9/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -236,7 +292,7 @@ namespace Ecommerce.Data
                             Price =11300,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/10/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -249,7 +305,7 @@ namespace Ecommerce.Data
                             Price =5030,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/11/a.jpg",
-
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -263,6 +319,7 @@ namespace Ecommerce.Data
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/mobiles/12/a.jpg",
 
+                            BrandId=1,
                             CatagoryId=3,
 
 
@@ -279,7 +336,7 @@ namespace Ecommerce.Data
                             Price =660,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/1/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
 
 
@@ -292,7 +349,7 @@ namespace Ecommerce.Data
                             Price =630,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/2/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
 
 
@@ -305,7 +362,7 @@ namespace Ecommerce.Data
                             Price =640,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/3/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
 
 
@@ -318,7 +375,7 @@ namespace Ecommerce.Data
                             Price =750,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/4/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
 
 
@@ -331,7 +388,7 @@ namespace Ecommerce.Data
                             Price =620,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/5/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
                         },
                              new Product()
@@ -342,7 +399,7 @@ namespace Ecommerce.Data
                             Price =410,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/6/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
                         },
                              new Product()
@@ -353,7 +410,7 @@ namespace Ecommerce.Data
                             Price =210,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/7/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
                         },
                             new Product()
@@ -364,7 +421,7 @@ namespace Ecommerce.Data
                             Price =420,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/8/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
                         },
                             new Product()
@@ -375,7 +432,7 @@ namespace Ecommerce.Data
                             Price =8000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/9/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
                         },
                             new Product()
@@ -386,7 +443,7 @@ namespace Ecommerce.Data
                             Price =610,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/10/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
                         },
                             new Product()
@@ -397,7 +454,7 @@ namespace Ecommerce.Data
                             Price =740,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/11/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
                         },
                             new Product()
@@ -408,7 +465,7 @@ namespace Ecommerce.Data
                             Price =450,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/shoese/12/a.jpg",
-
+                            BrandId=2,
                             CatagoryId=5,
                         },
 
@@ -425,7 +482,7 @@ namespace Ecommerce.Data
                             Price =18750,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/1/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                              new Product()
@@ -436,7 +493,7 @@ namespace Ecommerce.Data
                             Price =23000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/2/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                              new Product()
@@ -447,7 +504,7 @@ namespace Ecommerce.Data
                             Price =25000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/3/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                            new Product()
@@ -458,7 +515,7 @@ namespace Ecommerce.Data
                             Price =8000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/4/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                            new Product()
@@ -469,7 +526,7 @@ namespace Ecommerce.Data
                             Price =11500,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/5/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                            new Product()
@@ -480,7 +537,7 @@ namespace Ecommerce.Data
                             Price =13000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/6/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
 
@@ -492,7 +549,7 @@ namespace Ecommerce.Data
                             Price =14000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/7/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                            new Product()
@@ -503,7 +560,7 @@ namespace Ecommerce.Data
                             Price =12000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/8/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                            new Product()
@@ -514,7 +571,7 @@ namespace Ecommerce.Data
                             Price =18000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/9/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                            new Product()
@@ -525,7 +582,7 @@ namespace Ecommerce.Data
                             Price =13000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/10/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                            new Product()
@@ -536,7 +593,7 @@ namespace Ecommerce.Data
                             Price =35000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/11/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
                            new Product()
@@ -547,7 +604,7 @@ namespace Ecommerce.Data
                             Price =4000,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Laptop/12/a.jpg",
-
+                            BrandId=3,
                             CatagoryId=4,
                         },
 
@@ -564,7 +621,7 @@ namespace Ecommerce.Data
                             Price =200,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/1/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -575,7 +632,7 @@ namespace Ecommerce.Data
                             Price =200,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/2/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -586,7 +643,7 @@ namespace Ecommerce.Data
                             Price =300,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/3/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -597,7 +654,7 @@ namespace Ecommerce.Data
                             Price =400,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/4/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -608,7 +665,7 @@ namespace Ecommerce.Data
                             Price =710,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/5/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -619,7 +676,7 @@ namespace Ecommerce.Data
                             Price =820,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/6/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -630,7 +687,7 @@ namespace Ecommerce.Data
                             Price =630,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/7/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -641,7 +698,7 @@ namespace Ecommerce.Data
                             Price =650,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/8/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -652,7 +709,7 @@ namespace Ecommerce.Data
                             Price =740,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/9/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -663,7 +720,7 @@ namespace Ecommerce.Data
                             Price =250,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/10/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -674,7 +731,7 @@ namespace Ecommerce.Data
                             Price =240,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/11/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
                               new Product()
@@ -685,7 +742,7 @@ namespace Ecommerce.Data
                             Price =120,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Kids/12/a.jpg",
-
+                            BrandId=4,
                             CatagoryId=2,
                         },
 
@@ -703,7 +760,7 @@ namespace Ecommerce.Data
                             Price =520,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/Men/1/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -714,7 +771,7 @@ namespace Ecommerce.Data
                             Price =560,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/2/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -725,7 +782,7 @@ namespace Ecommerce.Data
                             Price =230,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/3/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -736,7 +793,7 @@ namespace Ecommerce.Data
                             Price =320,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/4/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -747,7 +804,7 @@ namespace Ecommerce.Data
                             Price =780,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/5/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -758,7 +815,7 @@ namespace Ecommerce.Data
                             Price =150,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/6/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -769,7 +826,7 @@ namespace Ecommerce.Data
                             Price =910,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/7/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -780,7 +837,7 @@ namespace Ecommerce.Data
                             Price =550,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/8/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -791,7 +848,7 @@ namespace Ecommerce.Data
                             Price =660,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/9/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -802,7 +859,7 @@ namespace Ecommerce.Data
                             Price =770,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/10/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -813,7 +870,7 @@ namespace Ecommerce.Data
                             Price =220,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/11/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
@@ -824,7 +881,7 @@ namespace Ecommerce.Data
                             Price =110,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/men/12/a.jpg",
-
+                            BrandId=5,
                             CatagoryId=1,
                         },
 
@@ -839,7 +896,7 @@ namespace Ecommerce.Data
                             Price =220,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/1/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -850,7 +907,7 @@ namespace Ecommerce.Data
                             Price =670,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/2/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -861,7 +918,7 @@ namespace Ecommerce.Data
                             Price =870,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/3/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -872,7 +929,7 @@ namespace Ecommerce.Data
                             Price =780,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/4/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -883,7 +940,7 @@ namespace Ecommerce.Data
                             Price =120,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/5/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -894,7 +951,7 @@ namespace Ecommerce.Data
                             Price =390,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/6/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -905,7 +962,7 @@ namespace Ecommerce.Data
                             Price =830,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/7/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -916,7 +973,7 @@ namespace Ecommerce.Data
                             Price =710,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/8/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -927,7 +984,7 @@ namespace Ecommerce.Data
                             Price =420,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/9/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -938,7 +995,7 @@ namespace Ecommerce.Data
                             Price =620,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/10/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -949,7 +1006,7 @@ namespace Ecommerce.Data
                             Price =710,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/11/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
@@ -960,7 +1017,7 @@ namespace Ecommerce.Data
                             Price =750,
                             Discount ="10%",
                             ImgUrl="/Imgs/Categories/women/12/a.jpg",
-
+                            BrandId=6,
                             CatagoryId=6,
                         },
 

@@ -26,7 +26,7 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
 
 
 
-            VendorRequest = new BaseRepository<VendorRequest>(context);
+            
             Brands = new BaseRepository<Brand>(context);
 
             ShoppingCartServices = new ShoppingCartService(context);
@@ -48,7 +48,7 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
         public IBaseRepository<WishList> WishLists { get; private set; }
 
 
-        public IBaseRepository<VendorRequest> VendorRequest { get; private set; }
+       
 
         public IBaseRepository<Brand> Brands { get; private set; }
 

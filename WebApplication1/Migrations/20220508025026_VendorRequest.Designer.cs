@@ -42,51 +42,6 @@ namespace Ecommerce.Migrations
 
                     b.ToTable("Brands");
                 });
-
-            modelBuilder.Entity("ClickPick.Models.VendorRequest", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CatagoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Discount")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsApproved")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.Property<int?>("Size")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StoreName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CatagoryId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("VendorRequest");
-                });
-
             modelBuilder.Entity("Ecommerce.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
