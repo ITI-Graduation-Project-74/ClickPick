@@ -144,7 +144,9 @@ namespace ClickPick.Controllers
 
 
             HttpContext.Session.Remove("coupon");
+            HttpContext.Session.Remove("orderHeader");
             TempData.Remove("USD");
+
 
             return View();
         }
