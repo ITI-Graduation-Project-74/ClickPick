@@ -21,7 +21,6 @@
 </div>
 
 }*@
-@model IEnumerable<OrderHeader>
 
 @section css{<link rel="stylesheet" href="~/css/orderHistory.css">}
  <div class="page-content page-container" id="page-content">
@@ -40,20 +39,18 @@
                           <th>ID No.</th>
                           <th>Created On</th> 
                           <th>Status</th>
-                          <th>Products</th>
                           <th>Cancel</th>
                         </tr>
                       </thead>
                       <tbody>
-                           @foreach(var order in Model){
+                           @foreach(var order in ViewBag.OrderDetails){
                         <tr>
                           <td>@order.Id</td>
-                          <td>@order.OrderDetails.FirstOrDefault().OrderDateTime</td>
-                          <td>@if(@order.OrderDetails.FirstOrDefault().status =="Canceled"){<p class="text-danger">@order.OrderDetails.FirstOrDefault().status</p>}
-                               else if (@order.OrderDetails.FirstOrDefault().status=="Pending"){<p class="text-primary">@order.OrderDetails.FirstOrDefault().status</p>}
-                              else{<p class="text-success"> @order.OrderDetails.FirstOrDefault().status</p>}
+                          <td>@order.OrderDateTime</td>
+                          <td>@if(@order.status =="Canceled"){<p class="text-danger">@order.status</p>}
+                               else if (@order.status=="Pending"){<p class="text-primary">@order.status</p>}
+                              else{<p class="text-success"> @order.status</p>}
                               </td>
-                         <td> @foreach(var item in order.OrderDetails.FirstOrDefault().){<p>- @item.Name</p>}</td>
                           <td>
                           <a href="/OrderHeader/OrderHistoryDetails/@(order.Id)" class="btn btn-outline-info">View Order</a>
                  

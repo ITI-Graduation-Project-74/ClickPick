@@ -58,21 +58,21 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label asp-for="Input.FirstName" for="reg-fn">First Name</label>
-                                <input asp-for="Input.FirstName" class="form-control" type="text"  >
+                                <input asp-for="Input.FirstName" class="form-control" type="text"  name="FirstName">
                                 <span asp-validation-for="Input.FirstName" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label asp-for="Input.LastName" for="reg-ln">Last Name</label>
-                                <input asp-for="Input.LastName"class="form-control" type="text" >
+                                <input asp-for="Input.LastName"class="form-control" type="text" name="LastName">
                                 <span asp-validation-for="Input.LastName" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label asp-for="Input.PhoneNumber"   for="reg-phone">Phone Number</label>
-                                <input asp-for="Input.PhoneNumber" class="form-control" type="text" >
+                                <input asp-for="Input.PhoneNumber" class="form-control" type="text" name="Phone">
                                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label asp-for="Input.Email" for="reg-email">E-mail Address</label>
-                                <input asp-for="Input.Email" class="form-control" id="reg-email" >
+                                <input asp-for="Input.Email" class="form-control" id="reg-email" name="Email">
                                 <span asp-validation-for="Input.Email" class="text-danger"></span>
                             </div>
                         </div>
