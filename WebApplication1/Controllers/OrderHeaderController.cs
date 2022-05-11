@@ -51,40 +51,53 @@ namespace Ecommerce.Controllers
             HttpContext.Session.SetString("orderHeader", JsonConvert.SerializeObject(orderHeader));
             return View("Payment");
         }
-        
+
 
         // Order History 
-        public async Task<IActionResult> OrdersHistory()
+
+        public IActionResult OrdersHistory()
         {
             //user 
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
 
             //getting order
-            List<OrderHeader> UserorderHeaders = _context.OrderHeaders.FindAll(a => a.ApplicationUserId == claim.Value).ToList();
+            List<OrderHeader> UserorderHeaders = _context.OrderHeaders
+                .FindAll(a => a.ApplicationUserId == claim.Value).ToList();
+
             List<OrderDetails> orders = new List<OrderDetails>();
+
             foreach (var orderHeaderItem in UserorderHeaders)
             {
-                List<OrderDetails> ordersI = await _context.OrderDetails.GetAllEagerLodingAsync(a => a.OrderHeaderId == orderHeaderItem.Id, new[] { "Products" });
+                List<OrderDetails> ordersI = _context.OrderDetails.FindAll(b => b.OrderHeaderId == orderHeaderItem.Id).ToList();
                 orders.AddRange(ordersI);
             }
-            
+
             ViewBag.OrderDetails = orders;
+            
             return View();
         }
 
-        public async Task<IActionResult> OrderHistoryDetails( int Id)
+        public  IActionResult OrderHistoryDetails(int Id)
         {
-           List<OrderDetails> orderHistoryDetail = await _context.OrderDetails.GetAllEagerLodingAsync(c => c.Id == Id, new[] { "Products" });
-            OrderDetails orderHistoryDetailWithoutProducts = orderHistoryDetail[0];
-            OrderHeader orderHeaderHistory = _context.OrderHeaders.Find(y => y.Id == orderHistoryDetailWithoutProducts.OrderHeaderId);
-            ViewBag.Orders=orderHistoryDetail;
-            ViewBag.Header=orderHeaderHistory;
+            OrderDetails orderDetailHistory = _context.OrderDetails.Find(c => c.Id == Id);
+            OrderHeader orderHeaderHistory = _context.OrderHeaders.Find(y => y.Id == orderDetailHistory.OrderHeaderId);
+            List<Product_OrderDetails> test = _context.Product_OrderDetails.FindAll(d => d.OrderDetailsId == Id).ToList();
+            List<Product> products = new List<Product>();
+            foreach(var item in test)
+            {
+                products.Add(_context.Products.Find(p => p.Id == item.ProductId));
+            }
+            ViewBag.Header = orderHeaderHistory;
+            ViewBag.Details = orderDetailHistory;
+            ViewBag.Products = products;
+
             return View();
         }
 
-        public IActionResult CancelOrder(int orderId) {
-           OrderDetails order= _context.OrderDetails.Find(a => a.Id == orderId);
+        public IActionResult CancelOrder(int orderId)
+        {
+            OrderDetails order = _context.OrderDetails.Find(a => a.Id == orderId);
             order.status = "Canceled";
             _context.Complete();
 

@@ -16,7 +16,7 @@ namespace Ecommerce.Models.Repositories
         public T Add(T entity)
         {
            context.Set<T>().Add(entity);
-           context.SaveChanges();
+           
            return entity;
         }
 

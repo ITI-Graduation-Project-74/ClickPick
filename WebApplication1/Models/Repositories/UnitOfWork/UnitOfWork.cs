@@ -22,6 +22,8 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
             OrderHeaders = new BaseRepository<OrderHeader>(context);
             OrderDetails = new BaseRepository<OrderDetails>(context);
 
+            Product_OrderDetails = new BaseRepository<Product_OrderDetails> (context);
+
             WishLists = new BaseRepository<WishList>(context);
 
 
@@ -47,8 +49,11 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
         public IBaseRepository<OrderDetails> OrderDetails { get; private set; }
         public IBaseRepository<WishList> WishLists { get; private set; }
 
+        public IBaseRepository<Product_OrderDetails> Product_OrderDetails { get; }
 
-       
+
+
+
 
         public IBaseRepository<Brand> Brands { get; private set; }
 

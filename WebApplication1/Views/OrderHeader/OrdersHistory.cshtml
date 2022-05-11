@@ -21,6 +21,7 @@
 </div>
 
 }*@
+
 @section css{<link rel="stylesheet" href="~/css/orderHistory.css">}
  <div class="page-content page-container" id="page-content">
     <div class="padding">
@@ -38,7 +39,6 @@
                           <th>ID No.</th>
                           <th>Created On</th> 
                           <th>Status</th>
-                          <th>Products</th>
                           <th>Cancel</th>
                         </tr>
                       </thead>
@@ -51,7 +51,6 @@
                                else if (@order.status=="Pending"){<p class="text-primary">@order.status</p>}
                               else{<p class="text-success"> @order.status</p>}
                               </td>
-                          <td> @foreach(var item in order.Products){<p>- @item.Name</p>}</td>
                           <td>
                           <a href="/OrderHeader/OrderHistoryDetails/@(order.Id)" class="btn btn-outline-info">View Order</a>
                  

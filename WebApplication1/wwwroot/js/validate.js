@@ -48,14 +48,54 @@ $('input[name=billingAddressCheck]').on('change', function () {
     }
 });
 
-////Payment
-//$("#PaymentFormDiv").hide();
-//$('input[type="radio"]').click(function () {
-//    if ($(this).attr("value") == "Cash") {
-//        $("#PaymentFormDiv").hide('slow');
-//    }
-//    if ($(this).attr("value") == "Paypal") {
-//        $("#PaymentFormDiv").show('slow');
+////Regestriation
+//$(function () {
+//    var $registerForm = $("#registerForm");
+//    if ($registerForm.length) {
+//        $registerForm.validate({
 
+//            rules: {
+//                Phone: {
+//                    required: true,
+//                    matches: true, // <-- no such method called "matches"!
+//                    minlength: 11,
+//                    maxlength: 11
+//                },
+//                FirstName: {
+//                    required: true,
+//                    number: false
+//                },
+//                LastName: {
+//                    required: true,
+//                    number: false
+//                },
+//                Email: {
+//                    required: true,
+//                    email:true
+//                }
+//            },
+//            messages: {
+//                Phone: {
+//                    required: "Required",
+//                    matches: "ex:01xxxxxxxxx",  // <-- no such method called "matches"!
+//                    minlength: "not valid",
+//                    maxlength: "not valid"
+//                },
+//                FirstName: {
+//                    required: "Required",
+//                    number: "Please enter a valid name"
+//                },
+//                LastName: {
+//                    required: "Required",
+//                    number: "Please enter a valid name"
+
+//                },
+//                Email: {
+//                    required: "Required",
+//                    email: "Please enter valid email"
+//                }
+//            }
+
+//        })
 //    }
 //});

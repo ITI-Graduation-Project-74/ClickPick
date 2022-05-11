@@ -162,6 +162,7 @@ namespace Ecommerce.Controllers
             {
                 return NotFound();
             }
+
             ViewData["UserId"] = new SelectList(_context.ApplicationUsers, "Id", "UserName");
             ViewData["CatagoryId"] = new SelectList(_context.Catagories, "Id", "CategoryName");
 

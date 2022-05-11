@@ -22,13 +22,13 @@ namespace Ecommerce.Migrations
                 oldType: "int",
                 oldNullable: true);
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Products_Brands_BrandId",
-                table: "Products",
-                column: "BrandId",
-                principalTable: "Brands",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+        //    migrationBuilder.AddForeignKey(
+        //        name: "FK_Products_Brands_BrandId",
+        //        table: "Products",
+        //        column: "BrandId",
+        //        principalTable: "Brands",
+        //        principalColumn: "Id",
+        //        onDelete: ReferentialAction.Cascade);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -45,12 +45,12 @@ namespace Ecommerce.Migrations
                 oldClrType: typeof(int),
                 oldType: "int");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Products_Brands_BrandId",
-                table: "Products",
-                column: "BrandId",
-                principalTable: "Brands",
-                principalColumn: "Id");
+            //migrationBuilder.AddForeignKey(
+            //    name: "FK_Products_Brands_BrandId",
+            //    table: "Products",
+            //    column: "BrandId",
+            //    principalTable: "Brands",
+            //    principalColumn: "Id");
         }
     }
 }

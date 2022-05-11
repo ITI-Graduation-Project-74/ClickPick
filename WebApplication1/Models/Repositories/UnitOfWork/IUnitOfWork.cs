@@ -22,9 +22,9 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
 
         public IBaseRepository<WishList> WishLists { get; }
 
-
-      
         public IBaseRepository<Brand> Brands { get; }
+
+        public IBaseRepository<Product_OrderDetails> Product_OrderDetails { get; }
 
         int Complete();
     }
