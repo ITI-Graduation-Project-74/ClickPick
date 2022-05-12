@@ -5,7 +5,7 @@
                     <div class="title">
                         <div class="row">
                             <div class="col"><h4><b>Order ID NO. @ViewBag.Details.Id</b></h4></div>
-                            <div class="col align-self-center text-right text-muted">3 Items</div>
+                            <div class="col align-self-center text-right text-muted">Price  </div>
                         </div>
                     </div> 
                    
@@ -17,10 +17,10 @@
                                <div class="col-2"><img class="img-fluid" src=@item.ImgUrl></div></a>
                             <div class="col">
                                 <div class="row text-muted">@item.Name</div>
-                                <div class="row">Cotton T-shirt</div>
+                               @* <div class="row">Cotton T-shirt</div>*@
                             </div>
                             
-                            <div class="col">&dolar; @item.Price <span class="close">&#10005;</span></div>
+                            <div class="col"> @item.Price.ToString("c") <span class="close"> </span></div>
                         </div>
                     </div>   
                 }

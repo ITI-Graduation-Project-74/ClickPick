@@ -46,6 +46,7 @@ namespace ClickPick.Controllers
             };
             TempData["DetailsProductId"] = productId;
             return View(Obj);
+
         }
 
         [HttpPost]

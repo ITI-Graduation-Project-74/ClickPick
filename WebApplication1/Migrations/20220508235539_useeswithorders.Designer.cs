@@ -32,9 +32,6 @@ namespace Ecommerce.Migrations
                     b.Property<string>("BillingAddress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CouponName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
@@ -51,17 +48,8 @@ namespace Ecommerce.Migrations
                     b.Property<DateTime>("OrderDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Percentage")
-                        .HasColumnType("int");
-
                     b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ValidFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ValidTo")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("string");
 
                     b.ToView("View_UsersWithOrders");
                 });
