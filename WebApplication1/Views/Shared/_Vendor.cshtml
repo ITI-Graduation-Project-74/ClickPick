@@ -54,6 +54,10 @@
                                     <a asp-controller="product" asp-action="contactUs"
                                 >Contact Us</a>
                                 </li>
+                              <li>
+                                    <a asp-controller="products" asp-route-id="@User.Identity.Name" asp-action="MyProducts"
+                                >My Products</a>
+                                </li>
 
                                 @if (User.IsInRole(ApplicationRoles.Role_Admin))
                                 {
