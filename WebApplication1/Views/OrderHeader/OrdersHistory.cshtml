@@ -53,7 +53,7 @@
                                else if (@order.OrderDetails.FirstOrDefault().status=="Pending"){<p class="text-primary">@order.OrderDetails.FirstOrDefault().status</p>}
                               else{<p class="text-success"> @order.OrderDetails.FirstOrDefault().status</p>}
                               </td>
-                         <td> @foreach(var item in order.OrderDetails.FirstOrDefault().){<p>- @item.Name</p>}</td>
+                         <td> @foreach(var item in order.OrderDetails){<p>- @item</p>}</td>
                           <td>
                           <a href="/OrderHeader/OrderHistoryDetails/@(order.Id)" class="btn btn-outline-info">View Order</a>
                  
