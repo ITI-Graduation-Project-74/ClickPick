@@ -1,22 +1,25 @@
-jQuery.validator.addMethod("NameMatch", function (Name, element) {
-    Name = Name.replace(/\s+/g, "");
-    return this.optional(element) || Name.length > 1 &&
-        Name.match(/^[a-z ,.'-]+$/i);
-}, "Please specify a valid Name");
-
-
+//Phone Regex Validator
 jQuery.validator.addMethod("matches", function (phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, "");
     return this.optional(element) || phone_number.length > 9 &&
         phone_number.match(/^0\d{10}$/);
 }, "Please specify a valid phone number");
 
-jQuery.validator.addMethod("PassMatch", function (Password, element) {
+//Name Regex Validator
+jQuery.validator.addMethod("Namematch", function (Name, element) {
+    Name = Name.replace(/\s+/g, "");
+    return this.optional(element) || Name.length > 1 &&
+        Name.match(/^[a-zA-Z .'-]+$/);
+}, "Please specify a valid Name");
+
+//Password Regex Validator
+jQuery.validator.addMethod("Passmatch", function (Password, element) {
     Password = Password.replace(/\s+/g, "");
     return this.optional(element) || Password.length > 5 &&
-        Password.match(/^(?=.[A-Z])(?=.[a-z])(?=.[0-9]).$/);
-}, "Please specify a valid PassWord");
+        Password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#/\$%\^&\*])(?=.{6,})/);
+}, "Please specify a valid  Password");
 
+//Order Validation
 $(function () {
     var $headerForm = $("#Orderheader");
     if ($headerForm.length) {
@@ -48,9 +51,9 @@ $(function () {
         })
     }
 });
-//$('#billingAddressCheck').click(function () {
-//    $('#billingAddress')[this.checked ? "show" : "hide"]();
-//});
+
+
+//Billing Address
 $("#billingAddressDiv").hide();
 $('input[name=billingAddressCheck]').on('change', function () {
     if ($(this).is(":checked")) {
@@ -77,13 +80,11 @@ $(function () {
                 },
                 "Input.FirstName": {
                     required: true,
-                    number: false,
-                    NameMatch: true
+                    Namematch: true
                 },
                 "Input.LastName": {
                     required: true,
-                    number: false,
-                    NameMatch: true
+                    Namematch: true
                 },
                 "Input.Email": {
                     required: true,
@@ -91,11 +92,8 @@ $(function () {
                 },
                 "Input.Password": {
                     required: true,
-                    PassMatch:true
-
-                },
-            
-                
+                    Passmatch: true
+                }
             },
             messages: {
                 "Input.PhoneNumber": {
@@ -106,11 +104,11 @@ $(function () {
                 },
                 "Input.FirstName": {
                     required: "Required",
-                    NameMatch: "Please enter a valid name"
+                    number: "Please enter a valid name"
                 },
                 "Input.LastName": {
                     required: "Required",
-                    NameMatch: "Please enter a valid name"
+                    number: "Please enter a valid name"
 
                 },
                 "Input.Email": {
@@ -119,8 +117,57 @@ $(function () {
                 },
                 "Input.Password": {
                     required: "Required",
-                    PassMatch: "Password must have at least 8 characters, 1 number, 1 upper and 1 lowercase, no special chars"
+                    Passmatch: "Password must have at least 6 characters, 1 number, 1 upper and 1 lowercase, one special chars"
+                },
+            }
 
+        })
+    }
+});
+
+
+//Vendor Request
+$(function () {
+    var VendorRequest = $("#form1");
+    if (VendorRequest.length) {
+        VendorRequest.validate({
+
+            rules: {
+                Name: {
+                    required: true,
+                    minlength: 3,
+                    maxlength:20
+                },
+                Description: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 20
+                },
+                Price: {
+                    required: true,
+                    number:true
+                },
+                Size: {
+                    required: true,
+                },
+            },
+            messages: {
+                Name: {
+                    required: "Required",
+                    minlength: "Minimum length: 3 charachters",
+                    maxlength: "Maximum length: 20 charachters"
+                },
+                Description: {
+                    required: "Required",
+                    minlength: "Minimum length: 3 charachters",
+                    maxlength: "Maximum length: 20 charachters"
+                },
+                Price: {
+                    required: "Required",
+                    number: "Please enter the proce Correctly"
+                },
+                Size: {
+                    required: "Required",
                 }
             }
 
@@ -128,4 +175,25 @@ $(function () {
     }
 });
 
-$(".error").css("color", "red");
+////categories Form
+$(function () {
+    var CategoriesForm = $("#CategoriesForm");
+    if (CategoriesForm.length) {
+        CategoriesForm.validate({
+
+            rules: {
+                CategoryName: {
+                    required: true
+                }
+            },
+            messages: {
+                CategoryName: {
+                    required: "Required"
+                }
+
+            }
+        })
+        }
+    });
+
+

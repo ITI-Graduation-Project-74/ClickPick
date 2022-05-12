@@ -7,6 +7,7 @@
     <UserSecretsId>aspnet-WebApplication1-0A6D6677-8DFC-4071-BB2F-F4F09CD3CD03</UserSecretsId>
     <AssemblyName>ClickPick</AssemblyName>
     <RootNamespace>ClickPick</RootNamespace>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +27,10 @@
     <None Remove="wwwroot\Imgs\Categories\Men%27s\**" />
     <None Remove="wwwroot\Imgs\Categories\Shoes\**" />
     <None Remove="wwwroot\Imgs\Categories\Women%27s\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
 
   <ItemGroup>

@@ -7,7 +7,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="EditTest" enctype="multipart/form-data">
+        <form asp-action="EditTest" enctype="multipart/form-data" id="CategoriesForm">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="ImgUrl" />
@@ -50,6 +50,7 @@
             <div class="form-group">
                 <input type="submit"  value="Edit" class="btn btn-primary" />
             </div>
+            <!-- comment   -->
         </form>
     </div>
 </div>
@@ -64,3 +65,6 @@
         }); 
 }
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="~/js/validate.js" ></script>
