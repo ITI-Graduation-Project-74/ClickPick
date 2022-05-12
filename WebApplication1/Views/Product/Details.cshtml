@@ -58,6 +58,7 @@
                                        <input  asp-for="Count" class="form-control" min="1" />
                                     </div>
                                 </div>
+                            
                             </div>
                             <div class="bottom-content">
                                 <div class="row align-items-end">
@@ -65,6 +66,7 @@
                                         <div class="button cart-button">
                                             <button type="submit" value="Add To Cart"  
                                             class="btn" style="width: 100%;">Add to Cart</button>
+                                           @* <a href="/WishList/wishList/@Model.ProductId"> towishList</a>*@
                                         </div>
                                     </div>
                                    
@@ -81,11 +83,11 @@
                 </form>
                 <form method="post" asp-controller="WishList" asp-action="wishList">
                    <input hidden asp-for="ProductId" />
-                        <div class="wish-button">
-                                            
-                            <button type="submit" value="Add To Wish List" 
-                                class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
-                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                           <div class="wish-button">
+                            <button type="submit" class="btn btn-primary"><i class="lni lni-heart"></i> To Wishlist</button>
+                             </div>
+                             </div>
                      </form>
             </div>
             <div class="product-details-info">
@@ -134,4 +136,6 @@
                 e.target.style.opacity = opacity;
             });
         });
+
+
     </script>                        
