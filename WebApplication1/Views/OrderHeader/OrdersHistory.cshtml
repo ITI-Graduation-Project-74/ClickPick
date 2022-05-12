@@ -1,9 +1,10 @@
 ﻿
-
 @section css{<link rel="stylesheet" href="~/css/orderHistory.css">}
+
+
  <div class="page-content page-container" id="page-content">
     <div class="padding">
-        <div class="row container d-flex justify-content-center">
+        <div class="row container d-flex justify-content-center mx-auto">
 
 <div class="col-lg-8 grid-margin stretch-card">
               <div class="card">
@@ -25,9 +26,17 @@
                         <tr>
                           <td>@order.Id</td>
                           <td>@order.OrderDateTime</td>
-                          <td>@if(@order.status =="Canceled"){<p class="text-danger">@order.status</p>}
-                               else if (@order.status=="Pending"){<p class="text-primary">@order.status</p>}
-                              else{<p class="text-success"> @order.status</p>}
+                          <td>@if(@order.status =="Canceled"){
+                              <p class="text-danger">@order.status</p>
+                                }
+                               else if (@order.status=="Pending")
+                               {
+                                   <p class="text-primary">@order.status</p>
+                               }
+                              else
+                              {
+                                  <p class="text-success"> @order.status</p>
+                              }
                               </td>
                           <td>
                           <a href="/OrderHeader/OrderHistoryDetails/@(order.Id)" class="btn btn-outline-info">View Order</a>
