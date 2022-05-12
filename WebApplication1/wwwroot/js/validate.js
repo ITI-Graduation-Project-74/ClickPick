@@ -13,8 +13,8 @@ jQuery.validator.addMethod("matches", function (phone_number, element) {
 
 jQuery.validator.addMethod("PassMatch", function (Password, element) {
     Password = Password.replace(/\s+/g, "");
-    return this.optional(element) || Password.length > 7 &&
-        Password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/);
+    return this.optional(element) || Password.length > 5 &&
+        Password.match(/^(?=.[A-Z])(?=.[a-z])(?=.[0-9]).$/);
 }, "Please specify a valid PassWord");
 
 $(function () {
