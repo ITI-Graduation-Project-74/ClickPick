@@ -14,7 +14,7 @@ namespace ClickPick.Models
      // [StringLength(1000), Required]
 
         public string Message { get; set; }
-      //  [StringLength(15), Required]
+      //[StringLength(15), Required]
 
         public string PhoneNumber { get; set; }
        // [StringLength(50)]
