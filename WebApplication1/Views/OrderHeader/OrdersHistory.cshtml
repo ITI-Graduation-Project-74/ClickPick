@@ -51,9 +51,6 @@
                                else if (@order.status=="Pending"){<p class="text-primary">@order.status</p>}
                               else{<p class="text-success"> @order.status</p>}
                               </td>
-
-                         <td> @foreach(var item in order.OrderDetails){<p>- @item</p>}</td>
-
                           <td>
                           <a href="/OrderHeader/OrderHistoryDetails/@(order.Id)" class="btn btn-outline-info">View Order</a>
                  

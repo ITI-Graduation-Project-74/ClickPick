@@ -371,43 +371,17 @@ namespace Ecommerce.Controllers
                 ViewData["CatagoryId"] = new SelectList(_context.Catagories, "Id", "CategoryName");
                 //return View(product);
                 //return RedirectToAction(nameof(Index));
-                ViewBag.msg = "Your Request Is Send";
+                ViewBag.msg = "Your Request Is Done";
                 return View(product);
 
                 //  return View("Send");
             }
             //return RedirectToAction(nameof(Index));
             // return View("Send");
-            ViewData["UserId"] = new SelectList(_context.ApplicationUsers, "Id", "UserName");
-            ViewData["CatagoryId"] = new SelectList(_context.Catagories, "Id", "CategoryName");
+            //ViewBag.Msg = "Your Request Is Done";
             return View(product);
 
 
-        }
-
-        public async Task<IActionResult> MyProducts(string id)
-        {
-            if(id != null)
-            {
-                var idUser = _context.Users.Where(a => a.UserName == id).FirstOrDefault();
-                var product = _context.Products.Where(a => a.ApplicationUser == idUser).Where(a => a.IsApproved == true).ToList();
-                return View(product);
-            }
-            string idUser2 = Convert.ToString(TempData["idUserFinally"]);
-            var idUser3 = _context.Users.Where(a => a.Id == idUser2).FirstOrDefault();
-            var product2 = _context.Products.Where(a => a.ApplicationUser == idUser3).Where(a => a.IsApproved == true).ToList();
-            return View(product2);
-        }
-        public async Task<IActionResult> deleteVendor(int id)
-        {
-            var idUser = _context.Products.Where(a=>a.Id == id).FirstOrDefault().UserId;
-            var product = _context.Products.Where(a=>a.Id == id).FirstOrDefault();
-            TempData["idUserFinally"] = idUser;
-            _context.Products.Remove(product);
-            _context.SaveChanges();
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction("MyProducts");
         }
 
     }
