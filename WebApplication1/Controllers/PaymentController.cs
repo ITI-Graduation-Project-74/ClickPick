@@ -1,4 +1,5 @@
-﻿using Ecommerce.Models;
+﻿using Ecommerce.Data;
+using Ecommerce.Models;
 using Ecommerce.Models.Repositories.UnitOfWork;
 using Ecommerce.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -11,9 +12,12 @@ namespace ClickPick.Controllers
     public class PaymentController : Controller
     {
         private readonly IUnitOfWork _context;
+        private readonly AppDbContext _db;
+
         public PaymentController(IUnitOfWork context)
         {
             _context = context;
+   
         }
 
         public IActionResult Index(String Method)
@@ -136,11 +140,19 @@ namespace ClickPick.Controllers
                 orderHeader.PaymentStripeId = session.PaymentIntentId;
 
                 _context.Complete();
+
                 Response.Headers.Add("Location", session.Url);
                 return new StatusCodeResult(303);
             }
-            
+            // Clear Cart After Order
 
+            var cartAfterOrder = _context.ShoppingCarts
+                  .FindAll(u => u.ApplicationUser.Id == claim.Value).ToList();
+            foreach (var item in cartAfterOrder)
+            {
+                _context.ShoppingCarts.Delete(item);
+            }
+            _context.Complete();
 
 
             HttpContext.Session.Remove("coupon");

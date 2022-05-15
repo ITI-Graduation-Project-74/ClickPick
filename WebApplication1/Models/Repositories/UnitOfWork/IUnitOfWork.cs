@@ -26,6 +26,8 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
 
         public IBaseRepository<Product_OrderDetails> Product_OrderDetails { get; }
 
+        public IBaseRepository<Review> Reviews { get;}
+
         int Complete();
     }
 }

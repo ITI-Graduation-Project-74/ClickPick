@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Stripe;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,9 @@ builder.Services.AddIdentity<ApplicationUser,IdentityRole>(options=>options.Sign
     .AddDefaultTokenProviders()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultUI();
+
+builder.Services.AddMvc().AddJsonOptions(options =>
+options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 // Stripe Service For Payment
 

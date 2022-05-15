@@ -24,6 +24,8 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
 
             Product_OrderDetails = new BaseRepository<Product_OrderDetails> (context);
 
+            Reviews = new BaseRepository<Review>(context);
+
             WishLists = new BaseRepository<WishList>(context);
 
 
@@ -53,7 +55,7 @@ namespace Ecommerce.Models.Repositories.UnitOfWork
 
 
 
-
+        public IBaseRepository<Review> Reviews { get; private set; }
 
         public IBaseRepository<Brand> Brands { get; private set; }
 

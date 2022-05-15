@@ -56,56 +56,13 @@
 							</div>
 
 							<div class="col-md-12">
-								<input type="submit" value="Filter" class="btn btn-primary btn-sm" />
-								<a asp-action="Index" class="btn btn-secondary btn-sm float-right">Clear</a>
+								<input type="submit" value="Filter" class="btn btn-primary btn-sm text-white" />
+								<a asp-action="Index" class="btn btn-secondary btn-sm float-end mt-2">Clear</a>
 							</div>
 
 						</form>
 					</div>
-					<!-- End Single Widget -->
-					@*   <div class="widget widget-price">
-						<h5 class="widget-title"> Price Range</h5>
-						<div class="price-filter">
-						<div id="slide-range"></div>
-						<p class="amount">
-						price: <input type="text" id="amount" disabled="" />
-
-						</p>
-
-						</div>
-
-						</div>*@
-					<!-- Start Single Widget -->
-					@*<div class="single-widget range">*@
-					@*<form asp-action="Index" class="col-2 my-1 p-2">
-						<div>
-						Filter Search
-						<div class="my-1">
-						<input type="hidden" asp-for=Filter.CategoryId />
-						<input type="text" asp-for="Filter.SearchSrting" placeholder="Name Or Category" class="form-control-sm-12" />
-						</div>
-						<div class="my-1">
-						<input type="number" asp-for="Filter.MinPrice" step="1" placeholder="$min" class="form-control-sm-5" />
-						&nbsp;&#8212;&nbsp;
-						<input type="number" asp-for="Filter.MaxPrice" step="1" placeholder="$max" class="form-control-sm-5" />
-						</div>
-						<input type="submit" value="Filter" class="btn btn-primary btn-sm" />
-						<a asp-action="Index" class="btn btn-secondary btn-sm float-right">Clear</a>
-						</div>
-
-						</form>*@
-					@*   </div>*@
-					@* <h3 >Price Range</h3>
-						<input type="range" class="form-range" name="range" step="1" min="0" max="20000"
-						value="10" onchange="rangePrimary.value=value">
-						<div class="range-inner">
-						<label>$</label>
-						<div class="amount">
-						<input type="text" id="rangePrimary" placeholder="100" />
-						</div>
-						</div>
-						</div>*@
-					<!-- End Single Widget -->
+			
 
 				</div>
 				<!-- End Product Sidebar -->
@@ -155,7 +112,7 @@
 								{
 									<div class="col-lg-4 col-md-6 col-12">
 										<div class="single-product">
-											<div class="product-image">
+											<div class="product-image w-75 mx-auto">
 												<a asp-controller="Product" asp-action="Details" asp-route-ProductId="@item.Id">
 													<img src="@item.ImgUrl" style="width:300px; height:300px">
 												</a>
@@ -185,14 +142,3 @@
 	</div>
 
 </section>
-<script>
-	var= priceSlider = $("#form-range").Slider({
-		Range : true,
-		min : 0,
-		max : 20000,
-		values :[0,20000],
-		Slider: function (event, ui){
-			$("#")
-		}
-	})
-</script>

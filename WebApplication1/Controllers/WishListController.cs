@@ -17,6 +17,7 @@ namespace ClickPick.Controllers
         {
             _context = context;
         }
+        [Authorize]
         public IActionResult Index()
         {
 
@@ -35,7 +36,7 @@ namespace ClickPick.Controllers
         }
 
         //wishList
-
+     
         public IActionResult wishList(int productId)
         {
             WishList Obj = new()
