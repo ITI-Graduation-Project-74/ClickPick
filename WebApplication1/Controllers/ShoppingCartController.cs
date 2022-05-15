@@ -104,15 +104,46 @@ namespace Ecommerce.Controllers
             var cart = _context.ShoppingCarts
                 .Find(c => c.ApplicationUserId == claim.Value && c.ProductId == productId);
 
-           
             _context.ShoppingCartServices.Delete(cart);
             _context.Complete();
             var count = _context.ShoppingCarts.FindAll(c => c.ApplicationUserId == cart.ApplicationUserId).ToList().Count;
             HttpContext.Session.SetInt32(StaticDetails.SessionCart, count);
-
-            
-
             return RedirectToAction("Index");
         }
+
+        [HttpDelete]
+        public IActionResult DeleteProduct(int productId)
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity
+                .FindFirst(ClaimTypes.NameIdentifier);
+
+            var cart = _context.ShoppingCarts
+                .Find(c => c.ApplicationUserId == claim.Value && c.ProductId == productId);
+
+            _context.ShoppingCartServices.Delete(cart);
+            _context.Complete();
+
+            var count = _context.ShoppingCarts
+                .FindAll(c => c.ApplicationUserId == cart.ApplicationUserId).ToList().Count;
+
+            HttpContext.Session.SetInt32(StaticDetails.SessionCart, count);
+
+            var cartItems = _context.ShoppingCarts
+                .FindAll(c => c.ApplicationUserId == cart.ApplicationUserId)
+
+                .Select(s => new {
+                    name=s.Product.Name,
+                    Price=s.Product.Price,
+                    ImgURl = s.Product.ImgUrl,
+                    CategoryName = s.Product.Catagory.CategoryName,
+                    Count = s.Count,
+                    ProductId=s.Product.Id,
+                }
+                ).ToList();
+
+            return Json(cartItems);
+        }
+
     }
 }

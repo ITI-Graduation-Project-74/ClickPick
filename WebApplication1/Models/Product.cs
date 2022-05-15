@@ -55,5 +55,8 @@ namespace Ecommerce.Models
         public virtual List <Product_OrderDetails> Product_OrderDetails { get; set; }
 
 
+        // Relation With Review
+        public virtual List<Review> Reviews { get; set; }
+
     }
 }

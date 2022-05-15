@@ -58,6 +58,9 @@
                 <!-- End Cart List Title -->
 
                 <!-- Cart Single List list -->
+                <div class="cartitemsj">
+
+                
                 @foreach (var item in Model.ListCart)
                 {
                     <div class="cart-single-list">
@@ -91,16 +94,25 @@
                                  </a>
                             
                         </div>
-                        <div class="col-lg-1 col-md-2 col-12">
+                        
+@*                        <div class="col-lg-1 col-md-2 col-12">
                              <button asp-action="RemoveProduct" asp-route-productId="@item.ProductId" type="submit" class="btn btn-outline-danger btn-lg">
                                             <i class="bi bi-trash bi--xl"></i>
                                </button>
+                        </div>*@
+
+                          <div class="col-lg-1 col-md-2 col-12">
+                             <a  value="@item.ProductId"  class="btn btn-outline-danger btn-lg bi bi-trash bi--xl deleteBtn">
+                                           @* <i class=""></i>*@
+                               </a>
                         </div>
+
+
                     </div>
                 </div>
                     
                 }
-                
+                </div>
                 <!-- End Single List list -->
             </div>
             <div class="row">
@@ -119,7 +131,7 @@
                                                 i += @item.Product.Price * @item.Count;  
                                             }
                                         <li>Cart Subtotal<span>
-                                           @i
+                                           @i $
                                         </span></li>
                                        
                                     </ul>
@@ -138,7 +150,85 @@
     </div>
     </form>
     <!--/ End Shopping Cart -->
+    <script src="~/lib/jquery/dist/jquery.min.js">
 
+
+</script>
+
+    <script>
+        $(document).on("click",".deleteBtn",(e)=>{
+            let productId=$(e.target).attr("value"); 
+          
+            $.ajax({
+                 type:"Delete",
+                 url:'@Url.Action("DeleteProduct","ShoppingCart")',
+                 data:{
+                    
+                     productId:productId
+                     
+                     
+                 },
+                 success:(data)=>{
+                     $(".cartitemsj").html("")
+
+                     $(data).each((i,item)=>{
+                         $(".cartitemsj").append(`
+
+                         <div class="cart-single-list">
+                    <div class="row align-items-center">
+                        <div class="col-lg-1 col-md-1 col-12">
+                            <a href="#"><img src="${item.imgURl}" alt="ProductImg"></a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-12">
+                            <h5 class="product-name"><a href="#">
+                                    ${item.name}</a></h5>
+                            <p class="product-des">
+                                <span><em>Category:</em> ${item.CategoryName}</span>
+                                
+                            </p>
+                        </div>
+                    
+                        <div class="col-lg-2 col-md-2 col-12">
+                            <strong>${item.price}$<span class="text-muted">x</span> ${item.count} </strong>
+                            <p>
+                              SubTotal: ${item.price*item.count}
+                            </p>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-12">
+                             <a href=/ShoppingCart/DecreaseProduct/${item.productId} 
+                                    class="text-success">
+                               <i class="fa-solid fa-cart-plus fa-2x"></i>
+                            |
+                                <a href=/ShoppingCart/IncreaseProduct/${item.productId}
+                                  class="fa-solid fa-cart-plus fa-2x">
+                                   </a>
+                                 </a>
+                            
+                        </div>
+
+                          <div class="col-lg-1 col-md-2 col-12">
+                             <a  value="${item.productId}"  class="btn btn-outline-danger btn-lg bi bi-trash bi--xl deleteBtn">
+                                          
+                               </a>
+                        </div>
+
+
+                    </div>
+                </div>
+                         
+                         `)
+                     })
+                     console.log(data);
+                 },
+                 error:(ex)=>{
+                     console.log(ex);
+                 },
+            })
+    
+    })
+   
+    
+    </script>
 
   
 		

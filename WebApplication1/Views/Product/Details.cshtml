@@ -2,7 +2,9 @@
 
 @{
     ViewData["title"] = "Product Details";
-   
+    double i = 0;
+    double totalReviews = 0;
+
 }
 @if(TempData["success"] != null)
     {
@@ -16,8 +18,7 @@
 
 
 <!-- Start Item Details -->
-<form method="post">
-    <input hidden asp-for="ProductId" />
+
     <section class="item-details section">
         <div class="container">
             <div class="top-area">
@@ -45,13 +46,66 @@
                             <h2 class="title">@Model.Product.Name</h2>
                             <p class="category" style="font-size:20px">
                                 <i class="lni lni-tag"></i> Category:
-                                <a>@Model.Product.Catagory.CategoryName</a>
+                                <a asp-controller="Category" asp-action="Index" asp-route-id="@Model.Product.CatagoryId"> @Model.Product.Catagory.CategoryName</a>
                                 </p>
                             <h3 class="price">@Model.Product.Price.ToString("c")</h3>
                             <p class="info-text">@Model.Product.Description</p>
+                            @if(@Model.Product.Reviews.Count()==0)
+                            {
+                               <h3> <span class="badge badge-info"  style="background-color: #3ca65e;">No reviews yet</span></h3> 
+                            }
+                            else
+                            {
+                                     @foreach (var item in Model.Product.Reviews)
+                                            {
+                            i += @item.Rating;
+                            }
+                            <span style="display:none"> 
+                                @(
+                                totalReviews=i/(@Model.Product.Reviews.Count())
+                            
+                            )
+                            </span>
+                           
+                            <h4 class="title" style="font-size: 18px;" > 
+                                 Total Reviews(@Model.Product.Reviews.Count()) : 
+                            
+                                     
+                                     <span class="badge badge-info" style="font-size: 20px; background-color: #6be191; color:white;">
+                                         @(Math.Round(totalReviews, 1, MidpointRounding.ToEven))
+                                         <i class="fa-solid fa-star text-white"></i>
+                                         </span>
+                              
+                                 
+                               
+
+                                 </h4>
+                             <p>
+
+                                 @if ((totalReviews*2)%2==0)
+                            {
+                                @for(int s=0; totalReviews>s; s++){
+                                    <span class="fa fa-star" style="font-size:20px; color:#EFD345"></span>
+                                }
+                            }else{
+                                @for(int s=0; totalReviews-1>s; s++){
+                                    <span class="fa fa-star" style="font-size:20px; color:#EFD345"></span>
+                                }
+                                <i class="fas fa-star-half" style="font-size:20px; color:#EFD345"></i>
+                            }
+                        
+                        </p>
+
+
+                            }
+                             
+                            
+
+                            <div class="bottom-content ">
+                                <div class="row align-items-end ">
+                            <form method="post">
+                                 <input hidden asp-for="ProductId" />
                             <div class="row">
-                                
-                                
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group quantity">
                                         <label for="color">Quantity</label>
@@ -60,35 +114,37 @@
                                 </div>
                             
                             </div>
+
                             <div class="bottom-content">
                                 <div class="row align-items-end">
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="button cart-button">
                                             <button type="submit" value="Add To Cart"  
                                             class="btn" style="width: 100%;">Add to Cart</button>
-                                           @* <a href="/WishList/wishList/@Model.ProductId"> towishList</a>*@
                                         </div>
                                     </div>
-                                   
-                                    @*<div class="col-lg-4 col-md-4 col-12">
-                                        <div class="wish-button">
-                                            <button class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
-                                        </div>
-                                    </div>*@
                                 </div>
                             </div>
+                            </form>
+                         <form method="post" asp-controller="WishList" asp-action="wishList" class="col-lg-4 col-md-4 col-12">
+                   <input hidden asp-for="ProductId" />
+                        <div>
+                           <div >
+                            <button type="submit" class="btn btn-outline-primary w-100  mt-3"><i class="lni lni-heart"></i> </button>
+                             </div>
+                           
+                        </div>
+                     </form>
+                     </div>
+                     </div>
                         </div>
                     </div>
                 </div>
-                </form>
-                <form method="post" asp-controller="WishList" asp-action="wishList">
-                   <input hidden asp-for="ProductId" />
-                        <div class="col-lg-4 col-md-4 col-12">
-                           <div class="wish-button">
-                            <button type="submit" class="btn btn-primary"><i class="lni lni-heart"></i> To Wishlist</button>
-                             </div>
-                             </div>
-                     </form>
+                
+                <div> 
+
+                </div>
+                
             </div>
             <div class="product-details-info">
                 <div class="single-block">
@@ -110,10 +166,101 @@
                                 </ul>
                             </div>
                         </div>
-    </div>
-    </div>
-    </div>
-    </div>
+                    </div>
+                </div>
+                        <div class="row">
+                
+                    <div class="col-lg-4 col-12">
+                        <form method="post" asp-controller="product" asp-action="leaveReview">
+                            <input hidden asp-for="ProductId" />
+                       <div class="modal-dialog">
+            <div class="modal-content " style="background-color: #DAE5D0;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Leave a Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="review-subject">Subject</label>
+                                <input name="subject" class="form-control" type="text" id="review-subject" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="review-rating">Rating</label>
+                                <select class="form-control" id="review-rating" name="star">
+                                    <option value="5">5 Stars</option>
+                                    <option value="4">4 Stars</option>
+                                    <option value="3">3 Stars</option>
+                                    <option value="2">2 Stars</option>
+                                    <option value="1">1 Star</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-message">Review</label>
+                        <textarea name="comment" class="form-control" id="review-message" rows="8" style="max-height: 200px"; required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer button">
+                    <button type="submit" class="btn" style="background-color: #376861;" >Submit Review</button>
+                </div>
+                              </div>
+                        </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-8 col-12">
+                        <div class="single-block" style="background-color: #DAE5D0;">
+                            <div class="reviews">
+                            @if (@Model.Product.Reviews.Count() == 0)
+                            {
+                                <h3 > No Reviews Yet</h3>
+                            } 
+                            else{
+                                 <h4 class="title">Latest Reviews</h4>
+                                <!-- Start Single Review -->
+                             @foreach (var item in @Model.Product.Reviews)
+                                  {
+                                         <div class="single-review">
+                                             <div class="review-info">
+                                                 <h4 style="font-size: 22px;">
+                                                    
+                                                     @item.ApplicationUser.UserName
+                                                     </h4>
+
+                                            <span>@item.Subject</span>
+                                  
+                                        <ul class="stars">
+
+                                            @for(int x=1; @item.Rating>=x; x++)
+                                            {
+                                                <li> 
+                                                     <i class="lni lni-star-filled"></i> 
+                                                 </li>
+                                             }
+                                    
+                                        </ul>
+                                        <p>@item.Comment</p>
+                                    </div>
+                                </div>
+                             }
+                            }
+    
+                                <!-- End Single Review --> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+             </div>
+        </div>
     </section>
 
  

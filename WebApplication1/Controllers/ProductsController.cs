@@ -25,7 +25,7 @@ namespace Ecommerce.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-         
+
             var appDbContext = _context.Products.Include(p => p.ApplicationUser).Include(p => p.Catagory).Include(p => p.ProductImgs);
 
             return View(await appDbContext.ToListAsync());
@@ -119,8 +119,16 @@ namespace Ecommerce.Controllers
                     {
                         var InputFileName = Path.GetFileName(file.FileName);
 
+                        var categoryId = employee.CatagoryId;
+                        var categoryName = _context.Catagories.Where(a => a.Id == categoryId).FirstOrDefault().CategoryName;
+
                         //var ServerSavePath = Path.Combine(Server.MapPath("~/imgs/") + InputFileName);
-                        var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
+                        var paths = new string[] { "wwwroot/", "Imgs/", "Categories/", categoryName + '/' };
+
+                        //var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
+                        var fullPath = Path.Combine(paths);
+
+                        var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), fullPath, InputFileName);
 
                         using (var stream = new FileStream(ServerSavePath, FileMode.Create))
                         {
@@ -192,12 +200,12 @@ namespace Ecommerce.Controllers
 
                 //if (product.ProductImgs.Count == 0)
                 //{
-                    //var product2 = await _context.Products.FindAsync(product.Id);
-                    //var p = product2.ProductImgs.Find(p => p.ProductId == product.Id);
-                    _context.ProductImgs.Update(p);
-                    _context.ChangeTracker.Clear();
-                    _context.Products.Update(product);
-                    await _context.SaveChangesAsync();
+                //var product2 = await _context.Products.FindAsync(product.Id);
+                //var p = product2.ProductImgs.Find(p => p.ProductId == product.Id);
+                _context.ProductImgs.Update(p);
+                _context.ChangeTracker.Clear();
+                _context.Products.Update(product);
+                await _context.SaveChangesAsync();
 
                 //}
 
@@ -210,7 +218,7 @@ namespace Ecommerce.Controllers
                         if (file != null)
                         {
                             var InputFileName = Path.GetFileName(file.FileName);
-
+                            var categoryName = product.Catagory.CategoryName;
                             //var ServerSavePath = Path.Combine(Server.MapPath("~/imgs/") + InputFileName);
                             var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
 
@@ -221,7 +229,7 @@ namespace Ecommerce.Controllers
 
 
                             //assigning file uploaded status to ViewBag for showing message to user.  
-                            ViewBag.UploadStatus = ProductImgs.Count().ToString() + " files uploaded successfully.";
+                            // ViewBag.UploadStatus = ProductImgs.Count().ToString() + " files uploaded successfully.";
 
                             //var product2 = await _context.Products.FindAsync(product.Id);
                             //var p = product2.ProductImgs.Find(p => p.ProductId == product.Id);
@@ -323,8 +331,8 @@ namespace Ecommerce.Controllers
                     Discount = product.Discount,
                     ImgUrl = product.ImgUrl,
                     Catagory = product.Catagory,
-                    UserId = _context.Users.SingleOrDefault(x=>x.UserName.ToLower()==User.Identity.Name.ToLower()).Id,
-                    IsApproved = false ,
+                    UserId = _context.Users.SingleOrDefault(x => x.UserName.ToLower() == User.Identity.Name.ToLower()).Id,
+                    IsApproved = false,
 
                     Id = R.Next()
                 };
@@ -344,9 +352,16 @@ namespace Ecommerce.Controllers
                     if (file != null)
                     {
                         var InputFileName = Path.GetFileName(file.FileName);
+                        var categoryId = employee.CatagoryId;
+                        var categoryName = _context.Catagories.Where(a => a.Id == categoryId).FirstOrDefault().CategoryName;
 
                         //var ServerSavePath = Path.Combine(Server.MapPath("~/imgs/") + InputFileName);
-                        var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
+                        var paths = new string[] { "wwwroot/", "Imgs/", "Categories/", categoryName + '/' };
+
+                        //var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
+                        var fullPath = Path.Combine(paths);
+
+                        var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), fullPath, InputFileName);
 
                         using (var stream = new FileStream(ServerSavePath, FileMode.Create))
                         {
@@ -387,7 +402,7 @@ namespace Ecommerce.Controllers
 
         public async Task<IActionResult> MyProducts(string id)
         {
-            if(id != null)
+            if (id != null)
             {
                 var idUser = _context.Users.Where(a => a.UserName == id).FirstOrDefault();
                 var product = _context.Products.Where(a => a.ApplicationUser == idUser).Where(a => a.IsApproved == true).ToList();
@@ -400,8 +415,8 @@ namespace Ecommerce.Controllers
         }
         public async Task<IActionResult> deleteVendor(int id)
         {
-            var idUser = _context.Products.Where(a=>a.Id == id).FirstOrDefault().UserId;
-            var product = _context.Products.Where(a=>a.Id == id).FirstOrDefault();
+            var idUser = _context.Products.Where(a => a.Id == id).FirstOrDefault().UserId;
+            var product = _context.Products.Where(a => a.Id == id).FirstOrDefault();
             TempData["idUserFinally"] = idUser;
             _context.Products.Remove(product);
             _context.SaveChanges();

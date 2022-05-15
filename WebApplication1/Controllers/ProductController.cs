@@ -1,4 +1,5 @@
-﻿using ClickPick.Utility;
+﻿using ClickPick.Models;
+using ClickPick.Utility;
 using Ecommerce.Data;
 using Ecommerce.Models;
 using Ecommerce.Models.PagedList;
@@ -53,25 +54,30 @@ namespace Ecommerce.Controllers
        // Product Imgs
         public IActionResult ProductDetails(int id)
         {
+            
 
             var productDetails = _context.ProductImgs.FindAll(x => x.ProductId == id);
             if (productDetails == null)
                 return View("Error");
-
+           
             return View(productDetails);
         }
 
         //Cart
         public IActionResult Details(int productId)
         {
+            // Get The Claim Of Logined User (ApplicationUserId)
+            //var claimsIdentity = (ClaimsIdentity)User.Identity;
+            //var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            //ApplicationUser user = _context.ApplicationUsers.Find(x => x.Id == claim.Value);
+            //ViewBag.userReviewName = user.UserName;
+
             ShoppingCart cartObj = new()
             {
                 Count = 1,
                 ProductId= productId,
                 Product = _context.Products.GetById(productId),
             };
-
-
 
             TempData["DetailsProductId"] = productId;
 
@@ -88,6 +94,8 @@ namespace Ecommerce.Controllers
             var claimsIdentity = (ClaimsIdentity)User.Identity;
 
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+           
 
             shoppingCart.ApplicationUserId = claim.Value;
 
@@ -125,6 +133,45 @@ namespace Ecommerce.Controllers
 
             return View(GetProductByName);
         }
+
+        //Review on Products
+        [Authorize]
+        public IActionResult leaveReview(string subject, string comment, int star, int productId)
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+           
+
+            // Checking if the user has already exsited review on spefici product
+
+            Review checkPreviousReviews = _context.Reviews
+                .Find(x => x.ApplicationUserId == claim.Value && x.ProductId==productId);
+
+            if (checkPreviousReviews == null)
+            {
+                Review review = new Review()
+                {
+
+                    Subject = subject,
+                    Comment = comment,
+                    Rating = star,
+                    ProductId = productId,
+                    ApplicationUserId = claim.Value
+                };
+                _context.Reviews.Add(review);
+                _context.Complete();
+            }
+            else
+            {
+                checkPreviousReviews.Rating = star;
+                checkPreviousReviews.Subject = subject;
+                checkPreviousReviews.Comment = comment;
+                _context.Complete();
+            }
+            return RedirectToAction("Details", new { productId = TempData["DetailsProductId"] });
+        }
+
         public IActionResult AboutUs()
         {
             return View();
