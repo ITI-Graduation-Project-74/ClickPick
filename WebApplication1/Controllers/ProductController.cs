@@ -24,7 +24,9 @@ namespace Ecommerce.Controllers
         }
         public IActionResult Index(int Page=1)
         {
-            var products = _context.Products.GetAll();
+            //var products = _context.Products.GetAll().OrderBy(p=>Guid.NewGuid());
+
+            var products = _context.Products.GetAll().OrderBy(p => p.Price);
             var categories = _context.Categories.GetAll();
 
             // Pages List 
@@ -141,8 +143,6 @@ namespace Ecommerce.Controllers
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
 
-           
-
             // Checking if the user has already exsited review on spefici product
 
             Review checkPreviousReviews = _context.Reviews
@@ -152,7 +152,7 @@ namespace Ecommerce.Controllers
             {
                 Review review = new Review()
                 {
-
+                    
                     Subject = subject,
                     Comment = comment,
                     Rating = star,
@@ -181,6 +181,8 @@ namespace Ecommerce.Controllers
         {
             return View();
         }
+
+
 
     }
 }

@@ -7,28 +7,28 @@
 
 
 <!-- Start Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="breadcrumbs-content">
-                        <h1 class="page-title">Cart</h1>
-                    </div>
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">Cart</h1>
                 </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li><a href="index.html">Shop</a></li>
-                        <li>Cart</li>
-                    </ul>
-                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-nav">
+                    <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
+                    <li><a href="index.html">Shop</a></li>
+                    <li>Cart</li>
+                </ul>
             </div>
         </div>
     </div>
-    <!-- End Breadcrumbs -->
+</div>
+<!-- End Breadcrumbs -->
 
-    <!-- Shopping Cart -->
-    <form method="post">
+<!-- Shopping Cart -->
+<form method="post">
     <div class="shopping-cart section">
         <div class="container">
             <div class="cart-list-head">
@@ -43,7 +43,7 @@
                         </div>
                         @*<div class="col-lg-2 col-md-2 col-12">
                             <p>Quantity</p>
-                        </div>*@
+                            </div>*@
                         <div class="col-lg-2 col-md-2 col-12">
                             <p>Subtotal</p>
                         </div>
@@ -60,58 +60,58 @@
                 <!-- Cart Single List list -->
                 <div class="cartitemsj">
 
-                
-                @foreach (var item in Model.ListCart)
-                {
-                    <div class="cart-single-list">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-1 col-12">
-                            <a href="#"><img src="@item.Product.ImgUrl" alt="ProductImg"></a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <h5 class="product-name"><a href="#">
-                                    @item.Product.Name</a></h5>
-                            <p class="product-des">
-                                <span><em>Category:</em> @item.Product.Catagory.CategoryName</span>
-                                
-                            </p>
-                        </div>
-                    
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <strong>@item.Product.Price.ToString("c")<span class="text-muted">x</span> @item.Count </strong>
-                            <p>
-                              SubTotal: @(item.Product.Price * @item.Count)
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                             <a asp-action="DecreaseProduct" asp-route-productId="@item.ProductId" 
+
+                    @foreach (var item in Model.ListCart)
+                    {
+                        <div class="cart-single-list">
+                            <div class="row align-items-center">
+                                <div class="col-lg-1 col-md-1 col-12">
+                                    <a href="#"><img src="@item.Product.ImgUrl" alt="ProductImg"></a>
+                                </div>
+                                <div class="col-lg-4 col-md-3 col-12">
+                                    <h5 class="product-name"><a href="#">
+                                            @item.Product.Name</a></h5>
+                                    <p class="product-des">
+                                        <span><em>Category:</em> @item.Product.Catagory.CategoryName</span>
+
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-2 col-md-2 col-12">
+                                    <strong>@item.Product.Price.ToString("c")<span class="text-muted">x</span> @item.Count </strong>
+                                    <p>
+                                        SubTotal: @(item.Product.Price * @item.Count)
+                                    </p>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-12">
+                                    <a asp-action="DecreaseProduct" asp-route-productId="@item.ProductId" 
                                     class="text-success">
-                               <i class="fa-solid fa-cart-plus fa-2x"></i>
-                            |
-                                <a asp-action="IncreaseProduct" asp-route-productId="@item.ProductId" 
+                                        <i class="fa-solid fa-cart-plus fa-2x"></i>
+                                        |
+                                        <a asp-action="IncreaseProduct" asp-route-productId="@item.ProductId" 
                                   class="fa-solid fa-cart-plus fa-2x">
-                                   </a>
-                                 </a>
-                            
+                                        </a>
+                                    </a>
+
+                                </div>
+
+                                @*<div class="col-lg-1 col-md-2 col-12">
+                                    <button asp-action="RemoveProduct" asp-route-productId="@item.ProductId" type="submit" class="btn btn-outline-danger btn-lg">
+                                    <i class="bi bi-trash bi--xl"></i>
+                                    </button>
+                                    </div>*@
+
+                                <div class="col-lg-1 col-md-2 col-12">
+                                    <a  value="@item.ProductId"  class="btn btn-outline-danger btn-lg bi bi-trash bi--xl deleteBtn">
+                                        @* <i class=""></i>*@
+                                    </a>
+                                </div>
+
+
+                            </div>
                         </div>
-                        
-@*                        <div class="col-lg-1 col-md-2 col-12">
-                             <button asp-action="RemoveProduct" asp-route-productId="@item.ProductId" type="submit" class="btn btn-outline-danger btn-lg">
-                                            <i class="bi bi-trash bi--xl"></i>
-                               </button>
-                        </div>*@
 
-                          <div class="col-lg-1 col-md-2 col-12">
-                             <a  value="@item.ProductId"  class="btn btn-outline-danger btn-lg bi bi-trash bi--xl deleteBtn">
-                                           @* <i class=""></i>*@
-                               </a>
-                        </div>
-
-
-                    </div>
-                </div>
-                    
-                }
+                    }
                 </div>
                 <!-- End Single List list -->
             </div>
@@ -126,10 +126,10 @@
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="right">
                                     <ul>
-                                         @foreach (var item in Model.ListCart)
-                                            {
-                                                i += @item.Product.Price * @item.Count;  
-                                            }
+                                        @foreach (var item in Model.ListCart)
+                                        {
+                                            i += @item.Product.Price * @item.Count;
+                                        }
                                         <li>Cart Subtotal<span>
                                            @i $
                                         </span></li>
@@ -163,7 +163,7 @@
                  type:"Delete",
                  url:'@Url.Action("DeleteProduct","ShoppingCart")',
                  data:{
-                    
+                       
                      productId:productId
                      
                      
@@ -195,14 +195,14 @@
                             </p>
                         </div>
                         <div class="col-lg-2 col-md-2 col-12">
-                             <a href=/ShoppingCart/DecreaseProduct/${item.productId} 
-                                    class="text-success">
-                               <i class="fa-solid fa-cart-plus fa-2x"></i>
-                            |
-                                <a href=/ShoppingCart/IncreaseProduct/${item.productId}
-                                  class="fa-solid fa-cart-plus fa-2x">
-                                   </a>
-                                 </a>
+                             <a value=${item.productId} role="button" 
+                                    class="text-success fa-solid fa-cart-plus fa-2x increaseD">
+                               
+                            |</a>
+                                <a value=${item.productId} role="button"
+                                  class="fa-solid fa-cart-plus fa-2x increaseP">
+                                </a>
+                                 
                             
                         </div>
 
@@ -218,7 +218,18 @@
                          
                          `)
                      })
-                     console.log(data);
+
+                     $(".increaseP").on("click",(e)=>{
+                         let value = $(e.target).attr("value");
+                         window.location.href='@Url.Action("IncreaseProduct", "ShoppingCart",new { productId="value" })'.replace("value",value)
+
+                     });
+
+                      $(".increaseD").on("click",(e)=>{
+                         let value = $(e.target).attr("value");
+                         window.location.href='@Url.Action("DecreaseProduct", "ShoppingCart",new { productId="value" })'.replace("value",value)
+
+                     })
                  },
                  error:(ex)=>{
                      console.log(ex);
@@ -230,5 +241,5 @@
     
     </script>
 
-  
+
 		
