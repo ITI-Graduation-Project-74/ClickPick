@@ -5,7 +5,6 @@
 
 @{
     double i = 0;
-   // double coup =double.Parse( TempData.Peek("coupon"));
 
 }
 
@@ -317,34 +316,46 @@
 
                             <div class="checkout-sidebar-coupon">
                             <p>Appy Coupon to get discount!</p>
-
-                            <form asp-action="Index" asp-controller="Coupon" method="get" id="c" enctype="multipart/form-data">
-                                <div class="single-form form-default">
+         <form  method="get" id="c" enctype="multipart/form-data">    
+             <div class="single-form form-default">
                                     <div class="form-input form">
                                         <input name="Name" type="text" placeholder="Coupon Code" id="couponName">
                                     </div>
                                      
                                     <div class="button">
-                                        <button onclick="sendCoupon();" type="button" class="btn" id="formcouponsubmit">apply</button>
+                                        <button  type="button" class="btn" id="sendCouponBtn">apply</button>
                                     </div>
-                                    @if(TempData.Peek("coupon") != null){ 
-                         <br />
-                    <span id="txtOrderTotal" class="text-success">
-                        @( ((double) i* (100-Convert.ToDouble( (TempData.Peek("coupon")))))/100)
-                        </span>
-                        <br/>
-                    <span class="text-danger"id="txtOrderTotal">- @( ((double) i*Convert.ToDouble( TempData.Peek("coupon")))/100) $</span><br />
-                    <form asp-controller="Coupon" asp-action="Remove" method="get">
-                        <button type="submit" class="btn btn-outline-danger">Remove Coupon</button>
-                        </form>
-                }
-                else
-                {
-                    <span class="text-danger">@(ViewBag.msg)</span>
-                }
+                                    <br/>
+                    
+                     <ul id="couponArea">
+                            <li class="list-group-item d-flex justify-content-between">
+                                      <span class="text-danger"> Discount</span>
+                                         <strong class="text-danger"> 
+                                  <strong>- </strong><span class="text-danger"id="DiscountAfterCoupon"></span><br />
+
+                                         </strong>
+                                   </li>
+
+                             <li class="list-group-item d-flex justify-content-between">
+                                      <span class="text-info"> Total (USD)</span>
+                                         <strong class="text-info"> 
+                                   <span id="TotalAfterCoupon" class="text-success"></span>
+                                         </strong>
+                                   </li>
+                                   </ul>
+                                    <ul id="CouponErrorli">
+                          <li class="list-group-item d-flex justify-content-between">
+                                         <strong class="text-info"> 
+                                   <span id="CouponError" class="text-danger"></span>
+                                         </strong>
+                                   </li>
+                        </ul>
+
+                         <div class=" d-flex justify-content-end mt-3 "> 
+                        <button type="button" class="btn btn-outline-danger" id="removeCoupon">Remove Coupon</button>
+                        </div>
                                 </div>
-                                <span id="ct" hidden></span>
-                            </form>
+                           </form>
                         </div>
                         </div>
                         <div class="checkout-sidebar-banner mt-30">
@@ -370,21 +381,72 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
     <script src="~/js/validate.js" ></script>
-   <script>
-      
-//$('#formcouponsubmit').ajax({
-//    url: "/Coupon/Index",
-//    method: "get",
-//    success: function (data) {
-//      console.log("TEst");
-//    },
-//    error: function (errorMessag) {
-//      console.log("errorMessag");
-//    },
-//  });
-function sendCoupon(){
-    var couponname=document.getElementById('couponName').value ;
-    $('#ct').load('/Coupon/Index',{Name:couponname});
+    <script>
+     $("#removeCoupon").hide();
+     $("#couponArea").hide();
+     $("#CouponErrorli").hide();
 
-} 
-   </script>
+     //sending coupon
+     $("#sendCouponBtn").click(function (e) {
+    e.preventDefault();
+    name = document.getElementById("couponName").value;
+    console.log(name);
+        $.ajax({
+            url: "/Coupon/Index",
+            method: "GET",
+            data: { Name : name},
+            success: function (data) {
+                console.log(typeof(data));
+              
+               
+                $(data).each((i,item)=>{
+
+                    if(typeof(item.msg) == "number"){
+                   
+                   $("#CouponErrorli").hide();
+                    $("#couponArea").show();
+                     totalPrice=@i * parseFloat(item.msg/100);
+                    $( "#TotalAfterCoupon" ).text(
+                    (@i - parseFloat( totalPrice)) + "  $" );
+                    $( "#DiscountAfterCoupon" ).text(
+                   "- "+ parseFloat( totalPrice) + "  $" );
+                   $("#removeCoupon").show();
+                    }
+                    else {
+                        
+                         $("#couponArea").hide();
+                         $("#removeCoupon").hide();
+                         $("#CouponErrorli").show();
+                         $( "#CouponError" ).text(item.msg );
+                    }
+                });  
+            }
+            ,
+            error: function (e) {
+                console.log(e);
+            }
+        
+        });
+    });
+
+    //removing Coupon
+    $("#removeCoupon").click(function (e) {
+    e.preventDefault();
+        $.ajax({
+            url: "/Coupon/Remove",
+            method: "POST",
+            success: function (data) {
+                         $("#couponArea").hide();
+                         $("#removeCoupon").hide();
+                         $("#CouponErrorli").show();
+                         $("#CouponError").text(data);
+            },
+            error: function (e) {
+                console.log(e);
+            }
+
+        });
+    }
+);
+
+    </script>
