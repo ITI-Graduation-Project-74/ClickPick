@@ -29,12 +29,53 @@
     </div>
     <!-- End Breadcrumbs -->
 
+
+
     <!--====== Checkout Form Steps Part Start ======-->
+      
     <section class="checkout-wrapper section mt-1">
         <h4 class="text-center text-muted"> Please Review Your Pricing Table And Confirm Your Checkout Method </h4>
-            <div class="col-lg-8 col-md-12 col-12 mx-auto mb-5">
-                    <div class="checkout-sidebar">
-                        <div class="checkout-sidebar-price-table mt-30">
+            <style>
+                input[type=radio] {
+                                    width: 30px;
+                                    height: 20px;
+                                }
+
+           
+                        </style>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="checkout-steps-form-style-1">
+    
+          <form asp-action="Index" asp-controller="Payment">
+                     
+          <div class="row justify-content-around p-5">
+            <label class="card p-0 " style="width: 21rem; height: 20rem; background-color:#F1EEE9" >
+                  <img class="card-img-top " style="width:100%; height:80% " src="~/Imgs/Payment/COD.png" alt="Card image cap">
+                  <div class="plan-details mx-auto my-auto">
+              <input name="Method" class="radio " type="radio" value="Cash" checked>
+                <h5 class="plan-type text-black text-uppercase font-size-lg text-lg-center d-inline-block text-muted">Cash On Delievry</h5>
+              </div>
+
+            
+            </label>
+          
+ 
+             <label class="card p-0 " style="width: 21rem; height: 20rem; background-color:#F1EEE9" >
+                  <img class="card-img-top " style="width:100%; height:80%" src="~/Imgs/Payment/Stripe2.png" alt="Card image cap">
+                  <div class="plan-details mx-auto my-auto">
+              <input name="Method" class="radio " type="radio" value="Stripe">
+                <h5 class="plan-type text-black text-uppercase font-size-lg text-lg-center text-muted d-inline-block">Stripe</h5>
+              </div>
+            </label>
+ 
+        </div>
+        <hr style="background-color:black;"/>
+      
+            <div class="col-lg-12 col-md-12 col-12 mx-auto mb-5">
+                    <div class="checkout-sidebar  ">
+                        <div class="checkout-sidebar-price-table mt-30 ">
                             <h5 class="title">Pricing Table</h5>
 
                                <ul class="list-group mb-3">
@@ -70,35 +111,8 @@
                                     </div>
                                </div>
                     </div>
-                            <hr />
-
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="checkout-steps-form-style-1">
-    
-          <form asp-action="Index" asp-controller="Payment">
-          <div class="row justify-content-lg-between justify-content-md-between justify-content-sm-between">
-            <label class="card " style="width: 18rem;" >
-                  <img class="card-img-top" src="~/Imgs/Payment/COD.jpg" style="width:250px; height:200px" alt="Card image cap">
-              <input name="Method" class="radio" type="radio" value="Cash" checked>
-              
-              <span class="plan-details">
-                <span class="plan-type">Cash On Delievry</span>
-               
-              </span>
-            </label>
-            <label class="card " style="width: 18rem;">
-                <img class="card-img-top" src="~/Imgs/Payment/Stripe.png" style="width:350px; height:250px" alt="Card image cap">
-                 <input name="Method" class="radio" type="radio" value="Stripe">
-                 <span class="hidden-visually"> Stripe</span>
-              
-            </label>
- 
-        </div>
-        <hr />
           <div class="single-form form-default button float-end mt-5">
-          <button type="submit" class="btn mt-3">Buy now</button>
+          <button type="submit" class="btn mt-3 ">Buy now</button>
                    </div>
         </form>          
                         </div>

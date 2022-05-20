@@ -55,8 +55,11 @@
                                 >Contact Us</a>
                                 </li>
                               <li>
-                                    <a asp-controller="products" asp-route-id="@User.Identity.Name" asp-action="MyProducts"
-                                >My Products</a>
+                  <a asp-controller="products" asp-route-id="@User.Identity.Name" asp-action="MyProducts">My Products</a>
+                                </li>
+
+                                  <li>
+                                    <a asp-controller="products"  asp-action="VendorRequest">Add Products</a>
                                 </li>
 
                                 @if (User.IsInRole(ApplicationRoles.Role_Admin))

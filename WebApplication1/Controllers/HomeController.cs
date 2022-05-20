@@ -68,7 +68,7 @@ namespace WebApplication1.Controllers
                 NetworkCredential NetworkCredential = new NetworkCredential("156ff941616c90", "d51a22689d2289");
                 SmtpClient.UseDefaultCredentials = false;
                 SmtpClient.Credentials = NetworkCredential;
-                SmtpClient.Port = 2525;
+                SmtpClient.Port = 587;
                 SmtpClient.EnableSsl = false;
                 SmtpClient.Send(mail);
 

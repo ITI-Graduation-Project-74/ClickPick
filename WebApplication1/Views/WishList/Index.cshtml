@@ -13,16 +13,27 @@
 
 }
 
+@if (Model.WishList.Count() == 0)
+{
+    <div class=" text-center">
+            <h4 >Your WishList is Empty </h4>
+            <br />
+            <img src="/Imgs/General/whislist.gif" style="border-radius:20px" />
+
+        </div>
+}
+else
+{
+    
 
 
 <form method="post">
-
 <div class="container d-flex flex-column align-items-center align-content-center mt-5 mb-5">
     <div class="d-flex flex-column justify-content-center align-items-center ">
         @foreach (var item in  Model.WishList)
         {
    
-        <div class="d-flex flex-column align-items-center align-content-center col-lg-6 col-12 mb-lg-3 " >
+        <div class="d-flex flex-column align-items-center align-content-center col-lg-12 col-12 mb-lg-3 " >
             <div class="row p-2 bg-white border rounded">
                 <div class="col-md-2 mt-1">
                     <img class="img-fluid img-responsive rounded product-image" src="@item.Product.ImgUrl">
@@ -55,4 +66,4 @@
 </div>
 </form>
 
-    
+    }

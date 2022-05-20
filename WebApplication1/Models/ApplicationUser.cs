@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using ClickPick.Models;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecommerce.Models
@@ -29,13 +30,11 @@ namespace Ecommerce.Models
         //Relation With Product as Vendor
         public virtual List<Product> Products { get; set; }
 
-        //relation with wishlist
-        //[ForeignKey("wishListId")]
-        //public virtual WishList WishList { get; set; }
-        //public int wishListId { get; set; }
+
+        // Relation With Review
+        public virtual List<Review> Reviews { get; set; }
 
 
-        
 
 
 

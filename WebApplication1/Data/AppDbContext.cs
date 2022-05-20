@@ -66,6 +66,8 @@ namespace Ecommerce.Data
         public DbSet<UsersWithorder> UsersWithorders { get; set; }
 
 
+        // Reviews
+        public virtual DbSet<Review> Reviews { get; set; }
 
 
     }
