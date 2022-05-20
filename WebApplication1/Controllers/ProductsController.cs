@@ -357,8 +357,10 @@ namespace Ecommerce.Controllers
 
                         //var ServerSavePath = Path.Combine(Server.MapPath("~/imgs/") + InputFileName);
                         var paths = new string[] { "wwwroot/", "Imgs/", "Categories/", categoryName + '/' };
+                       
 
                         //var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
+
                         var fullPath = Path.Combine(paths);
 
                         var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), fullPath, InputFileName);
@@ -375,6 +377,8 @@ namespace Ecommerce.Controllers
                         P.ImgUrl = file.FileName;
                         P.Id = R2.Next();
                         _context.ProductImgs.Add(P);
+                        employee.ImgUrl=  P.ImgUrl;
+                        _context.Products.Update(employee);
                         await _context.SaveChangesAsync();
                     }
                     //return RedirectToAction(nameof(Index));

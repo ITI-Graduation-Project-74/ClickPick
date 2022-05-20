@@ -3,6 +3,7 @@
 
 @{
     double i = 0;
+
 }
 
 
@@ -30,28 +31,45 @@
 <!-- Shopping Cart -->
 <form method="post">
     <div class="shopping-cart section">
+        <div class="cartCountNumber text-center" style="display:none">
+            <h4 >Your Cart is Empty </h4>
+            <br />
+            <img src="/Imgs/General/emptyCart.gif" style="border-radius:20px" />
+
+        </div>
+        @if (Model.ListCart.Count() == 0)
+        {
+            <div class="cartCountNumber text-center">
+            <h4 >Your Cart is Empty </h4>
+            <br />
+            <img src="/Imgs/General/emptyCart.gif" style="border-radius:20px" />
+
+        </div>
+        }
+        else
+        {
         <div class="container">
             <div class="cart-list-head">
                 <!-- Cart List Title -->
                 <div class="cart-list-title">
-                    <div class="row">
+                    <div class="row ">
                         <div class="col-lg-1 col-md-1 col-12">
 
                         </div>
                         <div class="col-lg-4 col-md-3 col-12">
-                            <p>Product Name</p>
+                            <h6>Product Name</h6>
                         </div>
                         @*<div class="col-lg-2 col-md-2 col-12">
                             <p>Quantity</p>
                             </div>*@
                         <div class="col-lg-2 col-md-2 col-12">
-                            <p>Subtotal</p>
+                            <h6>Subtotal</h6>
                         </div>
                         <div class="col-lg-2 col-md-2 col-12">
-                            <p>Amount</p>
+                            <h6>Amount</h6>
                         </div>
                         <div class="col-lg-1 col-md-2 col-12">
-                            <p>Remove</p>
+                            <h6>Remove</h6>
                         </div>
                     </div>
                 </div>
@@ -84,14 +102,13 @@
                                     </p>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-12">
-                                    <a asp-action="DecreaseProduct" asp-route-productId="@item.ProductId" 
-                                    class="text-success">
+                                 <a asp-action="DecreaseProduct" asp-route-productId="@item.ProductId" class="text-danger">
                                         <i class="fa-solid fa-cart-plus fa-2x"></i>
-                                        |
-                                        <a asp-action="IncreaseProduct" asp-route-productId="@item.ProductId" 
-                                  class="fa-solid fa-cart-plus fa-2x">
-                                        </a>
                                     </a>
+                                    |
+                                       <a asp-action="IncreaseProduct" asp-route-productId="@item.ProductId" 
+                                            class="fa-solid fa-cart-plus fa-2x">
+                                        </a>
 
                                 </div>
 
@@ -102,7 +119,7 @@
                                     </div>*@
 
                                 <div class="col-lg-1 col-md-2 col-12">
-                                    <a  value="@item.ProductId"  class="btn btn-outline-danger btn-lg bi bi-trash bi--xl deleteBtn">
+                                    <a  value="@item.ProductId"  class="btn btn-outline-danger btn-lg bi bi-trash bi--xl deleteBtn " style="width: 80px">
                                         @* <i class=""></i>*@
                                     </a>
                                 </div>
@@ -115,9 +132,13 @@
                 </div>
                 <!-- End Single List list -->
             </div>
-            <div class="row">
+           
+
+        
+      
+                  <div class="row">
                 <div class="col-12">
-                    <!-- Total Amount -->
+                    <!-- Total Amount --> 
                     <div class="total-amount">
                         <div class="row">
                             <div class="col-lg-8 col-md-6 col-12">
@@ -130,8 +151,8 @@
                                         {
                                             i += @item.Product.Price * @item.Count;
                                         }
-                                        <li>Cart Subtotal<span>
-                                           @i $
+                                        <li><b>Cart Subtotal</b><span>
+                                           <span class="badge badge-info cartTotalPrice" style="font-size: 20px; background-color:#94bdee; color:white;"><h6>@i $</h6></span>
                                         </span></li>
                                        
                                     </ul>
@@ -146,7 +167,10 @@
                     <!--/ End Total Amount -->
                 </div>
             </div>
-        </div>
+      
+          
+        </div> 
+         }
     </div>
     </form>
     <!--/ End Shopping Cart -->
@@ -157,16 +181,17 @@
 
     <script>
         $(document).on("click",".deleteBtn",(e)=>{
-            let productId=$(e.target).attr("value"); 
-          
+            let productId=$(e.target).attr("value");
+            var sum=0;
+            var itemCount=0;
+            var totalPrice=0;
+            var divToHide=document.getElementsByClassName('shopping-cart section');
+
             $.ajax({
                  type:"Delete",
                  url:'@Url.Action("DeleteProduct","ShoppingCart")',
-                 data:{
-                       
+                 data:{    
                      productId:productId
-                     
-                     
                  },
                  success:(data)=>{
                      $(".cartitemsj").html("")
@@ -196,18 +221,16 @@
                         </div>
                         <div class="col-lg-2 col-md-2 col-12">
                              <a value=${item.productId} role="button" 
-                                    class="text-success fa-solid fa-cart-plus fa-2x increaseD">
+                                    class="text-danger fa-solid fa-cart-plus fa-2x increaseD">
                                
                             |</a>
                                 <a value=${item.productId} role="button"
                                   class="fa-solid fa-cart-plus fa-2x increaseP">
                                 </a>
-                                 
-                            
                         </div>
 
                           <div class="col-lg-1 col-md-2 col-12">
-                             <a  value="${item.productId}"  class="btn btn-outline-danger btn-lg bi bi-trash bi--xl deleteBtn">
+                             <a  value="${item.productId}"  class="btn btn-outline-danger btn-lg bi bi-trash bi--xl deleteBtn" style="width: 80px">
                                           
                                </a>
                         </div>
@@ -217,7 +240,13 @@
                 </div>
                          
                          `)
+
+                        sum+=item.count;
+                        totalPrice+=item.price;
+                        
+
                      })
+                     
 
                      $(".increaseP").on("click",(e)=>{
                          let value = $(e.target).attr("value");
@@ -229,7 +258,21 @@
                          let value = $(e.target).attr("value");
                          window.location.href='@Url.Action("DecreaseProduct", "ShoppingCart",new { productId="value" })'.replace("value",value)
 
-                     })
+                     });
+
+                     $(".total-items").html(sum);
+                     
+
+                     $(".cartTotalPrice").html(totalPrice);
+
+                     if(sum==0){
+
+                         $('.total-amount').hide();
+                         $('.cart-list-title').hide();
+                         $('.cartCountNumber').show();
+
+                     }
+                     
                  },
                  error:(ex)=>{
                      console.log(ex);

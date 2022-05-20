@@ -69,7 +69,7 @@ namespace Ecommerce.Controllers
 
             return RedirectToAction("Index");
         }
-
+   
         public IActionResult DecreaseProduct(int productId)
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
