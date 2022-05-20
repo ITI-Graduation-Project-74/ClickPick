@@ -626,7 +626,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=38,
-                            Name ="Gray sweet-shirt",
+                            Name ="pink sweet-shirt",
                             Description="The Product Description",
                             Price =200,
                             Discount ="10%",
@@ -634,10 +634,11 @@ namespace Ecommerce.Data
                             BrandId=4,
                             CatagoryId=2,
                         },
+                              //3
                               new Product()
                         {
                                 Id=39,
-                            Name ="Blue short",
+                            Name ="Gray And Blue Pyjama",
                             Description="The Product Description",
                             Price =300,
                             Discount ="10%",
@@ -648,7 +649,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=40,
-                            Name ="Red Sweet-shirt",
+                            Name ="Gray And Green Pyjama",
                             Description="The Product Description",
                             Price =400,
                             Discount ="10%",
@@ -659,7 +660,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=41,
-                            Name ="Black Sweet-shirt",
+                            Name ="Gray And Black Pyjama",
                             Description="The Product Description",
                             Price =710,
                             Discount ="10%",
@@ -667,10 +668,11 @@ namespace Ecommerce.Data
                             BrandId=4,
                             CatagoryId=2,
                         },
+                              //6
                               new Product()
                         {
                                 Id=42,
-                            Name ="Blue pyjama",
+                            Name ="Black Short",
                             Description="The Product Description",
                             Price =820,
                             Discount ="10%",
@@ -681,7 +683,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=43,
-                            Name ="Yellow salopit",
+                            Name ="Red Sweet-Shirt",
                             Description="The Product Description",
                             Price =630,
                             Discount ="10%",
@@ -692,7 +694,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=44,
-                            Name ="Black T-shirt",
+                            Name ="Black Sweet-shirt",
                             Description="The Product Description",
                             Price =650,
                             Discount ="10%",
@@ -703,7 +705,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=45,
-                            Name ="Blue Salopit",
+                            Name ="Gray And Blue Pyjama",
                             Description="The Product Description",
                             Price =740,
                             Discount ="10%",
@@ -711,10 +713,11 @@ namespace Ecommerce.Data
                             BrandId=4,
                             CatagoryId=2,
                         },
+                              //10
                               new Product()
                         {
                                 Id=46,
-                            Name ="Pink Sweet-shirt",
+                            Name ="Yellow Salopit",
                             Description="The Product Description",
                             Price =250,
                             Discount ="10%",
@@ -725,7 +728,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=47,
-                            Name ="Blue and Gray pyjama",
+                            Name ="Black T-shairt",
                             Description="The Product Description",
                             Price =240,
                             Discount ="10%",
@@ -736,7 +739,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=48,
-                            Name ="Dark green pyjama",
+                            Name ="BabyBlue Salopit",
                             Description="The Product Description",
                             Price =120,
                             Discount ="10%",
@@ -765,7 +768,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=50,
-                            Name ="Black pyjama",
+                            Name ="Gray pants",
                             Description="The Product Description",
                             Price =560,
                             Discount ="10%",
@@ -776,7 +779,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=51,
-                            Name ="Blue pyjama",
+                            Name ="Green Shairt",
                             Description="The Product Description",
                             Price =230,
                             Discount ="10%",
@@ -787,7 +790,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=52,
-                            Name ="Gray t-shirt",
+                            Name ="Cafee Shairt",
                             Description="The Product Description",
                             Price =320,
                             Discount ="10%",
@@ -798,7 +801,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=53,
-                            Name ="Black Sweet-Pants",
+                            Name ="Black Pyjama",
                             Description="The Product Description",
                             Price =780,
                             Discount ="10%",
@@ -809,7 +812,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=54,
-                            Name ="Black and cafee pyjama",
+                            Name ="Blue and White pyjama",
                             Description="The Product Description",
                             Price =150,
                             Discount ="10%",
@@ -820,7 +823,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=55,
-                            Name ="white and gray pyjama",
+                            Name ="Gray T-Shairt",
                             Description="The Product Description",
                             Price =910,
                             Discount ="10%",
@@ -831,7 +834,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=56,
-                            Name ="Red Sweet-Shirt",
+                            Name ="Black SweetPants",
                             Description="The Product Description",
                             Price =550,
                             Discount ="10%",
@@ -842,7 +845,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=57,
-                            Name ="Black Sweet-Shirt",
+                            Name ="Black And Cofee Pyjama",
                             Description="The Product Description",
                             Price =660,
                             Discount ="10%",
@@ -853,7 +856,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=58,
-                            Name ="Gray Sweet-Pants",
+                            Name ="Black And Gray Pyjama",
                             Description="The Product Description",
                             Price =770,
                             Discount ="10%",
@@ -864,7 +867,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=59,
-                            Name ="Green Shirt",
+                            Name ="Red Sweet-Shirt",
                             Description="The Product Description",
                             Price =220,
                             Discount ="10%",
@@ -875,7 +878,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=60,
-                            Name ="Cofee Shirt",
+                            Name ="BlueBlack Sweet-Shirt",
                             Description="The Product Description",
                             Price =110,
                             Discount ="10%",
@@ -901,7 +904,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=62,
-                            Name ="Blue-Black Flowered Blouse",
+                            Name ="Gray suit",
                             Description="The Product Description",
                             Price =670,
                             Discount ="10%",
@@ -912,7 +915,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=63,
-                            Name ="Yellow Shirt",
+                            Name ="Gray Vest",
                             Description="The Product Description",
                             Price =870,
                             Discount ="10%",
@@ -923,7 +926,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=64,
-                            Name ="Blue Black Shirt",
+                            Name ="Red Blouse",
                             Description="The Product Description",
                             Price =780,
                             Discount ="10%",
@@ -934,7 +937,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=65,
-                            Name ="Red pyjama",
+                            Name ="Blue Flowerd Blouse",
                             Description="The Product Description",
                             Price =120,
                             Discount ="10%",
@@ -945,7 +948,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=66,
-                            Name ="Gray Pyjama",
+                            Name ="Yellow Vest",
                             Description="The Product Description",
                             Price =390,
                             Discount ="10%",
@@ -956,7 +959,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=67,
-                            Name ="Red Blouse",
+                            Name ="BabyBlue And White Vest",
                             Description="The Product Description",
                             Price =830,
                             Discount ="10%",
@@ -967,7 +970,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=68,
-                            Name ="Dark Red Vest",
+                            Name ="Dark Red Pyjama",
                             Description="The Product Description",
                             Price =710,
                             Discount ="10%",
@@ -978,7 +981,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=69,
-                            Name ="Baby Blue suit",
+                            Name ="Gray Pyjama",
                             Description="The Product Description",
                             Price =420,
                             Discount ="10%",
@@ -989,7 +992,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=70,
-                            Name ="Black suit",
+                            Name ="Black And Red Pyjama",
                             Description="The Product Description",
                             Price =620,
                             Discount ="10%",
@@ -1000,7 +1003,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=71,
-                            Name ="Gray vest",
+                            Name ="Dark Red vest",
                             Description="The Product Description",
                             Price =710,
                             Discount ="10%",
@@ -1011,7 +1014,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=72,
-                            Name ="Red blouse",
+                            Name ="Baby Blue Suit",
                             Description="The Product Description",
                             Price =750,
                             Discount ="10%",
