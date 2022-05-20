@@ -404,7 +404,7 @@ namespace Ecommerce.Data
                              new Product()
                         {
                                 Id=19,
-                            Name ="Black sappoh with high heels",
+                            Name ="New Balance Chunky Sole Lace-Up",
                             Description="The Product Description",
                             Price =210,
                             Discount ="10%",
