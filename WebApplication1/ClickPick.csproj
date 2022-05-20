@@ -11,21 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="wwwroot\Imgs\Categories\Laptops\**" />
-    <Compile Remove="wwwroot\Imgs\Categories\Men%27s\**" />
-    <Compile Remove="wwwroot\Imgs\Categories\Shoes\**" />
     <Compile Remove="wwwroot\Imgs\Categories\Women%27s\**" />
-    <Content Remove="wwwroot\Imgs\Categories\Laptops\**" />
-    <Content Remove="wwwroot\Imgs\Categories\Men%27s\**" />
-    <Content Remove="wwwroot\Imgs\Categories\Shoes\**" />
     <Content Remove="wwwroot\Imgs\Categories\Women%27s\**" />
-    <EmbeddedResource Remove="wwwroot\Imgs\Categories\Laptops\**" />
-    <EmbeddedResource Remove="wwwroot\Imgs\Categories\Men%27s\**" />
-    <EmbeddedResource Remove="wwwroot\Imgs\Categories\Shoes\**" />
     <EmbeddedResource Remove="wwwroot\Imgs\Categories\Women%27s\**" />
-    <None Remove="wwwroot\Imgs\Categories\Laptops\**" />
-    <None Remove="wwwroot\Imgs\Categories\Men%27s\**" />
-    <None Remove="wwwroot\Imgs\Categories\Shoes\**" />
     <None Remove="wwwroot\Imgs\Categories\Women%27s\**" />
   </ItemGroup>
 
