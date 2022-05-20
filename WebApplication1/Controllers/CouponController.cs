@@ -11,7 +11,7 @@ namespace ClickPick.Controllers
     {
         private readonly IUnitOfWork _context;
 
-        public CouponController(IUnitOfWork context)
+                public CouponController(IUnitOfWork context)
         {
             _context = context;
         }
@@ -26,13 +26,12 @@ namespace ClickPick.Controllers
                 .FindAll(c => c.ApplicationUserId == claim.Value)
             };
 
-
+            HttpContext.Session.Remove("coupon");
             Coupon c = _context.Coupons.Find(a => a.Name == Name);
             if (c == null)
             {
-                ViewBag.msg = "Not Applicaple";
-                TempData.Remove("coupon");
-                return View("CartSummary");
+                return Json(new { msg = "Not Applicaple" });
+
             }
             else
             {
@@ -41,31 +40,39 @@ namespace ClickPick.Controllers
                 int valid = DateTime.Compare(thisDay, c.ValidFrom);
                 if (valid < 0)
                 {
-                    ViewBag.msg = "Not Applicaple yet";
-                    TempData.Remove("coupon");
-                    return View("CartSummary");
+                    return Json(new { msg = "Not Applicaple yet" });
                 }
                 else if (expire > 0)
                 {
-                    ViewBag.msg = "sorry this coupon expired";
-                    TempData.Remove("coupon");
-                    return View("CartSummary");
+                    return Json(new { msg = "sorry this coupon expired" });
                 }
                 else
                 {
-                    TempData["coupon"] = c.Percentage;
-                    HttpContext.Session.SetString("coupon", JsonConvert.SerializeObject(c));
-                    return View("CartSummary");
+                    string jsonC = JsonConvert.SerializeObject(c);
+                    HttpContext.Session.SetString("coupon", jsonC);
+                    return Json(new { msg = c.Percentage });
+
 
                 }
             }
 
         }
-        public IActionResult Remove()
+        public string Remove()
         {
-            TempData.Remove("coupon");
-            ViewBag.msg = "coupon removed";
-            return View("CartSummary");
+            HttpContext.Session.Remove("coupon");
+            return "coupon removed ";
+        }
+
+        public string checkPhone(String phone)
+        {
+            ApplicationUser user = _context.ApplicationUsers.Find(u => u.PhoneNumber == phone);
+            if (user == null)
+            {
+                return " ";
+            }
+            else return "Sorry, This Phone number already exists";
+           
+
         }
     }
 }
