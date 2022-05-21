@@ -133,3 +133,36 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 <script src="~/js/validate.js" ></script>
+<script>
+        $('#Input_PhoneNumber').on('input', function () {
+        var phoneval = document.getElementById('Input_PhoneNumber').value;
+        if (phoneval.length > 10 ) {
+            $.ajax({
+                url: "/Coupon/checkPhone",
+                method: "GET",
+                data: { phone: phoneval },
+                success: function (data) { 
+                     if (data == "Sorry, This Phone number already exists" ) {
+                     $("#pleasework").text(data);
+                     $("#pleasework").css({
+                     color: "red"
+                       });
+                        $('#registerSubmit').click(function (e) {
+
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                      });
+                     }
+                     
+            },
+
+                error: function (e) {
+                    console.log(e);
+                    $("#PhoneNumbernn").text(e);
+                }
+
+            });
+        }
+    });
+</script>

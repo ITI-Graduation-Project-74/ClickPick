@@ -203,45 +203,4 @@ $(function () {
     });
 
 
-//phone number 
-//    $('#Input_PhoneNumber').on('input', function () {
-//        var phoneval = document.getElementById('Input_PhoneNumber').value;
-//        if (phoneval.length > 10 ) {
-//            $.ajax({
-//                url: "/Coupon/checkPhone",
-//                method: "GET",
-//                data: { phone: phoneval },
-//                success: function (data) { checkPhoneNumber(data); },
-//                error: function (e) {
-//                    console.log(e);
-//                    $("#PhoneNumbernn").text(e);
-//                }
-
-//            });
-//        }
-//    });
-//function checkPhoneNumber(data) {
-    
-//    document.getElementById("Input_PhoneNumber").addEventListener("blur", function () {
-//        var phoneval = document.getElementById('Input_PhoneNumber').value;
-//        if (data == "Sorry, This Phone number already exists" ) {
-//            $("#pleasework").text(data);
-//            $("#pleasework").css({
-//                color: "red"
-//            });
-//            $('#registerSubmit').click(function (e) {
-
-//                e.preventDefault();
-//                e.stopPropagation();
-//                e.stopImmediatePropagation();
-
-//                return false;
-//            });
-//        }
-       
-        
-
-//    })
-
-//}
 
