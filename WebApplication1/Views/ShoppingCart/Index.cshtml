@@ -1,5 +1,9 @@
 ﻿@using Ecommerce.Models.ViewModels
 @model ShoppingCartVM
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+
+
 
 @{
     double i = 0;
@@ -12,14 +16,14 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="breadcrumbs-content">
-                    <h1 class="page-title">Cart</h1>
+                    <h1 class="page-title">@localizer["Cart"]</h1>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-nav">
-                    <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                    <li><a href="index.html">Shop</a></li>
-                    <li>Cart</li>
+                    <li><a href="index.html"><i class="lni lni-home"></i> @localizer["Home"]</a></li>
+                    <li><a href="index.html">@localizer["Shop"]</a></li>
+                    <li>@localizer["Cart"]</li>
                 </ul>
             </div>
         </div>
@@ -39,19 +43,19 @@
 
                         </div>
                         <div class="col-lg-4 col-md-3 col-12">
-                            <p>Product Name</p>
+                            <p>@localizer["Product Name"]</p>
                         </div>
                         @*<div class="col-lg-2 col-md-2 col-12">
                             <p>Quantity</p>
                             </div>*@
                         <div class="col-lg-2 col-md-2 col-12">
-                            <p>Subtotal</p>
+                            <p>@localizer["Subtotal"]</p>
                         </div>
                         <div class="col-lg-2 col-md-2 col-12">
-                            <p>Amount</p>
+                            <p>@localizer["Amount"]</p>
                         </div>
                         <div class="col-lg-1 col-md-2 col-12">
-                            <p>Remove</p>
+                            <p>@localizer["Remove"]</p>
                         </div>
                     </div>
                 </div>
@@ -72,7 +76,7 @@
                                     <h5 class="product-name"><a href="#">
                                             @item.Product.Name</a></h5>
                                     <p class="product-des">
-                                        <span><em>Category:</em> @item.Product.Catagory.CategoryName</span>
+                                        <span><em>@localizer["Category"]:</em> @item.Product.Catagory.CategoryName</span>
 
                                     </p>
                                 </div>
@@ -80,7 +84,7 @@
                                 <div class="col-lg-2 col-md-2 col-12">
                                     <strong>@item.Product.Price.ToString("c")<span class="text-muted">x</span> @item.Count </strong>
                                     <p>
-                                        SubTotal: @(item.Product.Price * @item.Count)
+                                       @localizer["Subtotal"]: @(item.Product.Price * @item.Count)
                                     </p>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-12">
@@ -130,14 +134,14 @@
                                         {
                                             i += @item.Product.Price * @item.Count;
                                         }
-                                        <li>Cart Subtotal<span>
+                                        <li>@localizer["Cart Subtotal"]<span>
                                            @i $
                                         </span></li>
                                        
                                     </ul>
                                     <div class="button">
-                                        <a asp-action="CartSummary" class="btn">Checkout</a>
-                                        <a asp-controller="Product" asp-action="index" class="btn btn-alt">Continue shopping</a>
+                                        <a asp-action="CartSummary" class="btn">@localizer["Checkout"]</a>
+                                        <a asp-controller="Product" asp-action="index" class="btn btn-alt">@localizer["Continue shopping"]</a>
                                     </div>
                                 </div>
                             </div>

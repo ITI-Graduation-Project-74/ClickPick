@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+
+@{
     double i = 0;
     double ii = 0;
 }
@@ -22,11 +25,11 @@
           <div class="success-content">
               <img src="~/Imgs/Payment/orderCanceled.png" style="width:300px; height:300px;" />
             @*<i class="lni lni-envelope"></i>*@
-            <h3>Your Order Has Been Canceled </h3>
-            <p>Canceling your order is the last thing we want to do but some situations come up where cancellation is the best option to save you time and money..</p>
+            <h3>@localizer["Your Order Has Been Canceled"] </h3>
+            <p>@localizer["Canceling your order is the last thing we want to do but some situations come up where cancellation is the best option to save you time and money"].</p>
             <div class="button">
                 
-              <a asp-controller="product" asp-action="Index" class="btn">Back to Home</a>
+              <a asp-controller="product" asp-action="Index" class="btn">@localizer["Back to Home"]</a>
             </div>
           </div>
         </div>

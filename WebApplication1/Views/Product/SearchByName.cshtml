@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<Product>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+
 
 
 
@@ -8,8 +11,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="text-success">Your Search Results</h2>
-                        <p>Enjoy Your Shopping Time In ClickPick</p>
+                        <h2 class="text-success">@localizer["Your Search Results"]</h2>
+                        <p>@localizer["Enjoy Your Shopping Time In ClickPick"]</p>
                     </div>
                 </div>
             </div>
@@ -18,7 +21,7 @@
             {
                 <hr />
                 <div class="section-title mt-5">
-                        <p class="text-danger"> There are no Matched Result</p>
+                        <p class="text-danger"> @localizer["There are no Matched Result"]</p>
                     </div>
                 
             }
