@@ -1,4 +1,5 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
 
 @using ClickPick.Models.ViewModels
 
@@ -42,7 +43,7 @@ else
                     <h5><b> @item.Product.Name</b></h5>
                     <div class="d-flex flex-row"> <br>
                         @*<div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><br>*@
-                        <h6 class="mr-1 text-center" > Price : @item.Product.Price</h6>
+                        <h6 class="mr-1 text-center" >@localizer["Price"] : @item.Product.Price</h6>
                         
                       
                     </div>
@@ -53,9 +54,9 @@ else
                   
                     
                      <div class="d-flex flex-column mt-2">
-                         <button class="btn btn-primary mt-2" type="submit" asp-controller="product" asp-action="Details" asp-route-productId="@item.ProductId" >Add To Cart</button>
+                         <button class="btn btn-primary mt-2" type="submit" asp-controller="product" asp-action="Details" asp-route-productId="@item.ProductId" >@localizer["Add To Cart"]</button>
                          
-                         <button class="btn btn-outline-danger mt-2" type="submit"  asp-action="delete" asp-route-productId="@item.ProductId">Delete</button>
+                         <button class="btn btn-outline-danger mt-2" type="submit"  asp-action="delete" asp-route-productId="@item.ProductId">@localizer["Delete"]</button>
 
                      </div>
                 </div>
