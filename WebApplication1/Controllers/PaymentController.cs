@@ -66,11 +66,9 @@ namespace ClickPick.Controllers
             _context.OrderDetails.Add(orderDetails);
             _context.Complete();
 
-            long stripeTotalAmount = 0;
 
             foreach (var item in cart.ListCart)
             {
-                stripeTotalAmount += (long)(item.Product.Price * 100);
 
                 Product_OrderDetails productDetails = new Product_OrderDetails()
                 { ProductId = item.ProductId, OrderDetailsId = orderDetails.Id };
@@ -92,7 +90,8 @@ namespace ClickPick.Controllers
             }
 
             _context.Complete();
-
+            var cartAfterOrder = _context.ShoppingCarts
+                      .FindAll(u => u.ApplicationUser.Id == claim.Value).ToList();
             // Payment With Stripe 
             if (Method == "Stripe")
             {
@@ -105,15 +104,19 @@ namespace ClickPick.Controllers
                     CancelUrl = domain + $"Payment/OrderCanceled?id={orderDetails.OrderHeaderId}",
                 };
                
-                if (coupon.Id != 0)
-                    
-                {
-                    stripeTotalAmount = stripeTotalAmount - ((stripeTotalAmount * coupon.Percentage) / 100);
-                }
+               
                
                 foreach (var item in cart.ListCart)
                 {
+                    long stripeTotalAmount = (long)(item.Product.Price * 100);
 
+                    if (coupon.Id != 0)
+
+                    {
+                        long Discount = stripeTotalAmount * coupon.Percentage / 100;
+                        stripeTotalAmount -= Discount;
+                    }
+                  
                     var sessionLineItem = new SessionLineItemOptions
                     {
                         PriceData = new SessionLineItemPriceDataOptions
@@ -142,12 +145,21 @@ namespace ClickPick.Controllers
                 _context.Complete();
 
                 Response.Headers.Add("Location", session.Url);
+                // Clear Cart After Order
+
+                
+                foreach (var item in cartAfterOrder)
+                {
+                    _context.ShoppingCarts.Delete(item);
+                }
+                _context.Complete();
+                HttpContext.Session.Remove("coupon");
+                HttpContext.Session.Remove("orderHeader");
+                TempData.Remove("USD");
                 return new StatusCodeResult(303);
             }
             // Clear Cart After Order
 
-            var cartAfterOrder = _context.ShoppingCarts
-                  .FindAll(u => u.ApplicationUser.Id == claim.Value).ToList();
             foreach (var item in cartAfterOrder)
             {
                 _context.ShoppingCarts.Delete(item);

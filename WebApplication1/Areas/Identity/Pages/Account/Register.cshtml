@@ -152,7 +152,12 @@
                 e.preventDefault();
                 e.stopPropagation();
                 e.stopImmediatePropagation();
+                console.log("ff");
                       });
+                     }
+                     else{ $("#pleasework").text(data);
+                     $('#registerSubmit').unbind('click');
+                      
                      }
                      
             },
