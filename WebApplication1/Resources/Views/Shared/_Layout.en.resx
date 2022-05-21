@@ -117,18 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="10.00 am - 6.00 pm" xml:space="preserve">
-    <value>10.00 am - 6.00 pm</value>
-  </data>
+
   <data name="9.00 am - 8.00 pm" xml:space="preserve">
     <value>9.00 am - 8.00 pm</value>
   </data>
+
   <data name="About Us" xml:space="preserve">
     <value>About Us</value>
   </data>
   <data name="Admin Dashboard" xml:space="preserve">
     <value>Admin Dashboard</value>
   </data>
+
   <data name="App Store" xml:space="preserve">
     <value>App Store</value>
   </data>
@@ -171,30 +171,42 @@
   <data name="Headphones" xml:space="preserve">
     <value>Headphones</value>
   </data>
+
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="Home1" xml:space="preserve">
-    <value>Home1</value>
+    <value>Home</value>
+
   </data>
   <data name="Hotline" xml:space="preserve">
     <value>Hotline</value>
   </data>
+
+
   <data name="Information" xml:space="preserve">
     <value>Information</value>
   </data>
+
   <data name="Kids" xml:space="preserve">
     <value>Kids</value>
   </data>
+
   <data name="Laptop" xml:space="preserve">
     <value>Laptop</value>
   </data>
+
+  <data name="Mens" xml:space="preserve">
+    <value>Mens</value>
+  </data>
+
   <data name="Mobiles" xml:space="preserve">
     <value>Mobiles</value>
   </data>
   <data name="Orders" xml:space="preserve">
     <value>Orders</value>
   </data>
+
   <data name="Our Mobile App" xml:space="preserve">
     <value>Our Mobile App</value>
   </data>
@@ -207,12 +219,15 @@
   <data name="Saturday:" xml:space="preserve">
     <value>Saturday:</value>
   </data>
+
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
   <data name="Shoes" xml:space="preserve">
     <value>Shoes</value>
   </data>
+  
+
   <data name="Shop Departments" xml:space="preserve">
     <value>Shop Departments</value>
   </data>
@@ -222,9 +237,7 @@
   <data name="Sitemap" xml:space="preserve">
     <value>Sitemap</value>
   </data>
-  <data name="Smartphones &amp; Tablets" xml:space="preserve">
-    <value>Smartphones &amp; Tablets</value>
-  </data>
+ 
   <data name="String1TV, Video &amp; Audio" xml:space="preserve">
     <value>TV, Video &amp; Audio</value>
   </data>
@@ -237,6 +250,7 @@
   <data name="Sunday-Thursday:" xml:space="preserve">
     <value>Sunday-Thursday:</value>
   </data>
+
   <data name="Vendor Dashboard" xml:space="preserve">
     <value>Vendor Dashboard</value>
   </data>

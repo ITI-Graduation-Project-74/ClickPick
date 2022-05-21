@@ -10,7 +10,7 @@ namespace Ecommerce.Migrations
         {
             var sql = @"
                  CREATE VIEW View_UsersWithorder AS
- SELECT [OrderHeaders]. [Id]
+  SELECT [OrderHeaders]. [Id]
       ,[OrderHeaders].[FirstName]
       ,[OrderHeaders].[LastName]
       ,[OrderDateTime]
@@ -18,9 +18,11 @@ namespace Ecommerce.Migrations
       ,[OrderHeaders].[Address]
       ,[Note]
       ,[BillingAddress]
+      ,p.Method
   FROM [EcommerceM].[dbo].[OrderHeaders]
   inner join AspNetUsers ANU on ANU.Id= [OrderHeaders].ApplicationUserId
-  inner join OrderDetials OD on Od.OrderHeaderId=[OrderHeaders].Id ";
+  inner join OrderDetials OD on Od.OrderHeaderId=[OrderHeaders].Id 
+  inner join Payments P on P.Id=OD.PaymentId";
             migrationBuilder.Sql(sql);
         }
 

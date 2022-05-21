@@ -1,9 +1,26 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer localizer
 @section css{<link rel="stylesheet" href="~/css/orderHistory.css">}
+@if (ViewBag.OrderDetails.Count ==0)
+{
+    <div class="cartCountNumber text-center">
+        <br>
+        <h4 >You Don't Have Any Previous Purchases</h4>
+        <br />
+        <img src="/Imgs/General/orderEmpty.gif" style="border-radius:20px" />
+        <div>
+             <a class="btn" asp-action="index" asp-controller="Product">
+               <h3>&leftarrow; Go To Home</h3> 
+            </a>
+        </div>
+           
+       
 
-
- <div class="page-content page-container" id="page-content">
+    </div>
+}
+else
+{
+   <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center mx-auto">
 
@@ -55,7 +72,10 @@
             
             </div>
               </div>
-            </div>
+            </div>  
+}
+
+
             
 
     <!-- ========================= JS here ========================= -->

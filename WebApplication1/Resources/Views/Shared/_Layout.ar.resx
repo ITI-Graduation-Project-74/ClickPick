@@ -117,6 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+
   <data name="10.00 am - 6.00 pm" xml:space="preserve">
     <value>10.00 صباحًا - 6.00 مساءً</value>
   </data>
@@ -156,9 +157,8 @@
   <data name="FAQs Page" xml:space="preserve">
     <value>صفحة الأسئلة الشائعة</value>
   </data>
-  <data name="Follow Us" xml:space="preserve">
-    <value>تابعنا</value>
-  </data>
+  
+
   <data name="Get all the latest information, Sales and Offers." xml:space="preserve">
     <value>احصل على أحدث المعلومات والمبيعات والعروض.</value>
   </data>
@@ -174,73 +174,98 @@
   <data name="Home" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
+
   <data name="Home1" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
+  
   <data name="Hotline" xml:space="preserve">
     <value>الخط الساخن</value>
   </data>
+
   <data name="Information" xml:space="preserve">
     <value>المعلومات</value>
   </data>
+  
   <data name="Kids" xml:space="preserve">
     <value>أطفالي</value>
   </data>
+  
   <data name="Laptop" xml:space="preserve">
     <value>كومبيوتر محمول</value>
   </data>
+  
   <data name="Mobiles" xml:space="preserve">
     <value>الهواتف المحمولة</value>
   </data>
+  
   <data name="Orders" xml:space="preserve">
     <value>الطلبات</value>
   </data>
+
+
   <data name="Our Mobile App" xml:space="preserve">
     <value>تطبيق الهاتف المحمول الخاص بنا</value>
   </data>
+  
   <data name="Phone: +201012293070" xml:space="preserve">
     <value>هاتف: +201012293070</value>
   </data>
+  
   <data name="register" xml:space="preserve">
     <value>انشاء حساب</value>
   </data>
+  
   <data name="Saturday:" xml:space="preserve">
     <value>السبت</value>
   </data>
+  
   <data name="Search" xml:space="preserve">
     <value>بحث</value>
   </data>
+  
   <data name="Shoes" xml:space="preserve">
     <value>أحذية</value>
   </data>
+  
   <data name="Shop Departments" xml:space="preserve">
     <value>أقسام المتجر</value>
   </data>
+  
   <data name="Sign In" xml:space="preserve">
     <value>تسجيل الدخول</value>
   </data>
+  
   <data name="Sitemap" xml:space="preserve">
     <value>خريطة الموقع</value>
   </data>
+
   <data name="Smartphones &amp; Tablets" xml:space="preserve">
     <value>الهواتف الذكية والأجهزة اللوحية</value>
   </data>
+
   <data name="Subscribe" xml:space="preserve">
     <value>اشتراك</value>
   </data>
+
   <data name="Subscribe to our Newsletter" xml:space="preserve">
     <value>اشترك في نشرتنا الإخبارية</value>
   </data>
+
   <data name="Sunday-Thursday:" xml:space="preserve">
     <value>الأحد - الخميس</value>
   </data>
+
   <data name="TV, Video &amp; Audio" xml:space="preserve">
     <value>التلفزيون والفيديو والصوت</value>
   </data>
+
   <data name="Vendor Dashboard" xml:space="preserve">
     <value>لوحة معلومات البائع</value>
   </data>
+
   <data name="Womens" xml:space="preserve">
     <value>نسائي</value>
   </data>
+
 </root>

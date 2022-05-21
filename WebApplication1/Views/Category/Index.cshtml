@@ -43,9 +43,11 @@
 						<form asp-controller="Category" asp-action="index">
 							<input type="hidden" asp-for="Filter.CategoryId" value="@catagoryId" />
 
-							<select class="form-control" asp-for="Filter.BrandId" asp-items="ViewBag.Brands">
-								<option value="0">@localizer["All Brand"]</option>
-							</select>
+
+							@*<select class="form-control" asp-for="Filter.BrandId" asp-items="ViewBag.Brands">
+								<option value="0">All Brand</option>
+							</select>*@
+
 							&nbsp;&nbsp;
 							<input type="text" asp-for="Filter.SearchSrting" placeholder=@localizer["Search Here..."]>
 							@*<button type="submit"><i class="lni lni-search-alt"></i></button>*@

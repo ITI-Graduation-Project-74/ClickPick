@@ -1,4 +1,5 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
 
 @using ClickPick.Models.ViewModels
 
@@ -13,16 +14,27 @@
 
 }
 
+@if (Model.WishList.Count() == 0)
+{
+    <div class=" text-center">
+            <h4 >Your WishList is Empty </h4>
+            <br />
+            <img src="/Imgs/General/whislist.gif" style="border-radius:20px" />
+
+        </div>
+}
+else
+{
+    
 
 
 <form method="post">
-
 <div class="container d-flex flex-column align-items-center align-content-center mt-5 mb-5">
     <div class="d-flex flex-column justify-content-center align-items-center ">
         @foreach (var item in  Model.WishList)
         {
    
-        <div class="d-flex flex-column align-items-center align-content-center col-lg-6 col-12 mb-lg-3 " >
+        <div class="d-flex flex-column align-items-center align-content-center col-lg-12 col-12 mb-lg-3 " >
             <div class="row p-2 bg-white border rounded">
                 <div class="col-md-2 mt-1">
                     <img class="img-fluid img-responsive rounded product-image" src="@item.Product.ImgUrl">
@@ -31,7 +43,7 @@
                     <h5><b> @item.Product.Name</b></h5>
                     <div class="d-flex flex-row"> <br>
                         @*<div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><br>*@
-                        <h6 class="mr-1 text-center" > Price : @item.Product.Price</h6>
+                        <h6 class="mr-1 text-center" >@localizer["Price"] : @item.Product.Price</h6>
                         
                       
                     </div>
@@ -42,9 +54,9 @@
                   
                     
                      <div class="d-flex flex-column mt-2">
-                         <button class="btn btn-primary mt-2" type="submit" asp-controller="product" asp-action="Details" asp-route-productId="@item.ProductId" >Add To Cart</button>
+                         <button class="btn btn-primary mt-2" type="submit" asp-controller="product" asp-action="Details" asp-route-productId="@item.ProductId" >@localizer["Add To Cart"]</button>
                          
-                         <button class="btn btn-outline-danger mt-2" type="submit"  asp-action="delete" asp-route-productId="@item.ProductId">Delete</button>
+                         <button class="btn btn-outline-danger mt-2" type="submit"  asp-action="delete" asp-route-productId="@item.ProductId">@localizer["Delete"]</button>
 
                      </div>
                 </div>
@@ -55,4 +67,4 @@
 </div>
 </form>
 
-    
+    }

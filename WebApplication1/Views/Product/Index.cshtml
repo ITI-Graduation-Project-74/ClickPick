@@ -1,5 +1,7 @@
 ﻿@using Ecommerce.Models;
 @model dynamic
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
 
 @{
     Pages pager = new Pages();
@@ -51,12 +53,12 @@
                                 style="background-image: url('/Imgs/Categories/Mobiles/1/a.jpg');">
                                 <div class="content">
                                     <h2 style="color:white;">
-                                        <span style="color:white;" >Huuurrrry Uppp !!!</span>
-                                        iPhone 12 Pro Max
+                                        <span style="color:white;" >@localizer["Huuurrrry Uppp !!!"]</span>
+                                        @localizer["iPhone 12 Pro Max"]
                                     </h2>
                                     <h3 style="color:white;">$10000.99</h3>
                                     <div class="button">
-                                        <a href="product-grids.html" class="btn">Shop Now</a>
+                                        <a href="product-grids.html" class="btn">@localizer["Shop Now"]</a>
                                     </div>
                                 </div>
                             </div>
@@ -64,14 +66,16 @@
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <!-- Start Small Banner -->
-                            <div class="hero-small-banner style2">
-                                <div class="content">
+                            <div class="hero-small-banner style2" style="background-image: url('/Imgs/General/sale.gif');">
+                                 
+                                @*<div class="content">
+                                   
                                     <h2>Weekly Sale!</h2>
                                     <p>Saving up to 50% off all online store items this week.</p>
                                     <div class="button">
-                                        <a class="btn" href="product-grids.html">Shop Now</a>
+                                        <a class="btn" href="product-grids.html">@localizer["Shop Now"]</a>
                                     </div>
-                                </div>
+                                </div>*@
                             </div>
                             <!-- Start Small Banner -->
                         </div>
@@ -88,9 +92,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Featured Categories</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form.</p>
+                        <h2>@localizer["Featured Categories"]</h2>
+                        <p>@localizer["There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form"].</p>
                     </div>
                 </div>
             </div>
@@ -108,7 +111,7 @@
                             <li>
 
                                 <a class="btn btn-outline-secondary" asp-controller="Category" asp-action="Index" asp-route-Id="@item.Id">
-                                    See More</a>
+                                    @localizer["See More"]</a>
                                     </li>
                         </ul>
                         
@@ -132,7 +135,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
-                    <h3 style=""class="title">Popular Brands</h3>
+                    <h3 style=""class="title">@localizer["Popular Brands"]</h3>
                 </div>
             </div>
             <div class="brands-logo-wrapper">
@@ -174,9 +177,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Trending Product</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form.</p>
+                        <h2>@localizer["Trending Product"]</h2>
+                        <p>@localizer["There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form"].</p>
                     </div>
                 </div>
             </div>
@@ -198,14 +200,14 @@
                                     @item.Name
                                     </a>
                             </h4>
-                            <ul class="review">
+                          @*  <ul class="review">
                                 <li><i class="lni lni-star-filled"></i></li>
                                 <li><i class="lni lni-star-filled"></i></li>
                                 <li><i class="lni lni-star-filled"></i></li>
                                 <li><i class="lni lni-star-filled"></i></li>
                                 <li><i class="lni lni-star"></i></li>
                                 <li><span>4.0 Review(s)</span></li>
-                            </ul>
+                            </ul>*@
                             <div class="price">
                                 <span>@item.Price.ToString("c")</span>
                             </div>
@@ -230,12 +232,12 @@
             {
                 <li class="page-item">
                     <a class="page-link" asp-action="index"  asp-route-Page="1">
-                        First
+                        @localizer["First"]
                     </a>
                 </li> 
                 <li>
                     <a class="page-link"  asp-action="index"  asp-route-Page="@(pager.CurrentPage-1)">
-                        Previous
+                        @localizer["Previous"]
                     </a>
                 </li>   
             }
@@ -251,12 +253,12 @@
             {
                 <li class="page-item">
                     <a class="page-link" asp-action="index" asp-route-Page="@(pager.CurrentPage+1)">
-                        Next
+                        @localizer["Next"]
                     </a>
                 </li> 
                 <li>
                       <a class="page-link" asp-action="index"  asp-route-Page="@pager.TotalPages">
-                        Last
+                        @localizer["Last"]
                       </a>
                 </li>   
             }
@@ -276,8 +278,8 @@
                         <i class="lni lni-delivery"></i>
                     </div>
                     <div class="media-body">
-                        <h5>Free Shipping</h5>
-                        <span>On order over $99</span>
+                        <h5>@localizer["Free Shipping"]</h5>
+                        <span>@localizer["On order over $99"]</span>
                     </div>
                 </li>
                 <!-- Money Return -->
@@ -286,8 +288,8 @@
                         <i class="lni lni-support"></i>
                     </div>
                     <div class="media-body">
-                        <h5>24/7 Support.</h5>
-                        <span>Live Chat Or Call.</span>
+                        <h5>@localizer["24/7 Support"].</h5>
+                        <span>@localizer["Live Chat Or Call"].</span>
                     </div>
                 </li>
                 <!-- Support 24/7 -->
@@ -296,8 +298,8 @@
                         <i class="lni lni-credit-cards"></i>
                     </div>
                     <div class="media-body">
-                        <h5>Online Payment.</h5>
-                        <span>Secure Payment Services.</span>
+                        <h5>@localizer["Online Payment"].</h5>
+                        <span>@localizer["Secure Payment Services"].</span>
                     </div>
                 </li>
                 <!-- Safe Payment -->
@@ -306,8 +308,8 @@
                         <i class="lni lni-reload"></i>
                     </div>
                     <div class="media-body">
-                        <h5>Easy Return.</h5>
-                        <span>Hassle Free Shopping.</span>
+                        <h5>@localizer["Easy Return"].</h5>
+                        <span>@localizer["Hassle Free Shopping"].</span>
                     </div>
                 </li>
             </ul>
