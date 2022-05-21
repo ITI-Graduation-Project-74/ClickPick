@@ -15,10 +15,10 @@
     var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
 }
 
-<div title="@localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
-    <form id="selectLanguage" method="POST" asp-controller="Home" asp-action="SetLanguage"
+<div class="dropdown w-25 h-25" title="@localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name" style="margin-right: 55px;">
+    <form id="selectLanguage" method="POST" asp-controller="Home" asp-action="SetLanguage" 
           asp-route-returnUrl="@returnUrl">
-        <select name="culture"
+        <select name="culture" class="btn btn-primary dropdown-toggle "
                 onchange="this.form.submit();"
                 asp-for="@requestCulture.RequestCulture.UICulture.Name"
                 asp-items="cultureItems">
