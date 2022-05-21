@@ -91,8 +91,6 @@ namespace Ecommerce.Controllers
             return RedirectToAction("PendingRequest");
 
         }
-
-
         public IActionResult UsersWithOrders()
         {
             var viewresult = _context.UsersWithorders.ToList();

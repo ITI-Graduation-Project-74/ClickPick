@@ -377,7 +377,17 @@ namespace Ecommerce.Controllers
                         P.ImgUrl = file.FileName;
                         P.Id = R2.Next();
                         _context.ProductImgs.Add(P);
-                        employee.ImgUrl=  P.ImgUrl;
+                        //var ServerSavePath = Path.Combine(Server.MapPath("~/imgs/") + InputFileName);
+                        var paths2 = new string[] { "/Imgs/", "Categories/", categoryName + '/' };
+
+
+                        //var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
+
+                        var fullPath2 = Path.Combine(paths2);
+
+                        var ServerSavePath2 = Path.Combine( fullPath2, InputFileName);
+
+                        employee.ImgUrl= ServerSavePath2;
                         _context.Products.Update(employee);
                         await _context.SaveChangesAsync();
                     }

@@ -29,7 +29,7 @@ namespace Ecommerce.Data
                  eb =>
                  {
                      eb.HasNoKey();
-                     eb.ToView("View_UsersWithorder");
+                     eb.ToView("View_UsersWithorder2");
                      eb.Property(v => v.FirstName).HasColumnName("FirstName");
                  });
 
