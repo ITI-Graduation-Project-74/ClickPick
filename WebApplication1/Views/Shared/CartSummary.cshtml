@@ -1,4 +1,6 @@
 ﻿@model Coupon
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
 
 @using Microsoft.Extensions.Options
 @inject IOptions<ClickPick.Utility.StripeSettings> Stripe
@@ -14,14 +16,14 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">checkout</h1>
+                        <h1 class="page-title">@localizer["checkout"]</h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li><a href="index.html">Shop</a></li>
-                        <li>checkout</li>
+                        <li><a href="index.html"><i class="lni lni-home"></i>@localizer["Home"]</a></li>
+                        <li><a href="index.html">@localizer["Shop"]</a></li>
+                        <li>@localizer["checkout"]</li>
                     </ul>
                 </div>
             </div>
@@ -39,7 +41,7 @@
                         <ul id="accordionExample">
                             <li>
                                 <h6 class="title"  data-bs-target="#collapseThree"
-                                    aria-expanded="true" aria-controls="collapseThree">Your Personal Details </h6>
+                                    aria-expanded="true" aria-controls="collapseThree">@localizer["Your Personal Details"]</h6>
                                 <section class="checkout-steps-form-content collapse show" id="collapseThree"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                    <form id="Orderheader" asp-action="Index" asp-controller="OrderHeader" name="Orderheader" method="get">
@@ -47,7 +49,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="single-form form-default">
-                                                <label>Phone Number</label>
+                                                <label>@localizer["Phone Number"]</label>
                                                 <div class="form-input form">
                                                     <input name="Phone" type="text" placeholder="Phone Number" id="Phone">
                                                 </div>
@@ -55,7 +57,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="single-form form-default">
-                                                <label>Address</label>
+                                                <label>@localizer["Address"]</label>
                                                 <div class="form-input form">
                                                     <input name="Address" type="text" placeholder="Address" id="Address">
                                                 </div>
@@ -63,7 +65,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="single-form form-default">
-                                                <label>Additional Note</label>
+                                                <label>@localizer["Additional Note"]</label>
                                                 <div class="form-input form">
                                                     <input name="Note" type="text" placeholder="Additional Note" id="Note">
                                                 </div>
@@ -71,7 +73,7 @@
                                         </div>
                                          <div class="col-md-12">
                                             <div class="single-form form-default">
-                                                <label>Shipping fee</label>
+                                                <label>@localizer["Shipping fee"]</label>
                                                 <div class="form-input form">
                                         <select style="padding: 10px; background:#edf2ff; border:none;" name="Shipping">
                                        <option value="55" selected="selected">Cairo and Giza 55 EGP</option>
@@ -84,12 +86,12 @@
                                             <div class="single-checkbox checkbox-style-3">
                                                 <input type="checkbox" id="billingAddressCheck" name="billingAddressCheck">
                                                 <label for="billingAddressCheck"><span></span></label>
-                                                <p>Use Different Billing Address</p>
+                                                <p>@localizer["Use Different Billing Address"]</p>
                                             </div>
                                         </div>
                                          <div class="col-md-6">
                                             <div class="single-form form-default" id="billingAddressDiv">
-                                                <label for="billingAddress">Billing Address</label>
+                                                <label for="billingAddress">@localizer["Billing Address"]</label>
                                                 <div class="form-input form">
                                                     <input id="billingAddress" type="text" placeholder="City" name="billingAddress">
                                                 </div>
@@ -99,7 +101,7 @@
                                             <div class="single-form button">
                                                 <button type="submit" class="btn" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseFour" aria-expanded="false"
-                                                    aria-controls="collapseFour">Continue to Payment</button>
+                                                    aria-controls="collapseFour">@localizer["Continue to Payment"]</button>
                                             </div>
                                         </div>
                                     </div>
@@ -110,7 +112,7 @@
                             
                             <li>
                                 <h6 class="title  "  data-toggle="dropdown"
-                                    >Payment Info</h6>
+                                    >@localizer["Payment Info"]</h6>
                                 
                             </li>
                         </ul>
@@ -120,7 +122,7 @@
                     <div class="checkout-sidebar">
                         
                         <div class="checkout-sidebar-price-table mt-30">
-                            <h5 class="title">Pricing Table</h5>
+                            <h5 class="title">@localizer["Pricing Table"]</h5>
 
                                <ul class="list-group mb-3">
  
@@ -129,7 +131,7 @@
                                  <li class="list-group-item d-flex justify-content-between lh-condensed">
                                        <div>
                                          <h6 class="my-0">@(item.Product.Name)</h6>
-                                         <small class="text-muted">Brief description</small>
+                                         <small class="text-muted">@localizer["Brief description"]</small>
                                        </div>
                                        <span class="text-muted">@(item.Count) X @item.Product.Price</span>
                                   </li>
@@ -147,7 +149,7 @@
                                </ul>
 
                             <div class="checkout-sidebar-coupon">
-                            <p>Appy Coupon to get discount!</p>
+                            <p>@localizer["Appy Coupon to get discount"]!</p>
          
                             <form  method="get" id="c" enctype="multipart/form-data">    
              <div class="single-form form-default">
@@ -156,13 +158,13 @@
                                     </div>
 
                                     <div class="button">
-                                        <button  type="button" class="btn" id="sendCouponBtn">apply</button>
+                                        <button  type="button" class="btn" id="sendCouponBtn">@localizer["apply"]</button>
                                     </div>
                                     <br/>
 
                      <ul id="couponArea">
                             <li class="list-group-item d-flex justify-content-between">
-                                      <span class="text-danger"> Discount</span>
+                                      <span class="text-danger"> @localizer["Discount"]</span>
                                          <strong class="text-danger"> 
                                   <strong>- </strong><span class="text-danger"id="DiscountAfterCoupon"></span><br />
 
@@ -185,7 +187,7 @@
                         </ul>
 
                          <div class=" d-flex justify-content-end mt-3 "> 
-                        <button type="button" class="btn btn-outline-danger" id="removeCoupon">Remove Coupon</button>
+                        <button type="button" class="btn btn-outline-danger" id="removeCoupon">@localizer["Remove Coupon"]</button>
                         </div>
                                 </div>
                            </form>

@@ -117,31 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Additional Note" xml:space="preserve">
+    <value>معلومة إضافية</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="apply" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="Appy Coupon to get discount" xml:space="preserve">
+    <value>تطبيق الكوبون للحصول على الخصم</value>
+  </data>
+  <data name="Billing Address" xml:space="preserve">
+    <value>عنوان وصول الفواتير</value>
+  </data>
   <data name="Brief description" xml:space="preserve">
     <value>وصف مختصر</value>
-  </data>
-  <data name="Buy now" xml:space="preserve">
-    <value>اشترى الان</value>
-  </data>
-  <data name="Cash On Delievry" xml:space="preserve">
-    <value>الدفع كاش عند التوصيل</value>
   </data>
   <data name="checkout" xml:space="preserve">
     <value>الدفع</value>
   </data>
+  <data name="Continue to Payment" xml:space="preserve">
+    <value>تابع إلى الدفع</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>خصم</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>الصفحة الرئيسية</value>
   </data>
-  <data name="Please Review Your Pricing Table And Confirm Your Checkout Method" xml:space="preserve">
-    <value>يرجى مراجعة جدول الأسعار الخاص بك وتأكيد طريقة الدفع الخاصة بك</value>
+  <data name="Payment Info" xml:space="preserve">
+    <value>معلومات الدفع</value>
+  </data>
+  <data name="Phone Number" xml:space="preserve">
+    <value>رقم الهاتف</value>
   </data>
   <data name="Pricing Table" xml:space="preserve">
-    <value>سعر المنتجات</value>
+    <value>جدول السعر</value>
+  </data>
+  <data name="Remove Coupon" xml:space="preserve">
+    <value>إزالة الكوبون</value>
+  </data>
+  <data name="Shipping fee" xml:space="preserve">
+    <value>رسوم الشحن</value>
   </data>
   <data name="Shop" xml:space="preserve">
-    <value>سوق</value>
+    <value>متجر</value>
   </data>
-  <data name="Stripe" xml:space="preserve">
-    <value>الدفع عبر سترايب</value>
+  <data name="Use Different Billing Address" xml:space="preserve">
+    <value>استخدام عنوان مختلف للفواتير</value>
+  </data>
+  <data name="Your Personal Details" xml:space="preserve">
+    <value>تفاصيلك الشخصية</value>
   </data>
 </root>
