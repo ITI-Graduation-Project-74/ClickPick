@@ -1,4 +1,5 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
 @section css{<link rel="stylesheet" href="~/css/orderHistory.css">}
 @if (ViewBag.OrderDetails.Count ==0)
 {
@@ -26,16 +27,16 @@ else
 <div class="col-lg-8 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Your Orders</h4>
+                  <h4 class="card-title">@localizer["Your Orders"]</h4>
                   
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>ID No.</th>
-                          <th>Created On</th> 
-                          <th>Status</th>
-                          <th>Cancel</th>
+                          <th>@localizer["ID No."]</th>
+                          <th>@localizer["Created On"]</th> 
+                          <th>@localizer["Status"]</th>
+                          <th>@localizer["Cancel"]</th>
                         </tr>
                       </thead>
                       <tbody>

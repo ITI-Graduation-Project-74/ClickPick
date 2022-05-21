@@ -117,20 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Logout" xml:space="preserve">
-    <value>تسجيل خروج</value>
+  <data name="Back to shop" xml:space="preserve">
+    <value>العودة إلى المتجر</value>
   </data>
-  <data name="Manage Registration" xml:space="preserve">
-    <value>إدارة التسجيل</value>
+  <data name="Bill" xml:space="preserve">
+    <value>فاتورة</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>انشاء حساب</value>
+  <data name="Billing Address" xml:space="preserve">
+    <value>عنوان وصول الفواتير</value>
   </data>
-  <data name="Sign In" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+  <data name="Cancel Order" xml:space="preserve">
+    <value>إلغاء الطلب</value>
   </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>أهلا بك</value>
+  <data name="Canceled" xml:space="preserve">
+    <value>إلغاء</value>
   </data>
-
+  <data name="Completed" xml:space="preserve">
+    <value>مكتمل</value>
+  </data>
+  <data name="Customer Name" xml:space="preserve">
+    <value>اسم العميل</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>ملاحظات</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>السعر</value>
+  </data>
+  <data name="SHiPPING ADDRESS" xml:space="preserve">
+    <value>عنوان الشحن</value>
+  </data>
+  <data name="Shipping fee" xml:space="preserve">
+    <value>رسوم الشحن</value>
+  </data>
 </root>

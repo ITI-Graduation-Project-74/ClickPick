@@ -117,20 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Logout" xml:space="preserve">
-    <value>تسجيل خروج</value>
+  <data name="44 Salah Salem Street, Nasr City" xml:space="preserve">
+    <value>44 شارع صلاح سالم مدينة نصر</value>
   </data>
-  <data name="Manage Registration" xml:space="preserve">
-    <value>إدارة التسجيل</value>
+  <data name="Address" xml:space="preserve">
+    <value>العنوان</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>انشاء حساب</value>
+  <data name="Cairo" xml:space="preserve">
+    <value>القاهرة</value>
   </data>
-  <data name="Sign In" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+  <data name="Call us on" xml:space="preserve">
+    <value>اتصل بنا على</value>
   </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>أهلا بك</value>
+  <data name="Contact Us" xml:space="preserve">
+    <value>تواصل معنا</value>
   </data>
-
+  <data name="Home" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="Mail" xml:space="preserve">
+    <value>البريد الالكتروني</value>
+  </data>
+  <data name="Our technical support and customer service department is dedicated to helping you throughout the day" xml:space="preserve">
+    <value>قسم الدعم الفني وخدمة العملاء مخصص لمساعدتك على مدار اليوم</value>
+  </data>
+  <data name="Submit Message" xml:space="preserve">
+    <value>إرسال الرسالة</value>
+  </data>
+  <data name="tel" xml:space="preserve">
+    <value>هاتف</value>
+  </data>
+  <data name="We support you throughout the day" xml:space="preserve">
+    <value>ندعمك على مدار اليوم</value>
+  </data>
+  <data name="Your Email" xml:space="preserve">
+    <value>بريدك الالكتروني</value>
+  </data>
+  <data name="Your Message" xml:space="preserve">
+    <value>رسالتك</value>
+  </data>
+  <data name="Your Name" xml:space="preserve">
+    <value>اسمك</value>
+  </data>
+  <data name="Your Phone" xml:space="preserve">
+    <value>هاتفك</value>
+  </data>
+  <data name="Your Subject" xml:space="preserve">
+    <value>موضوعك</value>
+  </data>
 </root>
