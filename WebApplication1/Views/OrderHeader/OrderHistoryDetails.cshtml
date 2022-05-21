@@ -28,7 +28,11 @@
             
                     
                     
-                    <div class="back-to-shop"><a href="/OrderHeader/OrdersHistory">&leftarrow; <span class="text-muted">Back to shop</span></a></div>
+                    <div class="back-to-shop">
+                        <a href="/OrderHeader/OrdersHistory">&leftarrow; 
+                            <span class="text-muted">Back to shop</span>
+                         </a>
+                         </div>
                 </div>
                 <div class="col-md-5 summary">
                     <div><h5><b>Bill</b></h5></div>
@@ -59,6 +63,13 @@
                     <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                         <div class="col">Billing Address</div>
                         <div class="col text-right"> @ViewBag.Header.BillingAddress</div>
+                    </div>
+                }
+                @if(@ViewBag.Details.CouponId != null)
+                {
+                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                        <div class="col">Used Coupon</div>
+                        <div class="col text-right"> @ViewBag.Details.CouponId</div>
                     </div>
                 }
                    @if(@ViewBag.Header.Note != null)

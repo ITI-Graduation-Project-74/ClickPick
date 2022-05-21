@@ -17,14 +17,20 @@
                 </div>
             </div>
             <div class="row">
+
             @if(Model.Count() == 0)
             {
                 <hr />
+              
                 <div class="section-title mt-5">
+
                         <p class="text-danger"> @localizer["There are no Matched Result"]</p>
                     </div>
                 
+
             }
+
+
             @foreach (var item in Model)
                 {
                     <div class="col-lg-3 col-md-6 col-12">

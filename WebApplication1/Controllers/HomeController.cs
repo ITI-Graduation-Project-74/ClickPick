@@ -83,6 +83,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)
         {
@@ -94,6 +95,7 @@ namespace WebApplication1.Controllers
 
             return LocalRedirect(returnUrl);
         }
+
 
     }
 }

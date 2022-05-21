@@ -23,28 +23,27 @@ namespace Ecommerce.Data
                         new Category()
                         {
                             Id = 1,
-                            CategoryName = "Men's",
+                            CategoryName = "Men",
                             ImgUrl = "/Imgs/Categories/CategoryHead/C1.jpg",
                         },
 
                        new Category()
                         {
                             Id = 2,
-                            CategoryName = "Kid's",
+                            CategoryName = "Kids",
                             ImgUrl = "/Imgs/Categories/CategoryHead/C2.jpg",
                         },
                        new Category()
                         {
                             Id = 3,
-                            CategoryName = "Mobile",
-
+                            CategoryName = "Mobiles",
                             ImgUrl = "/Imgs/Categories/CategoryHead/C3.jpg",
 
                         },
                        new Category()
                         {
                             Id = 4,
-                            CategoryName = "Laptop",
+                            CategoryName = "Laptops",
 
                             ImgUrl = "/Imgs/Categories/CategoryHead/C4.jpg",
 
@@ -60,7 +59,7 @@ namespace Ecommerce.Data
                        new Category()
                         {
                             Id = 6,
-                            CategoryName = "Women's",
+                            CategoryName = "Women",
 
                             ImgUrl = "/Imgs/Categories/CategoryHead/C6.jpg",
 
@@ -175,7 +174,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =35100,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/1/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/1/a.jpg",
 
                             BrandId=1,
                             CatagoryId=3,
@@ -189,7 +188,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =30200,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/2/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/2/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
 
@@ -202,7 +201,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =23100,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/3/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/3/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
 
@@ -214,7 +213,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =4320,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/4/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/4/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
 
@@ -228,7 +227,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =5500,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/5/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/5/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
 
@@ -241,7 +240,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =7100,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/6/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/6/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
 
@@ -255,7 +254,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =8230,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/7/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/7/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
                         },
@@ -267,7 +266,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =9300,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/8/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/8/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
                         },
@@ -278,7 +277,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =7900,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/9/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/9/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
 
@@ -291,7 +290,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =11300,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/10/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/10/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
 
@@ -304,7 +303,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =5030,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/11/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/11/a.jpg",
                             BrandId=1,
                             CatagoryId=3,
 
@@ -317,7 +316,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =7050,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/mobiles/12/a.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/12/a.jpg",
 
                             BrandId=1,
                             CatagoryId=3,
@@ -335,7 +334,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =660,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/1/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/1/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
 
@@ -348,7 +347,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =630,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/2/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/2/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
 
@@ -361,7 +360,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =640,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/3/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/3/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
 
@@ -374,7 +373,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =750,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/4/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/4/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
 
@@ -387,7 +386,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =620,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/5/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/5/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
                         },
@@ -398,18 +397,18 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =410,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/6/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/6/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
                         },
                              new Product()
                         {
                                 Id=19,
-                            Name ="Black sappoh with high heels",
+                            Name ="New Balance Chunky Sole Lace-Up",
                             Description="The Product Description",
                             Price =210,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/7/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/7/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
                         },
@@ -420,7 +419,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =420,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/8/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/8/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
                         },
@@ -431,7 +430,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =8000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/9/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/9/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
                         },
@@ -442,7 +441,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =610,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/10/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/10/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
                         },
@@ -453,7 +452,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =740,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/11/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/11/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
                         },
@@ -464,7 +463,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =450,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/shoese/12/a.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/12/a.jpg",
                             BrandId=2,
                             CatagoryId=5,
                         },
@@ -481,7 +480,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =18750,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/1/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/1/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -492,7 +491,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =23000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/2/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/2/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -503,7 +502,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =25000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/3/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/3/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -514,7 +513,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =8000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/4/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/4/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -525,7 +524,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =11500,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/5/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/5/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -536,7 +535,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =13000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/6/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/6/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -548,7 +547,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =14000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/7/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/7/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -559,7 +558,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =12000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/8/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/8/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -570,7 +569,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =18000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/9/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/9/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -581,7 +580,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =13000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/10/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/10/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -592,7 +591,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =35000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/11/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/11/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -603,7 +602,7 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =4000,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/Laptop/12/a.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/12/a.jpg",
                             BrandId=3,
                             CatagoryId=4,
                         },
@@ -627,7 +626,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=38,
-                            Name ="Gray sweet-shirt",
+                            Name ="pink sweet-shirt",
                             Description="The Product Description",
                             Price =200,
                             Discount ="10%",
@@ -635,10 +634,11 @@ namespace Ecommerce.Data
                             BrandId=4,
                             CatagoryId=2,
                         },
+                              //3
                               new Product()
                         {
                                 Id=39,
-                            Name ="Blue short",
+                            Name ="Gray And Blue Pyjama",
                             Description="The Product Description",
                             Price =300,
                             Discount ="10%",
@@ -649,7 +649,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=40,
-                            Name ="Red Sweet-shirt",
+                            Name ="Gray And Green Pyjama",
                             Description="The Product Description",
                             Price =400,
                             Discount ="10%",
@@ -660,7 +660,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=41,
-                            Name ="Black Sweet-shirt",
+                            Name ="Gray And Black Pyjama",
                             Description="The Product Description",
                             Price =710,
                             Discount ="10%",
@@ -668,10 +668,11 @@ namespace Ecommerce.Data
                             BrandId=4,
                             CatagoryId=2,
                         },
+                              //6
                               new Product()
                         {
                                 Id=42,
-                            Name ="Blue pyjama",
+                            Name ="Black Short",
                             Description="The Product Description",
                             Price =820,
                             Discount ="10%",
@@ -682,7 +683,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=43,
-                            Name ="Yellow salopit",
+                            Name ="Red Sweet-Shirt",
                             Description="The Product Description",
                             Price =630,
                             Discount ="10%",
@@ -693,7 +694,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=44,
-                            Name ="Black T-shirt",
+                            Name ="Black Sweet-shirt",
                             Description="The Product Description",
                             Price =650,
                             Discount ="10%",
@@ -704,7 +705,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=45,
-                            Name ="Blue Salopit",
+                            Name ="Gray And Blue Pyjama",
                             Description="The Product Description",
                             Price =740,
                             Discount ="10%",
@@ -712,10 +713,11 @@ namespace Ecommerce.Data
                             BrandId=4,
                             CatagoryId=2,
                         },
+                              //10
                               new Product()
                         {
                                 Id=46,
-                            Name ="Pink Sweet-shirt",
+                            Name ="Yellow Salopit",
                             Description="The Product Description",
                             Price =250,
                             Discount ="10%",
@@ -726,7 +728,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=47,
-                            Name ="Blue and Gray pyjama",
+                            Name ="Black T-shairt",
                             Description="The Product Description",
                             Price =240,
                             Discount ="10%",
@@ -737,7 +739,7 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=48,
-                            Name ="Dark green pyjama",
+                            Name ="BabyBlue Salopit",
                             Description="The Product Description",
                             Price =120,
                             Discount ="10%",
@@ -766,121 +768,121 @@ namespace Ecommerce.Data
                               new Product()
                         {
                                 Id=50,
-                            Name ="Black pyjama",
+                            Name ="Gray pants",
                             Description="The Product Description",
                             Price =560,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/2/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/2/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=51,
-                            Name ="Blue pyjama",
+                            Name ="Green Shairt",
                             Description="The Product Description",
                             Price =230,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/3/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/3/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=52,
-                            Name ="Gray t-shirt",
+                            Name ="Cafee Shairt",
                             Description="The Product Description",
                             Price =320,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/4/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/4/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=53,
-                            Name ="Black Sweet-Pants",
+                            Name ="Black Pyjama",
                             Description="The Product Description",
                             Price =780,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/5/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/5/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=54,
-                            Name ="Black and cafee pyjama",
+                            Name ="Blue and White pyjama",
                             Description="The Product Description",
                             Price =150,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/6/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/6/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=55,
-                            Name ="white and gray pyjama",
+                            Name ="Gray T-Shairt",
                             Description="The Product Description",
                             Price =910,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/7/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/7/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=56,
-                            Name ="Red Sweet-Shirt",
+                            Name ="Black SweetPants",
                             Description="The Product Description",
                             Price =550,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/8/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/8/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=57,
-                            Name ="Black Sweet-Shirt",
+                            Name ="Black And Cofee Pyjama",
                             Description="The Product Description",
                             Price =660,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/9/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/9/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=58,
-                            Name ="Gray Sweet-Pants",
+                            Name ="Black And Gray Pyjama",
                             Description="The Product Description",
                             Price =770,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/10/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/10/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=59,
-                            Name ="Green Shirt",
+                            Name ="Red Sweet-Shirt",
                             Description="The Product Description",
                             Price =220,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/11/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/11/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
                               new Product()
                         {
                                 Id=60,
-                            Name ="Cofee Shirt",
+                            Name ="BlueBlack Sweet-Shirt",
                             Description="The Product Description",
                             Price =110,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/men/12/a.jpg",
+                            ImgUrl="/Imgs/Categories/Men/12/a.jpg",
                             BrandId=5,
                             CatagoryId=1,
                         },
@@ -895,128 +897,128 @@ namespace Ecommerce.Data
                             Description="The Product Description",
                             Price =220,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/1/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/1/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=62,
-                            Name ="Blue-Black Flowered Blouse",
+                            Name ="Gray suit",
                             Description="The Product Description",
                             Price =670,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/2/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/2/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=63,
-                            Name ="Yellow Shirt",
+                            Name ="Gray Vest",
                             Description="The Product Description",
                             Price =870,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/3/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/3/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=64,
-                            Name ="Blue Black Shirt",
+                            Name ="Red Blouse",
                             Description="The Product Description",
                             Price =780,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/4/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/4/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=65,
-                            Name ="Red pyjama",
+                            Name ="Blue Flowerd Blouse",
                             Description="The Product Description",
                             Price =120,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/5/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/5/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=66,
-                            Name ="Gray Pyjama",
+                            Name ="Yellow Vest",
                             Description="The Product Description",
                             Price =390,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/6/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/6/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=67,
-                            Name ="Red Blouse",
+                            Name ="BabyBlue And White Vest",
                             Description="The Product Description",
                             Price =830,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/7/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/7/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=68,
-                            Name ="Dark Red Vest",
+                            Name ="Dark Red Pyjama",
                             Description="The Product Description",
                             Price =710,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/8/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/8/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=69,
-                            Name ="Baby Blue suit",
+                            Name ="Gray Pyjama",
                             Description="The Product Description",
                             Price =420,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/9/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/9/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=70,
-                            Name ="Black suit",
+                            Name ="Black And Red Pyjama",
                             Description="The Product Description",
                             Price =620,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/10/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/10/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=71,
-                            Name ="Gray vest",
+                            Name ="Dark Red vest",
                             Description="The Product Description",
                             Price =710,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/11/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/11/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
                               new Product()
                         {
                                 Id=72,
-                            Name ="Red blouse",
+                            Name ="Baby Blue Suit",
                             Description="The Product Description",
                             Price =750,
                             Discount ="10%",
-                            ImgUrl="/Imgs/Categories/women/12/a.jpg",
+                            ImgUrl="/Imgs/Categories/Women/12/a.jpg",
                             BrandId=6,
                             CatagoryId=6,
                         },
@@ -1035,20 +1037,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 1,
-                            ImgUrl="/Imgs/Categories/mobiles/1/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/1/b.jpg",
                             ProductId=1,
 
                         },
                         new ProductImg()
                         {
                             Id = 2,
-                            ImgUrl="/Imgs/Categories/mobiles/1/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/1/c.jpg",
                             ProductId=1,
 
                         },new ProductImg()
                         {
                             Id = 3,
-                            ImgUrl="/Imgs/Categories/mobiles/1/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/1/d.jpg",
                             ProductId=1,
 
                         },
@@ -1057,20 +1059,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 4,
-                            ImgUrl="/Imgs/Categories/mobiles/2/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/2/b.jpg",
                             ProductId=2,
 
                         },
                         new ProductImg()
                         {
                             Id = 5,
-                            ImgUrl="/Imgs/Categories/mobiles/2/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/2/c.jpg",
                             ProductId=2,
 
                         },new ProductImg()
                         {
                             Id = 6,
-                            ImgUrl="/Imgs/Categories/mobiles/2/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/2/d.jpg",
                             ProductId=2,
 
                         },
@@ -1079,20 +1081,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 7,
-                            ImgUrl="/Imgs/Categories/mobiles/3/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/3/b.jpg",
                             ProductId=3,
 
                         },
                         new ProductImg()
                         {
                             Id = 8,
-                            ImgUrl="/Imgs/Categories/mobiles/3/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/3/c.jpg",
                             ProductId=3,
 
                         },new ProductImg()
                         {
                             Id = 9,
-                            ImgUrl="/Imgs/Categories/mobiles/3/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/3/d.jpg",
                             ProductId=3,
 
                         },
@@ -1102,20 +1104,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 10,
-                            ImgUrl="/Imgs/Categories/mobiles/4/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/4/b.jpg",
                             ProductId=4,
 
                         },
                         new ProductImg()
                         {
                             Id =11,
-                            ImgUrl="/Imgs/Categories/mobiles/4/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/4/c.jpg",
                             ProductId=4,
 
                         },new ProductImg()
                         {
                             Id = 12,
-                            ImgUrl="/Imgs/Categories/mobiles/4/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/4/d.jpg",
                             ProductId=4,
 
                         },
@@ -1125,20 +1127,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 13,
-                            ImgUrl="/Imgs/Categories/mobiles/5/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/5/b.jpg",
                             ProductId=5,
 
                         },
                         new ProductImg()
                         {
                             Id = 14,
-                            ImgUrl="/Imgs/Categories/mobiles/5/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/5/c.jpg",
                             ProductId=5,
 
                         },new ProductImg()
                         {
                             Id = 15,
-                            ImgUrl="/Imgs/Categories/mobiles/5/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/5/d.jpg",
                             ProductId=5,
 
                         },
@@ -1148,20 +1150,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 16,
-                            ImgUrl="/Imgs/Categories/mobiles/6/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/6/b.jpg",
                             ProductId=6,
 
                         },
                         new ProductImg()
                         {
                             Id = 17,
-                            ImgUrl="/Imgs/Categories/mobiles/6/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/6/c.jpg",
                             ProductId=6,
 
                         },new ProductImg()
                         {
                             Id = 18,
-                            ImgUrl="/Imgs/Categories/mobiles/6/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/6/d.jpg",
                             ProductId=6,
 
                         },
@@ -1171,20 +1173,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 19,
-                            ImgUrl="/Imgs/Categories/mobiles/7/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/7/b.jpg",
                             ProductId=7,
 
                         },
                         new ProductImg()
                         {
                             Id = 20,
-                            ImgUrl="/Imgs/Categories/mobiles/7/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/7/c.jpg",
                             ProductId=7,
 
                         },new ProductImg()
                         {
                             Id = 21,
-                            ImgUrl="/Imgs/Categories/mobiles/7/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/7/d.jpg",
                             ProductId=7,
 
                         },
@@ -1194,20 +1196,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 22,
-                            ImgUrl="/Imgs/Categories/mobiles/8/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/8/b.jpg",
                             ProductId=8,
 
                         },
                         new ProductImg()
                         {
                             Id = 23,
-                            ImgUrl="/Imgs/Categories/mobiles/8/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/8/c.jpg",
                             ProductId=8,
 
                         },new ProductImg()
                         {
                             Id = 24,
-                            ImgUrl="/Imgs/Categories/mobiles/8/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/8/d.jpg",
                             ProductId=8,
 
                         },
@@ -1217,20 +1219,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 25,
-                            ImgUrl="/Imgs/Categories/mobiles/9/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/9/b.jpg",
                             ProductId=9,
 
                         },
                         new ProductImg()
                         {
                             Id = 26,
-                            ImgUrl="/Imgs/Categories/mobiles/9/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/9/c.jpg",
                             ProductId=9,
 
                         },new ProductImg()
                         {
                             Id = 27,
-                            ImgUrl="/Imgs/Categories/mobiles/9/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/9/d.jpg",
                             ProductId=9,
 
                         },
@@ -1240,20 +1242,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 28,
-                            ImgUrl="/Imgs/Categories/mobiles/10/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/10/b.jpg",
                             ProductId=10,
 
                         },
                         new ProductImg()
                         {
                             Id = 29,
-                            ImgUrl="/Imgs/Categories/mobiles/10/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/10/c.jpg",
                             ProductId=10,
 
                         },new ProductImg()
                         {
                             Id = 30,
-                            ImgUrl="/Imgs/Categories/mobiles/10/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/10/d.jpg",
                             ProductId=10,
 
                         },
@@ -1263,20 +1265,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 31,
-                            ImgUrl="/Imgs/Categories/mobiles/11/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/11/b.jpg",
                             ProductId=11,
 
                         },
                         new ProductImg()
                         {
                             Id = 32,
-                            ImgUrl="/Imgs/Categories/mobiles/11/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/11/c.jpg",
                             ProductId=11,
 
                         },new ProductImg()
                         {
                             Id = 33,
-                            ImgUrl="/Imgs/Categories/mobiles/11/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/11/d.jpg",
                             ProductId=11,
 
                         },
@@ -1286,20 +1288,20 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 34,
-                            ImgUrl="/Imgs/Categories/mobiles/12/b.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/12/b.jpg",
                             ProductId=12,
 
                         },
                         new ProductImg()
                         {
                             Id = 35,
-                            ImgUrl="/Imgs/Categories/mobiles/12/c.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/12/c.jpg",
                             ProductId=12,
 
                         },new ProductImg()
                         {
                             Id = 36,
-                            ImgUrl="/Imgs/Categories/mobiles/12/d.jpg",
+                            ImgUrl="/Imgs/Categories/Mobiles/12/d.jpg",
                             ProductId=12,
 
                         },
@@ -1309,21 +1311,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 37,
-                            ImgUrl="/Imgs/Categories/shoese/1/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/1/b.jpg",
                             ProductId=13,
 
                         },
                         new ProductImg()
                         {
                             Id = 38,
-                            ImgUrl="/Imgs/Categories/shoese/1/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/1/c.jpg",
                             ProductId=13,
 
                         },
                         new ProductImg()
                         {
                             Id = 39,
-                            ImgUrl="/Imgs/Categories/shoese/1/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/1/d.jpg",
                             ProductId=13,
 
                         },
@@ -1333,21 +1335,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 40,
-                            ImgUrl="/Imgs/Categories/shoese/2/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/2/b.jpg",
                             ProductId=14,
 
                         },
                         new ProductImg()
                         {
                             Id = 41,
-                            ImgUrl="/Imgs/Categories/shoese/2/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/2/c.jpg",
                             ProductId=14,
 
                         },
                         new ProductImg()
                         {
                             Id = 42,
-                            ImgUrl="/Imgs/Categories/shoese/2/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/2/d.jpg",
                             ProductId=14,
 
                         },
@@ -1357,21 +1359,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 43,
-                            ImgUrl="/Imgs/Categories/shoese/3/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/3/b.jpg",
                             ProductId=15,
 
                         },
                         new ProductImg()
                         {
                             Id = 44,
-                            ImgUrl="/Imgs/Categories/shoese/3/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/3/c.jpg",
                             ProductId=15,
 
                         },
                         new ProductImg()
                         {
                             Id = 45,
-                            ImgUrl="/Imgs/Categories/shoese/3/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/3/d.jpg",
                             ProductId=15,
 
                         },
@@ -1381,21 +1383,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 46,
-                            ImgUrl="/Imgs/Categories/shoese/4/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/4/b.jpg",
                             ProductId=16,
 
                         },
                         new ProductImg()
                         {
                             Id = 47,
-                            ImgUrl="/Imgs/Categories/shoese/4/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/4/c.jpg",
                             ProductId=16,
 
                         },
                         new ProductImg()
                         {
                             Id = 48,
-                            ImgUrl="/Imgs/Categories/shoese/4/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/4/d.jpg",
                             ProductId=16,
 
                         },
@@ -1406,21 +1408,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 49,
-                            ImgUrl="/Imgs/Categories/shoese/5/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/5/b.jpg",
                             ProductId=17,
 
                         },
                         new ProductImg()
                         {
                             Id = 50,
-                            ImgUrl="/Imgs/Categories/shoese/5/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/5/c.jpg",
                             ProductId=17,
 
                         },
                         new ProductImg()
                         {
                             Id = 51,
-                            ImgUrl="/Imgs/Categories/shoese/5/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/5/d.jpg",
                             ProductId=17,
 
                         },
@@ -1430,21 +1432,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 52,
-                            ImgUrl="/Imgs/Categories/shoese/6/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/6/b.jpg",
                             ProductId=18,
 
                         },
                         new ProductImg()
                         {
                             Id = 53,
-                            ImgUrl="/Imgs/Categories/shoese/6/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/6/c.jpg",
                             ProductId=18,
 
                         },
                         new ProductImg()
                         {
                             Id = 54,
-                            ImgUrl="/Imgs/Categories/shoese/6/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/6/d.jpg",
                             ProductId=18,
 
                         },
@@ -1454,21 +1456,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 55,
-                            ImgUrl="/Imgs/Categories/shoese/7/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/7/b.jpg",
                             ProductId=19,
 
                         },
                         new ProductImg()
                         {
                             Id = 56,
-                            ImgUrl="/Imgs/Categories/shoese/7/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/7/c.jpg",
                             ProductId=19,
 
                         },
                         new ProductImg()
                         {
                             Id = 57,
-                            ImgUrl="/Imgs/Categories/shoese/7/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/7/d.jpg",
                             ProductId=19,
 
                         },
@@ -1478,21 +1480,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 58,
-                            ImgUrl="/Imgs/Categories/shoese/8/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/8/b.jpg",
                             ProductId=20,
 
                         },
                         new ProductImg()
                         {
                             Id = 59,
-                            ImgUrl="/Imgs/Categories/shoese/8/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/8/c.jpg",
                             ProductId=20,
 
                         },
                         new ProductImg()
                         {
                             Id = 60,
-                            ImgUrl="/Imgs/Categories/shoese/8/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/8/d.jpg",
                             ProductId=20,
 
                         },
@@ -1502,21 +1504,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 61,
-                            ImgUrl="/Imgs/Categories/shoese/9/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/9/b.jpg",
                             ProductId=21,
 
                         },
                         new ProductImg()
                         {
                             Id = 62,
-                            ImgUrl="/Imgs/Categories/shoese/9/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/9/c.jpg",
                             ProductId=21,
 
                         },
                         new ProductImg()
                         {
                             Id = 63,
-                            ImgUrl="/Imgs/Categories/shoese/9/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/9/d.jpg",
                             ProductId=21,
 
                         },
@@ -1526,21 +1528,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 64,
-                            ImgUrl="/Imgs/Categories/shoese/10/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/10/b.jpg",
                             ProductId=22,
 
                         },
                         new ProductImg()
                         {
                             Id = 65,
-                            ImgUrl="/Imgs/Categories/shoese/10/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/10/c.jpg",
                             ProductId=22,
 
                         },
                         new ProductImg()
                         {
                             Id = 66,
-                            ImgUrl="/Imgs/Categories/shoese/10/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/10/d.jpg",
                             ProductId=22,
 
                         },
@@ -1550,21 +1552,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 67,
-                            ImgUrl="/Imgs/Categories/shoese/11/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/11/b.jpg",
                             ProductId=23,
 
                         },
                         new ProductImg()
                         {
                             Id = 68,
-                            ImgUrl="/Imgs/Categories/shoese/11/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/11/c.jpg",
                             ProductId=23,
 
                         },
                         new ProductImg()
                         {
                             Id = 69,
-                            ImgUrl="/Imgs/Categories/shoese/11/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/11/d.jpg",
                             ProductId=23,
 
                         },
@@ -1574,21 +1576,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 70,
-                            ImgUrl="/Imgs/Categories/shoese/12/b.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/12/b.jpg",
                             ProductId=24,
 
                         },
                         new ProductImg()
                         {
                             Id = 71,
-                            ImgUrl="/Imgs/Categories/shoese/12/c.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/12/c.jpg",
                             ProductId=24,
 
                         },
                         new ProductImg()
                         {
                             Id = 72,
-                            ImgUrl="/Imgs/Categories/shoese/12/d.jpg",
+                            ImgUrl="/Imgs/Categories/Shoes/12/d.jpg",
                             ProductId=24,
 
                         },
@@ -1599,21 +1601,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 73,
-                            ImgUrl="/Imgs/Categories/Laptop/1/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/1/b.jpg",
                             ProductId=25,
 
                         },
                         new ProductImg()
                         {
                             Id = 74,
-                            ImgUrl="/Imgs/Categories/Laptop/1/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/1/c.jpg",
                             ProductId=25,
 
                         },
                         new ProductImg()
                         {
                             Id = 75,
-                            ImgUrl="/Imgs/Categories/Laptop/1/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/1/d.jpg",
                             ProductId=25,
 
                         },
@@ -1623,21 +1625,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 76,
-                            ImgUrl="/Imgs/Categories/Laptop/2/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/2/b.jpg",
                             ProductId=26,
 
                         },
                         new ProductImg()
                         {
                             Id = 77,
-                            ImgUrl="/Imgs/Categories/Laptop/2/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/2/c.jpg",
                             ProductId=26,
 
                         },
                         new ProductImg()
                         {
                             Id = 78,
-                            ImgUrl="/Imgs/Categories/Laptop/2/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/2/d.jpg",
                             ProductId=26,
 
                         },
@@ -1647,21 +1649,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 79,
-                            ImgUrl="/Imgs/Categories/Laptop/3/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/3/b.jpg",
                             ProductId=27,
 
                         },
                         new ProductImg()
                         {
                             Id = 80,
-                            ImgUrl="/Imgs/Categories/Laptop/3/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/3/c.jpg",
                             ProductId=27,
 
                         },
                         new ProductImg()
                         {
                             Id = 81,
-                            ImgUrl="/Imgs/Categories/Laptop/3/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/3/d.jpg",
                             ProductId=27,
 
                         },
@@ -1671,21 +1673,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 82,
-                            ImgUrl="/Imgs/Categories/Laptop/4/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/4/b.jpg",
                             ProductId=28,
 
                         },
                         new ProductImg()
                         {
                             Id = 83,
-                            ImgUrl="/Imgs/Categories/Laptop/4/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/4/c.jpg",
                             ProductId=28,
 
                         },
                         new ProductImg()
                         {
                             Id = 84,
-                            ImgUrl="/Imgs/Categories/Laptop/4/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/4/d.jpg",
                             ProductId=28,
 
                         },
@@ -1695,21 +1697,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 85,
-                            ImgUrl="/Imgs/Categories/Laptop/5/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/5/b.jpg",
                             ProductId=29,
 
                         },
                         new ProductImg()
                         {
                             Id = 86,
-                            ImgUrl="/Imgs/Categories/Laptop/5/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/5/c.jpg",
                             ProductId=29,
 
                         },
                         new ProductImg()
                         {
                             Id = 87,
-                            ImgUrl="/Imgs/Categories/Laptop/5/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/5/d.jpg",
                             ProductId=29,
 
                         },
@@ -1719,21 +1721,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 88,
-                            ImgUrl="/Imgs/Categories/Laptop/6/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/6/b.jpg",
                             ProductId=30,
 
                         },
                         new ProductImg()
                         {
                             Id = 89,
-                            ImgUrl="/Imgs/Categories/Laptop/6/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/6/c.jpg",
                             ProductId=30,
 
                         },
                         new ProductImg()
                         {
                             Id = 90,
-                            ImgUrl="/Imgs/Categories/Laptop/6/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/6/d.jpg",
                             ProductId=30,
 
                         },
@@ -1743,21 +1745,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 91,
-                            ImgUrl="/Imgs/Categories/Laptop/7/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/7/b.jpg",
                             ProductId=31,
 
                         },
                         new ProductImg()
                         {
                             Id = 92,
-                            ImgUrl="/Imgs/Categories/Laptop/7/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/7/c.jpg",
                             ProductId=31,
 
                         },
                         new ProductImg()
                         {
                             Id = 93,
-                            ImgUrl="/Imgs/Categories/Laptop/7/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/7/d.jpg",
                             ProductId=31,
 
                         },
@@ -1767,21 +1769,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 94,
-                            ImgUrl="/Imgs/Categories/Laptop/8/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/8/b.jpg",
                             ProductId=32,
 
                         },
                         new ProductImg()
                         {
                             Id = 95,
-                            ImgUrl="/Imgs/Categories/Laptop/8/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/8/c.jpg",
                             ProductId=32,
 
                         },
                         new ProductImg()
                         {
                             Id = 96,
-                            ImgUrl="/Imgs/Categories/Laptop/8/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/8/d.jpg",
                             ProductId=32,
 
                         },
@@ -1791,21 +1793,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 97,
-                            ImgUrl="/Imgs/Categories/Laptop/9/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/9/b.jpg",
                             ProductId=33,
 
                         },
                         new ProductImg()
                         {
                             Id = 98,
-                            ImgUrl="/Imgs/Categories/Laptop/9/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/9/c.jpg",
                             ProductId=33,
 
                         },
                         new ProductImg()
                         {
                             Id = 99,
-                            ImgUrl="/Imgs/Categories/Laptop/9/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/9/d.jpg",
                             ProductId=33,
 
                         },
@@ -1815,21 +1817,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 100,
-                            ImgUrl="/Imgs/Categories/Laptop/10/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/10/b.jpg",
                             ProductId=34,
 
                         },
                         new ProductImg()
                         {
                             Id = 101,
-                            ImgUrl="/Imgs/Categories/Laptop/10/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/10/c.jpg",
                             ProductId=34,
 
                         },
                         new ProductImg()
                         {
                             Id = 102,
-                            ImgUrl="/Imgs/Categories/Laptop/10/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/10/d.jpg",
                             ProductId=34,
 
                         },
@@ -1839,21 +1841,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 103,
-                            ImgUrl="/Imgs/Categories/Laptop/11/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/11/b.jpg",
                             ProductId=35,
 
                         },
                         new ProductImg()
                         {
                             Id = 104,
-                            ImgUrl="/Imgs/Categories/Laptop/11/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/11/c.jpg",
                             ProductId=35,
 
                         },
                         new ProductImg()
                         {
                             Id = 105,
-                            ImgUrl="/Imgs/Categories/Laptop/11/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/11/d.jpg",
                             ProductId=35,
 
                         },
@@ -1863,21 +1865,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 106,
-                            ImgUrl="/Imgs/Categories/Laptop/12/b.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/12/b.jpg",
                             ProductId=36,
 
                         },
                         new ProductImg()
                         {
                             Id = 107,
-                            ImgUrl="/Imgs/Categories/Laptop/12/c.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/12/c.jpg",
                             ProductId=36,
 
                         },
                         new ProductImg()
                         {
                             Id = 108,
-                            ImgUrl="/Imgs/Categories/Laptop/12/d.jpg",
+                            ImgUrl="/Imgs/Categories/Laptops/12/d.jpg",
                             ProductId=36,
 
                         },
@@ -2168,21 +2170,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 145,
-                            ImgUrl="/Imgs/Categories/men/1/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/1/b.jpg",
                             ProductId=49,
 
                         },
                         new ProductImg()
                         {
                             Id = 146,
-                            ImgUrl="/Imgs/Categories/men/1/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/1/c.jpg",
                             ProductId=49,
 
                         },
                         new ProductImg()
                         {
                             Id = 147,
-                            ImgUrl="/Imgs/Categories/men/1/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/1/d.jpg",
                             ProductId=49,
 
                         },
@@ -2191,21 +2193,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 148,
-                            ImgUrl="/Imgs/Categories/men/2/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/2/b.jpg",
                             ProductId=50,
 
                         },
                         new ProductImg()
                         {
                             Id = 149,
-                            ImgUrl="/Imgs/Categories/men/2/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/2/c.jpg",
                             ProductId=50,
 
                         },
                         new ProductImg()
                         {
                             Id = 150,
-                            ImgUrl="/Imgs/Categories/men/2/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/2/d.jpg",
                             ProductId=50,
 
                         },
@@ -2214,21 +2216,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 151,
-                            ImgUrl="/Imgs/Categories/men/3/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/3/b.jpg",
                             ProductId=51,
 
                         },
                         new ProductImg()
                         {
                             Id = 152,
-                            ImgUrl="/Imgs/Categories/men/3/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/3/c.jpg",
                             ProductId=51,
 
                         },
                         new ProductImg()
                         {
                             Id = 153,
-                            ImgUrl="/Imgs/Categories/men/3/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/3/d.jpg",
                             ProductId=51,
 
                         },
@@ -2237,21 +2239,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 154,
-                            ImgUrl="/Imgs/Categories/men/4/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/4/b.jpg",
                             ProductId=52,
 
                         },
                         new ProductImg()
                         {
                             Id = 155,
-                            ImgUrl="/Imgs/Categories/men/4/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/4/c.jpg",
                             ProductId=52,
 
                         },
                         new ProductImg()
                         {
                             Id = 156,
-                            ImgUrl="/Imgs/Categories/men/4/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/4/d.jpg",
                             ProductId=52,
 
                         },
@@ -2260,21 +2262,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 157,
-                            ImgUrl="/Imgs/Categories/men/5/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/5/b.jpg",
                             ProductId=53,
 
                         },
                         new ProductImg()
                         {
                             Id = 158,
-                            ImgUrl="/Imgs/Categories/men/5/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/5/c.jpg",
                             ProductId=53,
 
                         },
                         new ProductImg()
                         {
                             Id = 159,
-                            ImgUrl="/Imgs/Categories/men/5/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/5/d.jpg",
                             ProductId=53,
 
                         },
@@ -2283,21 +2285,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 160,
-                            ImgUrl="/Imgs/Categories/men/6/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/6/b.jpg",
                             ProductId=54,
 
                         },
                         new ProductImg()
                         {
                             Id = 161,
-                            ImgUrl="/Imgs/Categories/men/6/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/6/c.jpg",
                             ProductId=54,
 
                         },
                         new ProductImg()
                         {
                             Id = 162,
-                            ImgUrl="/Imgs/Categories/men/6/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/6/d.jpg",
                             ProductId=54,
 
                         },
@@ -2306,14 +2308,14 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 163,
-                            ImgUrl="/Imgs/Categories/men/7/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/7/b.jpg",
                             ProductId=55,
 
                         },
                         new ProductImg()
                         {
                             Id = 164,
-                            ImgUrl="/Imgs/Categories/men/7/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/7/c.jpg",
                             ProductId=55,
 
                         },
@@ -2329,21 +2331,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 166,
-                            ImgUrl="/Imgs/Categories/men/8/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/8/b.jpg",
                             ProductId=56,
 
                         },
                         new ProductImg()
                         {
                             Id = 167,
-                            ImgUrl="/Imgs/Categories/men/8/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/8/c.jpg",
                             ProductId=56,
 
                         },
                         new ProductImg()
                         {
                             Id = 168,
-                            ImgUrl="/Imgs/Categories/men/8/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/8/d.jpg",
                             ProductId=56,
 
                         },
@@ -2352,21 +2354,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 169,
-                            ImgUrl="/Imgs/Categories/men/9/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/9/b.jpg",
                             ProductId=57,
 
                         },
                         new ProductImg()
                         {
                             Id = 170,
-                            ImgUrl="/Imgs/Categories/men/9/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/9/c.jpg",
                             ProductId=57,
 
                         },
                         new ProductImg()
                         {
                             Id = 171,
-                            ImgUrl="/Imgs/Categories/men/9/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/9/d.jpg",
                             ProductId=57,
 
                         },
@@ -2375,21 +2377,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 172,
-                            ImgUrl="/Imgs/Categories/men/10/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/10/b.jpg",
                             ProductId=58,
 
                         },
                         new ProductImg()
                         {
                             Id = 173,
-                            ImgUrl="/Imgs/Categories/men/10/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/10/c.jpg",
                             ProductId=58,
 
                         },
                         new ProductImg()
                         {
                             Id = 174,
-                            ImgUrl="/Imgs/Categories/men/10/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/10/d.jpg",
                             ProductId=58,
 
                         },
@@ -2398,21 +2400,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 175,
-                            ImgUrl="/Imgs/Categories/men/11/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/11/b.jpg",
                             ProductId=59,
 
                         },
                         new ProductImg()
                         {
                             Id = 176,
-                            ImgUrl="/Imgs/Categories/men/11/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/11/c.jpg",
                             ProductId=59,
 
                         },
                         new ProductImg()
                         {
                             Id = 177,
-                            ImgUrl="/Imgs/Categories/men/11/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/11/d.jpg",
                             ProductId=59,
 
                         },
@@ -2421,21 +2423,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 178,
-                            ImgUrl="/Imgs/Categories/men/12/b.jpg",
+                            ImgUrl="/Imgs/Categories/Men/12/b.jpg",
                             ProductId=60,
 
                         },
                         new ProductImg()
                         {
                             Id = 179,
-                            ImgUrl="/Imgs/Categories/men/12/c.jpg",
+                            ImgUrl="/Imgs/Categories/Men/12/c.jpg",
                             ProductId=60,
 
                         },
                         new ProductImg()
                         {
                             Id = 180,
-                            ImgUrl="/Imgs/Categories/men/12/d.jpg",
+                            ImgUrl="/Imgs/Categories/Men/12/d.jpg",
                             ProductId=60,
 
                         },
@@ -2447,21 +2449,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 181,
-                            ImgUrl="/Imgs/Categories/women/1/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/1/b.jpg",
                             ProductId=61,
 
                         },
                         new ProductImg()
                         {
                             Id = 182,
-                            ImgUrl="/Imgs/Categories/women/1/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/1/c.jpg",
                             ProductId=61,
 
                         },
                         new ProductImg()
                         {
                             Id = 183,
-                            ImgUrl="/Imgs/Categories/women/1/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/1/d.jpg",
                             ProductId=61,
 
                         },
@@ -2470,21 +2472,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 184,
-                            ImgUrl="/Imgs/Categories/women/2/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/2/b.jpg",
                             ProductId=62,
 
                         },
                         new ProductImg()
                         {
                             Id = 185,
-                            ImgUrl="/Imgs/Categories/women/2/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/2/c.jpg",
                             ProductId=62,
 
                         },
                         new ProductImg()
                         {
                             Id = 186,
-                            ImgUrl="/Imgs/Categories/women/2/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/2/d.jpg",
                             ProductId=62,
 
                         },
@@ -2494,21 +2496,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 187,
-                            ImgUrl="/Imgs/Categories/women/3/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/3/b.jpg",
                             ProductId=63,
 
                         },
                         new ProductImg()
                         {
                             Id = 188,
-                            ImgUrl="/Imgs/Categories/women/3/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/3/c.jpg",
                             ProductId=63,
 
                         },
                         new ProductImg()
                         {
                             Id = 189,
-                            ImgUrl="/Imgs/Categories/women/3/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/3/d.jpg",
                             ProductId=63,
 
                         },
@@ -2517,21 +2519,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 190,
-                            ImgUrl="/Imgs/Categories/women/4/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/4/b.jpg",
                             ProductId=64,
 
                         },
                         new ProductImg()
                         {
                             Id = 191,
-                            ImgUrl="/Imgs/Categories/women/4/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/4/c.jpg",
                             ProductId=64,
 
                         },
                         new ProductImg()
                         {
                             Id = 192,
-                            ImgUrl="/Imgs/Categories/women/4/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/4/d.jpg",
                             ProductId=64,
 
                         },
@@ -2540,21 +2542,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 193,
-                            ImgUrl="/Imgs/Categories/women/5/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/5/b.jpg",
                             ProductId=65,
 
                         },
                         new ProductImg()
                         {
                             Id = 194,
-                            ImgUrl="/Imgs/Categories/women/5/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/5/c.jpg",
                             ProductId=65,
 
                         },
                         new ProductImg()
                         {
                             Id = 195,
-                            ImgUrl="/Imgs/Categories/women/5/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/5/d.jpg",
                             ProductId=65,
 
                         },
@@ -2563,21 +2565,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 196,
-                            ImgUrl="/Imgs/Categories/women/6/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/6/b.jpg",
                             ProductId=66,
 
                         },
                         new ProductImg()
                         {
                             Id = 197,
-                            ImgUrl="/Imgs/Categories/women/6/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/6/c.jpg",
                             ProductId=67,
 
                         },
                         new ProductImg()
                         {
                             Id = 198,
-                            ImgUrl="/Imgs/Categories/women/6/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/6/d.jpg",
                             ProductId=67,
 
                         },
@@ -2586,21 +2588,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 199,
-                            ImgUrl="/Imgs/Categories/women/7/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/7/b.jpg",
                             ProductId=67,
 
                         },
                         new ProductImg()
                         {
                             Id = 200,
-                            ImgUrl="/Imgs/Categories/women/7/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/7/c.jpg",
                             ProductId=67,
 
                         },
                         new ProductImg()
                         {
                             Id = 201,
-                            ImgUrl="/Imgs/Categories/women/7/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/7/d.jpg",
                             ProductId=67,
 
                         },
@@ -2609,21 +2611,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 202,
-                            ImgUrl="/Imgs/Categories/women/8/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/8/b.jpg",
                             ProductId=68,
 
                         },
                         new ProductImg()
                         {
                             Id = 203,
-                            ImgUrl="/Imgs/Categories/women/8/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/8/c.jpg",
                             ProductId=68,
 
                         },
                         new ProductImg()
                         {
                             Id = 204,
-                            ImgUrl="/Imgs/Categories/women/8/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/8/d.jpg",
                             ProductId=68,
 
                         },
@@ -2632,21 +2634,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 205,
-                            ImgUrl="/Imgs/Categories/women/9/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/9/b.jpg",
                             ProductId=69,
 
                         },
                         new ProductImg()
                         {
                             Id = 206,
-                            ImgUrl="/Imgs/Categories/women/9/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/9/c.jpg",
                             ProductId=69,
 
                         },
                         new ProductImg()
                         {
                             Id = 207,
-                            ImgUrl="/Imgs/Categories/women/9/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/9/d.jpg",
                             ProductId=69,
 
                         },
@@ -2655,21 +2657,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 208,
-                            ImgUrl="/Imgs/Categories/women/10/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/10/b.jpg",
                             ProductId=70,
 
                         },
                         new ProductImg()
                         {
                             Id = 209,
-                            ImgUrl="/Imgs/Categories/women/10/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/10/c.jpg",
                             ProductId=70,
 
                         },
                         new ProductImg()
                         {
                             Id = 210,
-                            ImgUrl="/Imgs/Categories/women/10/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/10/d.jpg",
                             ProductId=70,
 
                         },
@@ -2678,21 +2680,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 211,
-                            ImgUrl="/Imgs/Categories/women/11/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/11/b.jpg",
                             ProductId=71,
 
                         },
                         new ProductImg()
                         {
                             Id = 212,
-                            ImgUrl="/Imgs/Categories/women/11/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/11/c.jpg",
                             ProductId=71,
 
                         },
                         new ProductImg()
                         {
                             Id = 213,
-                            ImgUrl="/Imgs/Categories/women/11/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/11/d.jpg",
                             ProductId=71,
 
                         },
@@ -2701,21 +2703,21 @@ namespace Ecommerce.Data
                         new ProductImg()
                         {
                             Id = 214,
-                            ImgUrl="/Imgs/Categories/women/12/b.jpg",
+                            ImgUrl="/Imgs/Categories/Women/12/b.jpg",
                             ProductId=72,
 
                         },
                         new ProductImg()
                         {
                             Id = 215,
-                            ImgUrl="/Imgs/Categories/women/12/c.jpg",
+                            ImgUrl="/Imgs/Categories/Women/12/c.jpg",
                             ProductId=72,
 
                         },
                         new ProductImg()
                         {
                             Id = 216,
-                            ImgUrl="/Imgs/Categories/women/12/d.jpg",
+                            ImgUrl="/Imgs/Categories/Women/12/d.jpg",
                             ProductId=72,
 
                         },

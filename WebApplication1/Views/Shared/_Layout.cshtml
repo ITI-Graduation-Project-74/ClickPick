@@ -96,10 +96,10 @@
         <div class="header-middle">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-3 col-7">
+                     <div class="col-lg-3 col-md-3 col-7">
                         <!-- Start Header Logo -->
-                        <a class="navbar-brand" href="index.html">
-                           
+                        <a class="navbar-brand" href="/Product/Index">
+                            <img src="/imgs/General/logo.jpg" alt="Logo" style="width:184px;">
                         </a>
                         <!-- End Header Logo -->
                     </div>
@@ -144,7 +144,10 @@
                                 </div>
                                 <div class="cart-items">
                                     <a asp-controller="ShoppingCart" asp-action="Index" class="main-btn">
-                                        <i class="lni lni-cart"></i>
+                                        <i class="lni lni-cart">
+
+                                        </i>
+                                        <span class="cartCount"></span>
                                         @await Component.InvokeAsync("ShoppingCart")
                                     </a>                           
                                 </div>
