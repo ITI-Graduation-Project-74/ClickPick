@@ -1,4 +1,5 @@
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
 @using System.Web
 
 @using ClickPick.CustomModels
@@ -15,14 +16,14 @@
 		<div class="row align-items-center">
 			<div class="col-lg-6 col-md-6 col-12">
 				<div class="breadcrumbs-content">
-					<h1 class="page-title">Shop Grid</h1>
+					<h1 class="page-title">@localizer["Shop Grid"]</h1>
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-12">
 				<ul class="breadcrumb-nav">
-					<li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-					<li><a href="javascript:void(0)">Shop</a></li>
-					<li>Shop Grid</li>
+					<li><a href="index.html"><i class="lni lni-home"></i>@localizer["Home"]</a></li>
+					<li><a href="javascript:void(0)">@localizer["Shop"]</a></li>
+					<li>@localizer["Shop Grid"]</li>
 				</ul>
 			</div>
 		</div>
@@ -38,33 +39,31 @@
 				<div class="product-sidebar">
 					<!-- Start Single Widget -->
 					<div class="single-widget search">
-						<h3>Search Product</h3>
+						<h3>@localizer["Search Product"]</h3>
 						<form asp-controller="Category" asp-action="index">
 							<input type="hidden" asp-for="Filter.CategoryId" value="@catagoryId" />
 
 							<select class="form-control" asp-for="Filter.BrandId" asp-items="ViewBag.Brands">
-								<option value="0">All Brand</option>
+								<option value="0">@localizer["All Brand"]</option>
 							</select>
 							&nbsp;&nbsp;
-							<input type="text" asp-for="Filter.SearchSrting" placeholder="Search Here...">
+							<input type="text" asp-for="Filter.SearchSrting" placeholder=@localizer["Search Here..."]>
 							@*<button type="submit"><i class="lni lni-search-alt"></i></button>*@
 							&nbsp;&nbsp;
 							<div class="my-1">
-								<input type="number" asp-for="Filter.MinPrice" step="1" placeholder="$min" class="form-control-sm-5" />
+								<input type="number" asp-for="Filter.MinPrice" step="1" placeholder=@localizer["$min"] class="form-control-sm-5" />
 								&nbsp;&nbsp;
-								<input type="number" asp-for="Filter.MaxPrice" step="1" placeholder="$max" class="form-control-sm-5" />
+								<input type="number" asp-for="Filter.MaxPrice" step="1" placeholder=@localizer["$max"] class="form-control-sm-5" />
 							</div>
 
 							<div class="col-md-12">
-								<input type="submit" value="Filter" class="btn btn-primary btn-sm text-white" />
-								<a asp-action="Index" class="btn btn-secondary btn-sm float-end mt-2">Clear</a>
+								<input type="submit" value=@localizer["Filter"] class="btn btn-primary btn-sm" />
+								<a asp-action="Index" class="btn btn-secondary btn-sm float-right">@localizer["Clear"]</a>
 							</div>
 
 						</form>
 					</div>
-			
-
-				</div>
+				
 				<!-- End Product Sidebar -->
 			</div>
 			<div class="col-lg-9 col-12">
@@ -73,16 +72,16 @@
 						<div class="row align-items-center">
 							<div class="col-lg-7 col-md-8 col-12">
 								<div class="product-sorting">
-									<label for="sorting">Sort by:</label>
+												<label for="sorting">@localizer["Sort by:"]</label>
 									<select class="form-control" id="sorting">
-										<option>Popularity</option>
-										<option>Low - High Price</option>
-										<option>High - Low Price</option>
-										<option>Average Rating</option>
-										<option>A - Z Order</option>
-										<option>Z - A Order</option>
+										<option>@localizer["Popularity"]</option>
+										<option>@localizer["Low - High Price"]</option>
+										<option>@localizer["High - Low Price"]</option>
+										<option>@localizer["Average Rating"]</option>
+										<option>@localizer["A - Z Order"]</option>
+										<option>@localizer["Z - A Order"]</option>
 									</select>
-									<h3 class="total-show-product">Showing: <span>1 - 12 items</span></h3>
+									<h3 class="total-show-product">@localizer["Showing:"] <span>@localizer["1 - 12 items"]</span></h3>
 								</div>
 							</div>
 							<div class="col-lg-5 col-md-4 col-12">
