@@ -10,8 +10,6 @@
 @section css{<link rel="stylesheet" href="~/css/style.css">}
 
 
-
-
 <!-- Start Breadcrumbs -->
 <div class="breadcrumbs">
     <div class="container">
@@ -69,6 +67,7 @@
                                 <label asp-for="Input.PhoneNumber"   for="reg-phone">Phone Number</label>
                                 <input asp-for="Input.PhoneNumber" class="form-control" type="text" name="Input.PhoneNumber" >
                                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                                <span id="pleasework"></span>
                             </div>
                         </div>
 
@@ -127,3 +126,42 @@
      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
      <script src="~/js/validate.js" ></script>
 }
+
+@*<script>
+        $('#Input_PhoneNumber').on('input', function () {
+        var phoneval = document.getElementById('Input_PhoneNumber').value;
+        if (phoneval.length > 10 ) {
+            $.ajax({
+                url: "/Coupon/checkPhone",
+                method: "GET",
+                data: { phone: phoneval },
+                success: function (data) { 
+                     if (data == "Sorry, This Phone number already exists" ) {
+                     $("#pleasework").text(data);
+                     $("#pleasework").css({
+                     color: "red"
+                       });
+                        $('#registerSubmit').click(function (e) {
+
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                      });
+                     }else
+                     { $("#pleasework").text(data);
+                     $('#registerSubmit').unbind('click');
+                      
+                     }
+                     
+            },
+
+                error: function (e) {
+                    console.log(e);
+                    $("#PhoneNumbernn").text(e);
+                }
+
+            });
+        }
+    });
+</script>
+*@

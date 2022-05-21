@@ -132,9 +132,31 @@ $(function () {
 });
 
 
+
+////categories Form
+$(function () {
+    var CategoriesForm = $("#CategoriesForm");
+    if (CategoriesForm.length) {
+        CategoriesForm.validate({
+
+            rules: {
+                CategoryName: {
+                    required: true
+                }
+            },
+            messages: {
+                CategoryName: {
+                    required: "Required"
+                }
+
+            }
+        })
+        }
+});
 //Vendor Request
 $(function () {
     var VendorRequest = $("#form1");
+    console.log("omar");
     if (VendorRequest.length) {
         VendorRequest.validate({
 
@@ -142,7 +164,7 @@ $(function () {
                 Name: {
                     required: true,
                     minlength: 3,
-                    maxlength:20
+                    maxlength: 20
                 },
                 Description: {
                     required: true,
@@ -151,7 +173,7 @@ $(function () {
                 },
                 Price: {
                     required: true,
-                    number:true
+                    number: true
                 },
                 Size: {
                     required: true,
@@ -181,26 +203,44 @@ $(function () {
     }
 });
 
-////categories Form
-$(function () {
-    var CategoriesForm = $("#CategoriesForm");
-    if (CategoriesForm.length) {
-        CategoriesForm.validate({
+// PhoneNumber Check 
 
-            rules: {
-                CategoryName: {
-                    required: true
+$('#Input_PhoneNumber').on('input', function () {
+    var phoneval = document.getElementById('Input_PhoneNumber').value;
+   
+    if (phoneval.length > 10) {
+        $.ajax({
+            url: "/Coupon/checkPhone",
+            method: "GET",
+            data: { phone: phoneval },
+            success: function (data) {
+                if (data == "Sorry, This Phone number already exists") {
+                    $("#pleasework").text(data);
+                    $("#pleasework").css({
+                        color: "red"
+                    });
+                    $('#registerSubmit').click(function (e) {
+
+                        e.preventDefault();
+                        e.stopPropagation();
+                        e.stopImmediatePropagation();
+                    });
+                } else {
+                    $("#pleasework").text(data);
+                    $('#registerSubmit').unbind('click');
+
                 }
+
             },
-            messages: {
-                CategoryName: {
-                    required: "Required"
-                }
 
+            error: function (e) {
+                console.log(e);
+                $("#PhoneNumbernn").text(e);
             }
-        })
-        }
-    });
+
+        });
+    }
+});
 
 
 

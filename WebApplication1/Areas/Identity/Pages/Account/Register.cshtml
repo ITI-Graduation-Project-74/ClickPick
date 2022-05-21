@@ -133,7 +133,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 <script src="~/js/validate.js" ></script>
-<script>
+
+@*<script>
         $('#Input_PhoneNumber').on('input', function () {
         var phoneval = document.getElementById('Input_PhoneNumber').value;
         if (phoneval.length > 10 ) {
@@ -153,6 +154,10 @@
                 e.stopPropagation();
                 e.stopImmediatePropagation();
                       });
+                     }else
+                     { $("#pleasework").text(data);
+                     $('#registerSubmit').unbind('click');
+                      
                      }
                      
             },
@@ -165,4 +170,4 @@
             });
         }
     });
-</script>
+</script>*@
