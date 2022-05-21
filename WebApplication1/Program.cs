@@ -6,8 +6,12 @@ using Ecommerce.Models.Repositories;
 using Ecommerce.Models.Repositories.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Stripe;
+using System.Globalization;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,6 +41,21 @@ builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Str
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.AddControllersWithViews();
 
+//Add Localization
+builder.Services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
+builder.Services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
+builder.Services.Configure<RequestLocalizationOptions>(
+    opt =>
+    {
+        var supportCultures = new List<CultureInfo>
+        {
+            new CultureInfo("en-US"),
+            new CultureInfo("ar-EG")
+        };
+        opt.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+        opt.SupportedCultures = supportCultures;
+        opt.SupportedUICultures = supportCultures;
+    });
 //builder.Services.AddTransient(typeof(IBaseRepository<>),typeof(BaseRepository<>));
 
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
@@ -83,6 +102,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+//Add Localization
+var locoptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(locoptions.Value);
 
 
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
