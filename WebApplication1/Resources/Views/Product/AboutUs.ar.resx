@@ -117,20 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Logout" xml:space="preserve">
-    <value>تسجيل خروج</value>
+  <data name="ClickPick" xml:space="preserve">
+    <value>ClickPick</value>
   </data>
-  <data name="Manage Registration" xml:space="preserve">
-    <value>إدارة التسجيل</value>
+  <data name="ClickPick was established in 2022. It is one of the most famous electronic markets in Egypt, specialized in all products. We have sales outlets and branches all over Egypt. Our main branch is in Nasr City and it was the starting point and the starting point. Then followed by the rest of the branches whose locations were chosen in the most high-end central locations and centers Shopping and retail streets." xml:space="preserve">
+    <value>تأسس موقعنا في عام 2022. وهو واحد من أشهرالأسواق الالكترونية في مصر المتخصص في جميع المنتجات ولنا منافذ بيع وفروع في جميع أنحاء مصر، فرعنا الرئيسي في مدينة النصر وكان هو المنطلق والمبتدأ ثم توالى بعد ذلك باقى الفروع اللذين تم اختيارأماكنهم في أكثر المواقع المركزية الراقية ومراكز التسوق وشوارع البيع بالتجزئة‎</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>انشاء حساب</value>
+  <data name="Our Core Team" xml:space="preserve">
+    <value>فريقنا الأساسي</value>
   </data>
-  <data name="Sign In" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+  <data name="The most famous online store in Egypt" xml:space="preserve">
+    <value>أشهر متجر الكتروني في مصر</value>
   </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>أهلا بك</value>
+  <data name="We are a group of six programmers who met in the Ministry of Communications and Information Technology grant, and we are distinguished by a high level of achievement, united by a common goal, and a common vision. We understand that the success of a team depends on the work of each member, and we work as one. Towards a common goal only, and we complement and support each other so that it seems that our work does not have any difficulties, and our goal and aim is to satisfy the customer and provide him with the best product, quality and price." xml:space="preserve">
+    <value>نحن مجموعة مكونة من ستة مبرمجين التقينا في منحة وزارة الاتصالات وتكنولوجيا المعلومات، ونمتاز بمستوى عالٍ من الإنجاز، ومجتمعون على غاية مشتركة، وبرؤية مشتركة. ونفهم أنّ نجاح الفريق يعتمد على عمل كلّ عضو، ونحن نعمل كجهاز واحد. نحو غاية مشتركة فحسب، ونكمّل وندعم بعضنا بعضاً حتّى يبدو أنّ عملنا لا تعتريه أيّ صعوبات، وغايتنا وهدفنا هي إرضاء العميل وتقديم أفضل منتج وجودة وسعر له</value>
   </data>
-
 </root>

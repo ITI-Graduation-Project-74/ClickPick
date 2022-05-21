@@ -1,4 +1,6 @@
-﻿@section css{<link rel="stylesheet" href="~/css/orderHistoryDetails.css">}
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+@section css{<link rel="stylesheet" href="~/css/orderHistoryDetails.css">}
 
 <div class="card">
             <div class="row">
@@ -6,7 +8,7 @@
                     <div class="title">
                         <div class="row">
                             <div class="col"><h4><b>Order ID NO. @ViewBag.Details.Id</b></h4></div>
-                            <div class="col align-self-center text-right text-muted">Price  </div>
+                            <div class="col align-self-center text-right text-muted">@localizer["Price"]  </div>
                         </div>
                     </div> 
                    
@@ -28,40 +30,42 @@
             
                     
                     
+
                     <div class="back-to-shop">
                         <a href="/OrderHeader/OrdersHistory">&leftarrow; 
                             <span class="text-muted">Back to shop</span>
                          </a>
-                         </div>
+                     </div>
+
                 </div>
                 <div class="col-md-5 summary">
-                    <div><h5><b>Bill</b></h5></div>
+                    <div><h5><b>@localizer["Bill"]</b></h5></div>
                     <hr>
-                        <p>SHIPPING ADDRESS</p>
+                        <p>@localizer["SHiPPING ADDRESS"]</p>
                         <p id="code" > @ViewBag.Header.Address</p>
                     <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                        <div class="col">Phone</div>
+                        <div class="col">@localizer["Phone"]</div>
                         <div class="col text-right"> @ViewBag.Header.PhoneNumber </div>
                     </div>
                     <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                        <div class="col">Customer Name</div>
+                        <div class="col">@localizer["Customer Name"]</div>
                         <div class="col text-right"> 
                             <span>@(ViewBag.Header.FirstName) </span><span>@(ViewBag.Header.LastName)</span> </div>
                     </div>
                        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                        <div class="col">Date </div>
+                        <div class="col">@localizer["Date"] </div>
                         <div class="col text-right"> 
                           <span>@ViewBag.Details.OrderDateTime)</span> </div>
                     </div>
                     <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                        <div class="col">Shipping fee </div>
+                        <div class="col">@localizer["Shipping fee"] </div>
                         <div class="col text-right"> 
                           <span>@ViewBag.Header.Shipping</span> </div>
                     </div>
                 @if(@ViewBag.Header.BillingAddress != null)
                 {
                     <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                        <div class="col">Billing Address</div>
+                        <div class="col">@localizer["Billing Address"]</div>
                         <div class="col text-right"> @ViewBag.Header.BillingAddress</div>
                     </div>
                 }
@@ -75,23 +79,23 @@
                    @if(@ViewBag.Header.Note != null)
                 {
                     <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                        <div class="col">Notes</div>
+                        <div class="col">@localizer["Notes"]</div>
                         <div class="col text-right"> @ViewBag.Header.Note</div>
                     </div>
                 }
                     @if(@ViewBag.Details.status =="Pending"){
-                        <a onclick="onclick="return confirm('are you sure?');" href="/OrderHeader/CancelOrder?orderId=@(ViewBag.Details.Id)" class="btn btn-danger"> Cancel Order</a>
+                        <a onclick="onclick="return confirm('are you sure?');" href="/OrderHeader/CancelOrder?orderId=@(ViewBag.Details.Id)" class="btn btn-danger"> @localizer["Cancel Order"]</a>
                         }
                           else if (@ViewBag.Details.status=="Canceled"){
                               <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                         <div class="col">Status</div>
-                        <div class="col text-right text-danger" > Canceled</div>
+                        <div class="col text-right text-danger" >@localizer["Canceled"]</div>
                     </div>
                           }
                               else{
                                       <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                         <div class="col">Status</div>
-                        <div class="col text-right text-success" > Completed</div>
+                        <div class="col text-right text-success" > @localizer["Completed"]</div>
                     </div>}
                 </div>
             </div>

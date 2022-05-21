@@ -83,7 +83,21 @@ builder.Services.AddSession(
         options.Cookie.HttpOnly = true;
         options.Cookie.IsEssential = true;
     });
-
+//AddLocalization
+builder.Services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
+builder.Services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
+builder.Services.Configure<RequestLocalizationOptions>(
+    opt =>
+    {
+        var supportCultures = new List<CultureInfo>
+        {
+            new CultureInfo("en"),
+            new CultureInfo("ar-EG")
+        };
+        opt.DefaultRequestCulture = new RequestCulture(culture: "en", uiCulture: "en");
+        opt.SupportedCultures = supportCultures;
+        opt.SupportedUICultures = supportCultures;
+    });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -102,6 +116,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+
 
 //Add Localization
 var locoptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();

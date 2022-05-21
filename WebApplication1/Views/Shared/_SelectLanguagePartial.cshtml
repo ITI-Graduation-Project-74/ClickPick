@@ -13,6 +13,7 @@
         .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName })
         .ToList();
     var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
+
 }
 
 <div class="dropdown w-25 h-25" title="@localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name" style="margin-right: 55px;">

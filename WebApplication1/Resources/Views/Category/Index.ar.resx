@@ -117,20 +117,62 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Logout" xml:space="preserve">
-    <value>تسجيل خروج</value>
+  <data name="$max" xml:space="preserve">
+    <value>الأعلى</value>
   </data>
-  <data name="Manage Registration" xml:space="preserve">
-    <value>إدارة التسجيل</value>
+  <data name="$min" xml:space="preserve">
+    <value>الأقل</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>انشاء حساب</value>
+  <data name="1 - 12 items" xml:space="preserve">
+    <value>1 - 12 عنصر</value>
+    <comment> </comment>
   </data>
-  <data name="Sign In" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+  <data name="A - Z Order" xml:space="preserve">
+    <value>أ- ي طلب</value>
   </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>أهلا بك</value>
+  <data name="All Brand" xml:space="preserve">
+    <value>جميع الماركات</value>
   </data>
-
+  <data name="Average Rating" xml:space="preserve">
+    <value>متوسط التصنيف</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>تصفية</value>
+  </data>
+  <data name="High - Low Price" xml:space="preserve">
+    <value>الأعلى إلى الأقل سعر</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="Low - High Price" xml:space="preserve">
+    <value>الأقل إلى الأعلى سعر</value>
+  </data>
+  <data name="Popularity" xml:space="preserve">
+    <value>شعبية</value>
+  </data>
+  <data name="Search Here..." xml:space="preserve">
+    <value>ابحث هنا...</value>
+  </data>
+  <data name="Search Product" xml:space="preserve">
+    <value>ابحث عن المنتج</value>
+  </data>
+  <data name="Shop" xml:space="preserve">
+    <value>متجر</value>
+  </data>
+  <data name="Shop Grid" xml:space="preserve">
+    <value>متجر الشبكة</value>
+  </data>
+  <data name="Showing:" xml:space="preserve">
+    <value>عرض:</value>
+  </data>
+  <data name="Sort by:" xml:space="preserve">
+    <value>ترتيب حسب:</value>
+  </data>
+  <data name="Z - A Order" xml:space="preserve">
+    <value>ي - أ طلب</value>
+  </data>
 </root>

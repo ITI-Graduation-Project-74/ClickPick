@@ -117,20 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Logout" xml:space="preserve">
-    <value>تسجيل خروج</value>
+  <data name="44 Salah Salem Street, Nasr City" xml:space="preserve">
+    <value>44 Salah Salem Street, Nasr City</value>
   </data>
-  <data name="Manage Registration" xml:space="preserve">
-    <value>إدارة التسجيل</value>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>انشاء حساب</value>
+  <data name="Cairo" xml:space="preserve">
+    <value>Cairo</value>
   </data>
-  <data name="Sign In" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+  <data name="Call us on" xml:space="preserve">
+    <value>Call us on</value>
   </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>أهلا بك</value>
+  <data name="Contact Us" xml:space="preserve">
+    <value>Contact Us</value>
   </data>
-
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Mail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="Our technical support and customer service department is dedicated to helping you throughout the day" xml:space="preserve">
+    <value>Our technical support and customer service department is dedicated to helping you throughout the day</value>
+  </data>
+  <data name="Submit Message" xml:space="preserve">
+    <value>Submit Message</value>
+  </data>
+  <data name="tel" xml:space="preserve">
+    <value>tel</value>
+  </data>
+  <data name="We support you throughout the day" xml:space="preserve">
+    <value>We support you throughout the day</value>
+  </data>
+  <data name="Your Email" xml:space="preserve">
+    <value>Your Email</value>
+  </data>
+  <data name="Your Message" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="Your Name" xml:space="preserve">
+    <value>Your Name</value>
+  </data>
+  <data name="Your Phone" xml:space="preserve">
+    <value>Your Phone</value>
+  </data>
+  <data name="Your Subject" xml:space="preserve">
+    <value>Your Subject</value>
+  </data>
 </root>

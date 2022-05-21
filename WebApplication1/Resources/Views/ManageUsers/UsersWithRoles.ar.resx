@@ -117,20 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Logout" xml:space="preserve">
-    <value>تسجيل خروج</value>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الالكتروني</value>
   </data>
-  <data name="Manage Registration" xml:space="preserve">
-    <value>إدارة التسجيل</value>
+  <data name="Roles" xml:space="preserve">
+    <value>الأدوار</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>انشاء حساب</value>
+  <data name="Total Users till" xml:space="preserve">
+    <value>إجمالي المستخدمين حتى</value>
   </data>
-  <data name="Sign In" xml:space="preserve">
-    <value>تسجيل الدخول</value>
+  <data name="Username" xml:space="preserve">
+    <value>اسم المستخدم</value>
   </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>أهلا بك</value>
+  <data name="Users With Roles" xml:space="preserve">
+    <value>المستخدمون الذين لهم أدوار</value>
   </data>
-
 </root>

@@ -117,20 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Logout" xml:space="preserve">
-    <value>تسجيل خروج</value>
+  <data name="Privacy Policy" xml:space="preserve">
+    <value>سياسة الخصوصية</value>
   </data>
-  <data name="Manage Registration" xml:space="preserve">
-    <value>إدارة التسجيل</value>
+  <data name="Use this page to detail your site's privacy policy." xml:space="preserve">
+    <value>استخدم هذه الصفحة لتفاصيل سياسة الخصوصية الخاصة بموقعك.</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>انشاء حساب</value>
-  </data>
-  <data name="Sign In" xml:space="preserve">
-    <value>تسجيل الدخول</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>أهلا بك</value>
-  </data>
-
 </root>

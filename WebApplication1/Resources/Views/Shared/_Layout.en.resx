@@ -117,57 +117,140 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+
+  <data name="9.00 am - 8.00 pm" xml:space="preserve">
+    <value>9.00 am - 8.00 pm</value>
+  </data>
+
   <data name="About Us" xml:space="preserve">
     <value>About Us</value>
   </data>
   <data name="Admin Dashboard" xml:space="preserve">
     <value>Admin Dashboard</value>
   </data>
+
+  <data name="App Store" xml:space="preserve">
+    <value>App Store</value>
+  </data>
+  <data name="Cameras, Photo &amp; Video" xml:space="preserve">
+    <value>Cameras, Photo &amp; Video</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
+  </data>
+  <data name="Computers &amp; Accessories" xml:space="preserve">
+    <value>Computers &amp; Accessories</value>
   </data>
   <data name="Contact Us" xml:space="preserve">
     <value>Contact Us</value>
   </data>
+  <data name="Download on the" xml:space="preserve">
+    <value>Download on the</value>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>Downloads</value>
+  </data>
+  <data name="Email address here..." xml:space="preserve">
+    <value>Email address here...</value>
+  </data>
+  <data name="FAQs Page" xml:space="preserve">
+    <value>FAQs Page</value>
+  </data>
   <data name="Follow Us" xml:space="preserve">
     <value>Follow Us</value>
   </data>
+  <data name="Get all the latest information, Sales and Offers." xml:space="preserve">
+    <value>Get all the latest information, Sales and Offers.</value>
+  </data>
+  <data name="Get In Touch With Us" xml:space="preserve">
+    <value>Get In Touch With Us</value>
+  </data>
+  <data name="Google Play" xml:space="preserve">
+    <value>Google Play</value>
+  </data>
+  <data name="Headphones" xml:space="preserve">
+    <value>Headphones</value>
+  </data>
+
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="Home1" xml:space="preserve">
     <value>Home</value>
+
   </data>
   <data name="Hotline" xml:space="preserve">
     <value>Hotline</value>
   </data>
+
+
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+
   <data name="Kids" xml:space="preserve">
     <value>Kids</value>
   </data>
+
   <data name="Laptop" xml:space="preserve">
     <value>Laptop</value>
   </data>
+
   <data name="Mens" xml:space="preserve">
     <value>Mens</value>
   </data>
+
   <data name="Mobiles" xml:space="preserve">
     <value>Mobiles</value>
   </data>
   <data name="Orders" xml:space="preserve">
     <value>Orders</value>
   </data>
+
+  <data name="Our Mobile App" xml:space="preserve">
+    <value>Our Mobile App</value>
+  </data>
+  <data name="Phone: +201012293070" xml:space="preserve">
+    <value>Phone: +201012293070</value>
+  </data>
   <data name="register" xml:space="preserve">
     <value>register</value>
   </data>
+  <data name="Saturday:" xml:space="preserve">
+    <value>Saturday:</value>
+  </data>
+
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
   <data name="Shoes" xml:space="preserve">
     <value>Shoes</value>
   </data>
+  
+
+  <data name="Shop Departments" xml:space="preserve">
+    <value>Shop Departments</value>
+  </data>
   <data name="Sign In" xml:space="preserve">
     <value>Sign In</value>
   </data>
+  <data name="Sitemap" xml:space="preserve">
+    <value>Sitemap</value>
+  </data>
+ 
+  <data name="String1TV, Video &amp; Audio" xml:space="preserve">
+    <value>TV, Video &amp; Audio</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Subscribe</value>
+  </data>
+  <data name="Subscribe to our Newsletter" xml:space="preserve">
+    <value>Subscribe to our Newsletter</value>
+  </data>
+  <data name="Sunday-Thursday:" xml:space="preserve">
+    <value>Sunday-Thursday:</value>
+  </data>
+
   <data name="Vendor Dashboard" xml:space="preserve">
     <value>Vendor Dashboard</value>
   </data>
