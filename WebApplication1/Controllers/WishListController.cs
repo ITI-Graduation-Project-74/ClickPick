@@ -75,12 +75,13 @@ namespace ClickPick.Controllers
             {
                 _context.WishLists.Add(wishList);
                 _context.Complete();
-                TempData["wishList"] = "Add To WishList";
+
+               
 
             }
             // Save To Database
             _context.Complete();
-
+            TempData["wishList"] = "Added To Your WishList";
             return RedirectToAction("Details" , "Product" , new {productId=TempData["DetailsProductId"] });
         }
         public IActionResult delete(int productId)

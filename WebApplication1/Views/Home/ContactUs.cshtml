@@ -6,6 +6,18 @@
     ViewData["Title"]= "ContactUs";
 }
 
+@{
+    @if(TempData["Mailsend"] !=null )
+    {
+        <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> 
+        <script type="text/javascript">
+            toastr.success('@TempData["Mailsend"]');
+           
+       </script> 
+    }
+}
+
  <!-- Start Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="container">
@@ -78,7 +90,7 @@
                         <div class="col-lg-8 col-md-12 col-12">
                             <div class="contact-form-head">
                                 <div class="form-main">
-                                 <h1>@ViewBag.Message</h1>
+                                 
                                     <form class="form" method="post" action="/Home/ContactUs">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-12">

@@ -17,7 +17,9 @@ namespace Ecommerce.Controllers
         }
         public IActionResult Index(int id)
         {
-            var products = _context.Products.FindAll(n => n.CatagoryId == id).ToList();
+            var products = _context.Products.FindAll(n => n.CatagoryId == id)
+                .Where(x => x.IsApproved == true || x.IsApproved == null).ToList();
+
             ViewBag.Brands = new SelectList(_context.Brands.GetAll(), "Id", "BrandName");
             return View(new ProductViewModel()
             {

@@ -47,6 +47,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Imgs\Categories\Mobiles\" />
+    <Folder Include="wwwroot\Imgs\Categories\Menna\" />
   </ItemGroup>
 
   <ItemGroup>

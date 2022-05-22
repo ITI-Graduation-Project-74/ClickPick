@@ -16,14 +16,14 @@
 		<div class="row align-items-center">
 			<div class="col-lg-6 col-md-6 col-12">
 				<div class="breadcrumbs-content">
-					<h1 class="page-title">@localizer["Shop Grid"]</h1>
+					
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-12">
 				<ul class="breadcrumb-nav">
-					<li><a href="index.html"><i class="lni lni-home"></i>@localizer["Home"]</a></li>
+					<li><a href="#"><i class="lni lni-home"></i>@localizer["Home"]</a></li>
 					<li><a href="javascript:void(0)">@localizer["Shop"]</a></li>
-					<li>@localizer["Shop Grid"]</li>
+					<li>@localizer["ClickPick"]</li>
 				</ul>
 			</div>
 		</div>
@@ -74,15 +74,7 @@
 						<div class="row align-items-center">
 							<div class="col-lg-7 col-md-8 col-12">
 								<div class="product-sorting">
-												<label for="sorting">@localizer["Sort by:"]</label>
-									<select class="form-control" id="sorting">
-										<option>@localizer["Popularity"]</option>
-										<option>@localizer["Low - High Price"]</option>
-										<option>@localizer["High - Low Price"]</option>
-										<option>@localizer["Average Rating"]</option>
-										<option>@localizer["A - Z Order"]</option>
-										<option>@localizer["Z - A Order"]</option>
-									</select>
+									
 									<h3 class="total-show-product">@localizer["Showing:"] <span>@localizer["1 - 12 items"]</span></h3>
 								</div>
 							</div>
@@ -127,6 +119,15 @@
 												<div class="price">
 													<span>@item.Price.ToString("c")</span>
 												</div>
+
+												 @if(@item.ApplicationUser?.StoreName !=null)
+											{
+												<span class="badge badge-info"  style="background-color: #3ca65e;" >Sold by @item.ApplicationUser.StoreName</span>
+											}
+											else
+											{
+												 <span class="badge badge-info"  style="background-color: #a7b10d;" > Fullfilled by ClickPick </span>
+											 }
 											</div>
 										</div>
 									</div>

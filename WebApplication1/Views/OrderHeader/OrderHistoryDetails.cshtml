@@ -1,6 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer localizer
-@section css{<link rel="stylesheet" href="~/css/orderHistoryDetails.css">}
+
+@section css
+{
+    <link rel="stylesheet" href="~/css/orderHistoryDetails.css">
+}
 
 <div class="card">
             <div class="row">
@@ -84,7 +88,7 @@
                     </div>
                 }
                     @if(@ViewBag.Details.status =="Pending"){
-                        <a onclick="onclick="return confirm('are you sure?');" href="/OrderHeader/CancelOrder?orderId=@(ViewBag.Details.Id)" class="btn btn-danger"> @localizer["Cancel Order"]</a>
+                        <a onclick= " return confirm('are you sure?');" href="/OrderHeader/CancelOrder?orderId=@(ViewBag.Details.Id)" class="btn btn-danger cancelOrderS"> @localizer["Cancel Order"]</a>
                         }
                           else if (@ViewBag.Details.status=="Canceled"){
                               <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">

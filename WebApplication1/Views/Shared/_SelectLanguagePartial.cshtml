@@ -10,19 +10,33 @@
 @{
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
     var cultureItems = locOptions.Value.SupportedUICultures
-        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName })
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.Name })
         .ToList();
     var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
 
 }
 
-<div class="dropdown w-25 h-25" title="@localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name" style="margin-right: 55px;">
+@*<div class=" w-25 h-25" title="@localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name" style="margin-right: 55px;">
     <form id="selectLanguage" method="POST" asp-controller="Home" asp-action="SetLanguage" 
           asp-route-returnUrl="@returnUrl">
         <select name="culture" class="btn btn-primary dropdown-toggle "
                 onchange="this.form.submit();"
                 asp-for="@requestCulture.RequestCulture.UICulture.Name"
                 asp-items="cultureItems">
+        </select>
+    </form>
+</div>*@
+
+
+<div class=" w-25 h-25" title="@localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name" style="margin-right: 55px;">
+    <form id="selectLanguage" method="POST" asp-controller="Home" asp-action="SetLanguage" 
+          asp-route-returnUrl="@returnUrl">
+        <select name="culture" class="btn btn-primary dropdown-toggle "
+                onchange="this.form.submit();"
+                asp-for="@requestCulture.RequestCulture.UICulture.Name">
+
+                <option selected="selected" value="en-US">English</option>
+                <option  value="ar-EG">العربية</option>
         </select>
     </form>
 </div>
