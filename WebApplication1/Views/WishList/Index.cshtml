@@ -35,11 +35,11 @@ else
         {
    
         <div class="d-flex flex-column align-items-center align-content-center col-lg-12 col-12 mb-lg-3 " >
-            <div class="row p-2 bg-white border rounded">
-                <div class="col-md-2 mt-1">
-                    <img class="img-fluid img-responsive rounded product-image" src="@item.Product.ImgUrl">
+            <div class="row p-2 bg-white border rounded" style="max-width: 799px; max-height:250px">
+                <div class="col-lg-2 col-md-2 mt-1" >
+                    <img class="img-fluid img-responsive rounded product-image" src="@item.Product.ImgUrl" >
                 </div>
-                <div class="col-md-6 mt-1">
+                <div class=" col-lg-6 col-md-6 mt-1">
                     <h5><b> @item.Product.Name</b></h5>
                     <div class="d-flex flex-row"> <br>
                         @*<div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><br>*@
@@ -50,7 +50,7 @@ else
                     
                     <p class="text-justify text-truncate para mb-0"><br>@item.Product.Description<br></p>
                 </div>
-                <div class="align-items-end align-content-center col-md-4 border-right mt-1">
+                <div class="align-items-end align-content-center col-lg-4 col-md-4 border-right mt-1">
                   
                     
                      <div class="d-flex flex-column mt-2">
