@@ -1,4 +1,5 @@
 @model ShoppingCart
+@using ClickPick.Utility
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer localizer
 
@@ -8,17 +9,37 @@
     double totalReviews = 0;
 
 }
-@if(TempData["success"] != null)
+@if(TempData["success"] !=null )
     {
         <script src="~/lib/jquery/dist/jquery.min.js"></script> 
         <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> 
         <script type="text/javascript">
             toastr.success('@TempData["success"]');
+           
        </script> 
     }
 
+    @if(TempData["wishList"] !=null )
+    {
+        <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> 
+        <script type="text/javascript">
+            toastr.success('@TempData["wishList"]');
+           
+       </script> 
+    }
 
-
+    @if(TempData["reviewAdded"] !=null )
+    {
+        <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> 
+        <script type="text/javascript">
+            toastr.success('@TempData["reviewAdded"]');
+           
+       </script> 
+    }
+    
+     
 <!-- Start Item Details -->
 
     <section class="item-details section">
@@ -54,7 +75,7 @@
                             <p class="info-text">@Model.Product.Description</p>
                             @if(@Model.Product.Reviews.Count()==0)
                             {
-                               <h3> <span class="badge badge-info"  style="background-color: #3ca65e;">@localizer["No reviews yet"]</span></h3> 
+                               <h6> <span class="badge badge-info"  style="background-color: #c8e6d2;color: black;">@localizer["No reviews yet"]</span></h6> 
                             }
                             else
                             {
@@ -73,7 +94,7 @@
                                  Total Reviews(@Model.Product.Reviews.Count()) : 
                             
                                      
-                                     <span class="badge badge-info" style="font-size: 20px; background-color: #6be191; color:white;">
+                                     <span class="badge badge-info" style="font-size: 20px; background-color:#c8e6d2;color: black;">
                                          @(Math.Round(totalReviews, 1, MidpointRounding.ToEven))
                                          <i class="fa-solid fa-star text-white"></i>
                                          </span>
@@ -99,6 +120,16 @@
                         </p>
 
 
+                            }
+
+                            
+                             @if(@Model.Product.ApplicationUser?.StoreName !=null)
+                            {
+                                <span class="badge badge-info"  style="background-color: #3ca65e;" >Sold by @Model.Product.ApplicationUser.StoreName</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-info"  style="background-color: #a7b10d;" > Fullfilled by ClickPick </span>
                             }
                              
                             

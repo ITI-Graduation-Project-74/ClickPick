@@ -26,7 +26,7 @@ namespace Ecommerce.Controllers
         {
             //var products = _context.Products.GetAll().OrderBy(p=>Guid.NewGuid());
 
-            var products = _context.Products.GetAll().OrderBy(p => p.Price);
+            var products = _context.Products.GetAll().Where(x=>x.IsApproved==true || x.IsApproved==null).OrderBy(p => p.Price);
             var categories = _context.Categories.GetAll();
 
             // Pages List 
@@ -169,6 +169,7 @@ namespace Ecommerce.Controllers
                 checkPreviousReviews.Comment = comment;
                 _context.Complete();
             }
+            TempData["reviewAdded"] = "Thanks for your feedback";
             return RedirectToAction("Details", new { productId = TempData["DetailsProductId"] });
         }
 

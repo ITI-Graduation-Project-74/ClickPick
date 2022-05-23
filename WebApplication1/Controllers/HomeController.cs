@@ -72,7 +72,7 @@ namespace WebApplication1.Controllers
                 SmtpClient.Port = 587;
                 SmtpClient.EnableSsl = false;
                 SmtpClient.Send(mail);
-
+                TempData["Mailsend"] = "Thank You , Your Mail has sent successfully";
                 ViewBag.Message = "Mail Send";
                 ModelState.Clear();
             }

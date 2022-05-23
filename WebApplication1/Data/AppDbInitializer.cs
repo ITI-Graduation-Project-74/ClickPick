@@ -37,7 +37,7 @@ namespace Ecommerce.Data
                         {
                             Id = 3,
                             CategoryName = "Mobiles",
-                            ImgUrl = "/Imgs/Categories/CategoryHead/C3.jpg",
+                            ImgUrl = "/Imgs/Categories/CategoryHead/C3.png",
 
                         },
                        new Category()

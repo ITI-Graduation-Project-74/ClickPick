@@ -1,4 +1,4 @@
-using ClickPick.Utility;
+﻿using ClickPick.Utility;
 using Ecommerce.Data;
 using Ecommerce.Models;
 
@@ -52,9 +52,11 @@ builder.Services.Configure<RequestLocalizationOptions>(
             new CultureInfo("en-US"),
             new CultureInfo("ar-EG")
         };
+
         opt.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
         opt.SupportedCultures = supportCultures;
         opt.SupportedUICultures = supportCultures;
+
     });
 //builder.Services.AddTransient(typeof(IBaseRepository<>),typeof(BaseRepository<>));
 
@@ -83,21 +85,7 @@ builder.Services.AddSession(
         options.Cookie.HttpOnly = true;
         options.Cookie.IsEssential = true;
     });
-//AddLocalization
-builder.Services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
-builder.Services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
-builder.Services.Configure<RequestLocalizationOptions>(
-    opt =>
-    {
-        var supportCultures = new List<CultureInfo>
-        {
-            new CultureInfo("en"),
-            new CultureInfo("ar-EG")
-        };
-        opt.DefaultRequestCulture = new RequestCulture(culture: "en", uiCulture: "en");
-        opt.SupportedCultures = supportCultures;
-        opt.SupportedUICultures = supportCultures;
-    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -100,7 +100,9 @@ namespace Ecommerce.Controllers
                     ImgUrl = product.ImgUrl,
                     Catagory = product.Catagory,
                     UserId = product.UserId,
-                    Id = R.Next()
+                    IsApproved = true,
+                    Id = R.Next(),
+                    BrandId = product.BrandId
                 };
 
                 employee.Id = R.Next();
@@ -141,7 +143,22 @@ namespace Ecommerce.Controllers
                         P.ProductId = id;
                         P.ImgUrl = file.FileName;
                         P.Id = R2.Next();
+
+                        //var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
+                        var paths2 = new string[] { "/Imgs/", "Categories/", categoryName + '/' };
+
+                        var fullPath2 = Path.Combine(paths2);
+
+                        var ServerSavePath2 = Path.Combine(fullPath2, InputFileName);
+
+                        P.ImgUrl = ServerSavePath2;
+
+                        employee.ImgUrl = ServerSavePath2;
+                        _context.Update(employee);
                         _context.ProductImgs.Add(P);
+
+
+
                         await _context.SaveChangesAsync();
                     }
                     //return RedirectToAction(nameof(Index));
@@ -357,7 +374,7 @@ namespace Ecommerce.Controllers
 
                         //var ServerSavePath = Path.Combine(Server.MapPath("~/imgs/") + InputFileName);
                         var paths = new string[] { "wwwroot/", "Imgs/", "Categories/", categoryName + '/' };
-                       
+
 
                         //var ServerSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", InputFileName);
 
@@ -385,9 +402,9 @@ namespace Ecommerce.Controllers
 
                         var fullPath2 = Path.Combine(paths2);
 
-                        var ServerSavePath2 = Path.Combine( fullPath2, InputFileName);
+                        var ServerSavePath2 = Path.Combine(fullPath2, InputFileName);
 
-                        employee.ImgUrl= ServerSavePath2;
+                        employee.ImgUrl = ServerSavePath2;
                         _context.Products.Update(employee);
                         await _context.SaveChangesAsync();
                     }
